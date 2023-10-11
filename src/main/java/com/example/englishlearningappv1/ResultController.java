@@ -1,8 +1,19 @@
 package com.example.englishlearningappv1;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
+import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 
 public class ResultController {
 
@@ -11,6 +22,14 @@ public class ResultController {
 
     @FXML
     public ProgressIndicator correct_progress, wrong_progress;
+
+    @FXML
+    public Button mainMenu;
+
+    private Stage stage;
+    private Scene scene;
+
+    final private static String MULTIPLE_CHOICE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
 
     int correct;
     int wrong;
@@ -43,6 +62,24 @@ public class ResultController {
             remark.setText("Congratulations! Its your hardwork and determination which helped you to score good marks. Check you results here.");
         } else if (correct==10) {
             remark.setText("Congratulations! You have passed the quiz with full marks because of your hardwork and dedication towards studies. Keep it up! Check your results here.");
+        }
+    }
+
+    @FXML
+    public void playAgainClicked(ActionEvent event) {
+        try {
+            QuizController quizController = new QuizController();
+            quizController.playAgain();
+
+            URL url = new File(MULTIPLE_CHOICE_FXML_FILE_PATH).toURI().toURL();
+            Parent root = FXMLLoader.load(url);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch(IOException e) {
+            e.printStackTrace();
         }
     }
 

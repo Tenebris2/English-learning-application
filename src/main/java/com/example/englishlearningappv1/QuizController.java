@@ -38,8 +38,13 @@ public class QuizController {
 
     @FXML
     private void initialize() {
-
         loadQuestions();
+    }
+
+    public void playAgain() {
+        counter = 0;
+        correct = 0;
+        wrong = 0;
     }
 
     private void loadQuestions() {
