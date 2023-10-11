@@ -1,18 +1,14 @@
 package com.example.englishlearningappv1;
 
+import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
-import static com.example.englishlearningappv1.CRUDFunctions.connectDB;
-
-import static com.example.englishlearningappv1.MultipleChoice.makeQuestion;
+import static com.example.englishlearningappv1.Functions.CRUDFunctions.connectDB;
 
 public class Start {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, IOException {
         connectDB();
-        DictionaryApp.main(args);
+        HomePage.main(args);
     }
 }
 

@@ -1,14 +1,18 @@
 package com.example.englishlearningappv1;
 
+import com.example.englishlearningappv1.Controllers.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.net.URL;
+
 public class DictionaryApp extends Application {
 
-    private static final String FXML_FILE_PATH = "JavaFx.fxml";
+    private static final String FXML_FILE_PATH = "com/example/englishlearningappv1/fxml/JavaFx.fxml";
     private static Controller controller = new Controller();
     private Dictionary dic = new Dictionary();
     private HistorySearch his = new HistorySearch();
@@ -21,7 +25,8 @@ public class DictionaryApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource(FXML_FILE_PATH));
+        URL url = new File("src/main/resources/com/example/englishlearningappv1/fxml/JavaFx.fxml").toURI().toURL();
+        Parent root = FXMLLoader.load(url);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Dictionary");
@@ -31,7 +36,6 @@ public class DictionaryApp extends Application {
         controller.initData();
         controller.hideSearchView(root);
         controller.addFunction();
-
     }
 
     @Override

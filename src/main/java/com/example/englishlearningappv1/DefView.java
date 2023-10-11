@@ -1,7 +1,11 @@
 package com.example.englishlearningappv1;
 
+import javafx.beans.value.ObservableValue;
 import javafx.scene.Scene;
+import javafx.scene.effect.BlendMode;
+import javafx.scene.paint.Color;
 import javafx.scene.web.WebView;
+import org.w3c.dom.Document;
 
 public class DefView extends Root{
     private WebView defView;
@@ -10,7 +14,9 @@ public class DefView extends Root{
     //Khởi tạo WebView xem nghĩa
     public DefView(Scene scene){
         defView = (WebView) scene.lookup(tag);
+        defView.setStyle("-fx-background-radius: 10;");
     }
+
 
     //Hiển thị nghĩa
     public void representDef(String def){

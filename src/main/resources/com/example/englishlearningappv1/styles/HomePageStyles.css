@@ -1,0 +1,24 @@
+#homePage {
+    -fx-background-color:#131f24;
+}
+.button {
+    -fx-border-radius: 100px;
+    -fx-background-color: transparent;
+}
+
+/* hover state */
+.button:hover {
+  -fx-background-color: #44B6F1;
+  transition: -fx-background-color 0.5s ease;
+}
+
+#anchorPane1 {
+    -fx-border-color:  #253239;
+    -fx-border-width: 0 1px 0 0;
+}
+
+#introductionChapterCircle {
+    -fx-background-image: url("C:\Users\Asus\IdeaProjects\English-learning-app-v1\src\main\resources\com\example\englishlearningappv1\image\light-bulb.png");
+}
+
+

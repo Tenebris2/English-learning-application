@@ -1,0 +1,20 @@
+.list-view .list-cell:even {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-border-color:  #253239;
+
+}
+
+.list-view .list-cell:odd {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-border-color:  #253239;
+}
+.list-view .list-cell:odd:focus{
+    -fx-background-color: white;
+}
+
+#listOfButtons {
+    -fx-border-color:  #253239;
+    -fx-border-width: 0 1px 0 0;
+}
