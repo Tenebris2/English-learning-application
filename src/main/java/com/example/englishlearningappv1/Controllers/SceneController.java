@@ -8,7 +8,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.controlsfx.control.action.Action;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,10 +20,10 @@ public class SceneController {
     @FXML
     private Parent root;
 
-    final private static String MULTIPLE_CHOICE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/MultipleChoiceGame.fxml";
+    final private static String MULTIPLE_CHOICE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
     private static final String DICTIONARY_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/JavaFx.fxml";
-
     final private static String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
+
     public void switchtoMPC(ActionEvent event) throws IOException {
         URL url = new File(MULTIPLE_CHOICE_FXML_FILE_PATH).toURI().toURL();
         Parent root = FXMLLoader.load(url);
@@ -33,6 +32,7 @@ public class SceneController {
         stage.setScene(scene);
         stage.show();
     }
+
     public void switchtoDictionary(ActionEvent event) throws Exception {
         URL url = new File(DICTIONARY_FXML_FILE_PATH).toURI().toURL();
         Parent root = FXMLLoader.load(url);

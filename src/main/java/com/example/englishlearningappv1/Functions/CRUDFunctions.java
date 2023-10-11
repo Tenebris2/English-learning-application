@@ -3,9 +3,9 @@ package com.example.englishlearningappv1.Functions;
 import java.sql.*;
 
 public class CRUDFunctions{
-    static final String dbURL = "jdbc:mysql://localhost:3306/dictionary";
+    static final String dbURL = "jdbc:mysql://localhost:3307/test2";
     static final String username = "root";
-    static final String password = "";
+    static final String password = "12122004Anh";
     private static final String SPLITTING_CHAR = "<html>";
 
     public static Connection connection;
