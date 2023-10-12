@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -20,7 +21,6 @@ import javafx.util.Duration;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 import javafx.animation.KeyFrame;
@@ -32,7 +32,7 @@ import javafx.util.Duration;
 
 public class QuizController {
 
-    private String[] questions = {
+     String[] questions = {
             "1. How many consonants are there in the English alphabet?",
             "2. Who invented the Light bulb?",
             "3. In the Solar System, farthest planet from the Sun is",
@@ -45,7 +45,7 @@ public class QuizController {
             "10. World Environment Day is on -"
     };
 
-    private String[][] options = {
+     String[][] options = {
             {"19", "20", "21", "22"},
             {"Thomas Alva Edison", "Alexander Fleming", "Charles Babbage", "Albert Einstein"},
             {"Jupiter", "Saturn", "Uranus", "Neptune"},
@@ -56,6 +56,19 @@ public class QuizController {
             {"Lion", "Blackbuck", "Cheetah", "Quarter Horse"},
             {"Blue", "Green", "Yellow", "Pink"},
             {"5th June", "5th July", "15th June", "25th June"}
+    };
+
+    char[] answers = {
+            'C',
+            'A',
+            'D',
+            'B',
+            'C',
+            'B',
+            'D',
+            'C',
+            'B',
+            'A'
     };
 
     public int totalSec = 15;
@@ -95,8 +108,9 @@ public class QuizController {
             new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
+
+                    timer.setText("Time Left: " + String.valueOf(totalSec));
                     totalSec--;
-                    timer.setText(String.valueOf(totalSec));
                     if (totalSec <= 0) {
                         timeline.stop(); // Dừng đếm ngược khi đạt 0 giây
                     }
@@ -107,18 +121,27 @@ public class QuizController {
 
 
     private void loadQuestions() {
-
+        totalSec = 15;
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
         if (counter < questions.length) {
             question.setText(questions[counter]);
             opt1.setText(options[counter][0]);
             opt2.setText(options[counter][1]);
             opt3.setText(options[counter][2]);
             opt4.setText(options[counter][3]);
-            timeline.setCycleCount(Timeline.INDEFINITE);
-            timeline.play();
         }
     }
 
+
+    private void displayAnswer() {
+        timeline.stop();
+
+        Timeline pause = new Timeline();
+
+
+        loadQuestions();
+    }
 
 
     boolean checkAnswer(String answer) {
@@ -199,11 +222,12 @@ public class QuizController {
 
     @FXML
     public void opt1clicked(ActionEvent event) {
+        displayAnswer();
         checkAnswer(opt1.getText().toString());
         if (checkAnswer(opt1.getText().toString())) {
-            correct = correct + 1;
+            correct++;
         } else {
-            wrong = wrong + 1;
+            wrong++;
         }
         if (counter == 9) {
             try {
@@ -219,7 +243,7 @@ public class QuizController {
             }
         } else {
             counter++;
-            loadQuestions();
+            displayAnswer();
         }
 
     }
@@ -249,7 +273,7 @@ public class QuizController {
             }
         } else {
             counter++;
-            loadQuestions();
+            displayAnswer();
         }
     }
 
@@ -275,7 +299,7 @@ public class QuizController {
             }
         } else {
             counter++;
-            loadQuestions();
+            displayAnswer();
         }
     }
 
@@ -301,9 +325,8 @@ public class QuizController {
             }
         } else {
             counter++;
-            loadQuestions();
+            displayAnswer();
         }
     }
-
 }
 
