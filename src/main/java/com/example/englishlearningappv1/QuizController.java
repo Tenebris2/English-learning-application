@@ -1,6 +1,9 @@
 package com.example.englishlearningappv1;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,13 +14,51 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.animation.AnimationTimer;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.util.Duration;
+
 
 public class QuizController {
 
+    private String[] questions = {
+            "1. How many consonants are there in the English alphabet?",
+            "2. Who invented the Light bulb?",
+            "3. In the Solar System, farthest planet from the Sun is",
+            "4. Largest moon in the Solar System?",
+            "5. Which of these is 'not' a property of metal?",
+            "6. Who discovered Pasteurisation?",
+            "7. Hydrochloric acid (HCl) is produced by -?",
+            "8. The fastest animal in the world is -",
+            "9. Complementary colour of Red is -",
+            "10. World Environment Day is on -"
+    };
+
+    private String[][] options = {
+            {"19", "20", "21", "22"},
+            {"Thomas Alva Edison", "Alexander Fleming", "Charles Babbage", "Albert Einstein"},
+            {"Jupiter", "Saturn", "Uranus", "Neptune"},
+            {"Titan", "Ganymede", "Moon", "Europa"},
+            {"Good Conduction", "Malleable", "Non Ductile", "Sonourous"},
+            {"Alexander Fleming", "Louis Pasteur", "Simon Pasteur", "William Pasteur"},
+            {"Small Intestine", "Liver", "Oesophagus", "Stomach"},
+            {"Lion", "Blackbuck", "Cheetah", "Quarter Horse"},
+            {"Blue", "Green", "Yellow", "Pink"},
+            {"5th June", "5th July", "15th June", "25th June"}
+    };
+
+    public int totalSec = 15;
 
     private Stage stage;
 
@@ -25,6 +66,8 @@ public class QuizController {
 
     final private static String RESULT_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/result.fxml";
 
+    @FXML
+    public Label timer;
 
     @FXML
     public Label question;
@@ -39,6 +82,7 @@ public class QuizController {
     @FXML
     private void initialize() {
         loadQuestions();
+        timeline.play();
     }
 
     public void playAgain() {
@@ -47,79 +91,34 @@ public class QuizController {
         wrong = 0;
     }
 
+    Timeline timeline = new Timeline(
+            new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    totalSec--;
+                    timer.setText(String.valueOf(totalSec));
+                    if (totalSec <= 0) {
+                        timeline.stop(); // Dừng đếm ngược khi đạt 0 giây
+                    }
+                }
+            })
+    );
+
+
+
     private void loadQuestions() {
 
-        if (counter == 0) { //Question 1
-            question.setText("1. How many consonants are there in the English alphabet?");
-            opt1.setText("19");
-            opt2.setText("20");
-            opt3.setText("21");
-            opt4.setText("22");
-        }
-        if (counter == 1) { //Question 2
-            question.setText("2. Who invented the Light bulb?");
-            opt1.setText("Thomas Alva Edison");
-            opt2.setText("Alexander Fleming");
-            opt3.setText("Charles Babbage");
-            opt4.setText("Albert Einstein");
-        }
-        if (counter == 2) { //Question 3
-            question.setText("3. In the Solar System, farthest planet from the Sun is");
-            opt1.setText("Jupiter");
-            opt2.setText("Saturn");
-            opt3.setText("Uranus");
-            opt4.setText("Neptune");
-        }
-        if (counter == 3) { //Question 4
-            question.setText("4. Largest moon in the Solar System?");
-            opt1.setText("Titan");
-            opt2.setText("Ganymede");
-            opt3.setText("Moon");
-            opt4.setText("Europa");
-        }
-        if (counter == 4) {//Question 5
-            question.setText("5. Which of these is 'not' a property of metal?");
-            opt1.setText("Good Conduction");
-            opt2.setText("Malleable");
-            opt3.setText("Non Ductile");
-            opt4.setText("Sonourous");
-        }
-        if (counter == 5) { //Question 6
-            question.setText("6. Who discovered Pasteurisation?");
-            opt1.setText("Alexander Fleming");
-            opt2.setText("Louis Pasteur");
-            opt3.setText("Simon Pasteur");
-            opt4.setText("William Pasteur");
-        }
-        if (counter == 6) { //Question 7
-            question.setText("7. Hydrochloric acid (HCl) is produced by -?");
-            opt1.setText("Small Intestine");
-            opt2.setText("Liver");
-            opt3.setText("Oesophagus");
-            opt4.setText("Stomach");
-        }
-        if (counter == 7) { //Question 8
-            question.setText("8. The fastest animal in the world is -");
-            opt1.setText("Lion");
-            opt2.setText("Blackbuck");
-            opt3.setText("Cheetah");
-            opt4.setText("Quarter Horse");
-        }
-        if (counter == 8) { //Question 9
-            question.setText("9. Complementary colour of Red is -");
-            opt1.setText("Blue");
-            opt2.setText("Green");
-            opt3.setText("Yellow");
-            opt4.setText("Pink");
-        }
-        if (counter == 9) { //Question 10
-            question.setText("10. World Environment Day is on -");
-            opt1.setText("5th June");
-            opt2.setText("5th July");
-            opt3.setText("15th June");
-            opt4.setText("25th June");
+        if (counter < questions.length) {
+            question.setText(questions[counter]);
+            opt1.setText(options[counter][0]);
+            opt2.setText(options[counter][1]);
+            opt3.setText(options[counter][2]);
+            opt4.setText(options[counter][3]);
+            timeline.setCycleCount(Timeline.INDEFINITE);
+            timeline.play();
         }
     }
+
 
 
     boolean checkAnswer(String answer) {

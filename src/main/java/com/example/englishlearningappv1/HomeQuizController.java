@@ -44,9 +44,6 @@ public class HomeQuizController {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-
-
             }
         });
 
