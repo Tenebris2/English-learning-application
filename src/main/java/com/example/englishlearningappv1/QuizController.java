@@ -111,7 +111,7 @@ public class QuizController {
 
                     timer.setText("Time Left: " + String.valueOf(totalSec));
                     totalSec--;
-                    if (totalSec <= 0) {
+                    if (totalSec < 0) {
                         timeline.stop(); // Dừng đếm ngược khi đạt 0 giây
                     }
                 }
@@ -136,6 +136,8 @@ public class QuizController {
 
     private void displayAnswer() {
         timeline.stop();
+
+
 
         Timeline pause = new Timeline();
 
