@@ -1,7 +1,6 @@
 package com.example.englishlearningappv1;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -11,23 +10,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Background;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.animation.AnimationTimer;
 import javafx.util.Duration;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.util.Duration;
 
 
 public class QuizController {
@@ -88,7 +79,7 @@ public class QuizController {
     @FXML
     public Button opt1, opt2, opt3, opt4;
 
-    static int counter = 0;
+    static int index = 0;
     static int correct = 0;
     static int wrong = 0;
 
@@ -99,7 +90,7 @@ public class QuizController {
     }
 
     public void playAgain() {
-        counter = 0;
+        index = 0;
         correct = 0;
         wrong = 0;
     }
@@ -124,94 +115,107 @@ public class QuizController {
         totalSec = 15;
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
-        if (counter < questions.length) {
-            question.setText(questions[counter]);
-            opt1.setText(options[counter][0]);
-            opt2.setText(options[counter][1]);
-            opt3.setText(options[counter][2]);
-            opt4.setText(options[counter][3]);
+        if (index < questions.length) {
+            question.setText(questions[index]);
+            opt1.setText(options[index][0]);
+            opt2.setText(options[index][1]);
+            opt3.setText(options[index][2]);
+            opt4.setText(options[index][3]);
         }
     }
-
 
     private void displayAnswer() {
         timeline.stop();
 
+        opt1.setDisable(true);
+        opt2.setDisable(true);
+        opt3.setDisable(true);
+        opt4.setDisable(true);
 
+        PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
 
-        Timeline pause = new Timeline();
+        pauseTransition.setOnFinished(event -> {
+            totalSec = 15;
+            timer.setText("Time Left: " + String.valueOf(totalSec));
 
+            opt1.setDisable(false);
+            opt2.setDisable(false);
+            opt3.setDisable(false);
+            opt4.setDisable(false);
 
-        loadQuestions();
+            loadQuestions();
+        });
+
+        pauseTransition.play();
     }
 
 
     boolean checkAnswer(String answer) {
 
-        if (counter == 0) {
+        if (index == 0) {
             if (answer.equals("21")) {
                 return true;
             } else {
                 return false;
             }
         }
-        if (counter == 1) {
+        if (index == 1) {
             if (answer.equals("Thomas Alva Edison")) {
                 return true;
             } else {
                 return false;
             }
         }
-        if (counter == 2) {
+        if (index == 2) {
             if (answer.equals("Neptune")) {
                 return true;
             } else {
                 return false;
             }
         }
-        if (counter == 3) {
+        if (index == 3) {
             if (answer.equals("Ganymede")) {
                 return true;
             } else {
                 return false;
             }
         }
-        if (counter == 4) {
+        if (index == 4) {
             if (answer.equals("Non Ductile")) {
                 return true;
             } else {
                 return false;
             }
         }
-        if (counter == 5) {
+        if (index == 5) {
             if (answer.equals("Louis Pasteur")) {
                 return true;
             } else {
                 return false;
             }
         }
-        if (counter == 6) {
+        if (index == 6) {
             if (answer.equals("Stomach")) {
                 return true;
             } else {
                 return false;
             }
         }
-        if (counter == 7) {
+        if (index == 7) {
             if (answer.equals("Cheetah")) {
                 return true;
             } else {
                 return false;
             }
         }
-        if (counter == 8) {
+        if (index == 8) {
             if (answer.equals("Green")) {
                 return true;
             } else {
                 return false;
             }
         }
-        if (counter == 9) {
+        if (index == 9) {
             if (answer.equals("5th June")) {
                 return true;
             } else {
@@ -231,7 +235,7 @@ public class QuizController {
         } else {
             wrong++;
         }
-        if (counter == 9) {
+        if (index == 9) {
             try {
                 URL url = new File(RESULT_FXML_FILE_PATH).toURI().toURL();
                 Parent root = FXMLLoader.load(url);
@@ -244,7 +248,7 @@ public class QuizController {
                 e.printStackTrace();
             }
         } else {
-            counter++;
+            index++;
             displayAnswer();
         }
 
@@ -260,7 +264,7 @@ public class QuizController {
         } else {
             wrong = wrong + 1;
         }
-        if (counter == 9) {
+        if (index == 9) {
             try {
 
                 URL url = new File(RESULT_FXML_FILE_PATH).toURI().toURL();
@@ -274,7 +278,7 @@ public class QuizController {
                 e.printStackTrace();
             }
         } else {
-            counter++;
+            index++;
             displayAnswer();
         }
     }
@@ -287,7 +291,7 @@ public class QuizController {
         } else {
             wrong = wrong + 1;
         }
-        if (counter == 9) {
+        if (index == 9) {
             try {
                 URL url = new File(RESULT_FXML_FILE_PATH).toURI().toURL();
                 Parent root = FXMLLoader.load(url);
@@ -300,7 +304,7 @@ public class QuizController {
                 e.printStackTrace();
             }
         } else {
-            counter++;
+            index++;
             displayAnswer();
         }
     }
@@ -313,7 +317,7 @@ public class QuizController {
         } else {
             wrong = wrong + 1;
         }
-        if (counter == 9) {
+        if (index == 9) {
             try {
                 URL url = new File(RESULT_FXML_FILE_PATH).toURI().toURL();
                 Parent root = FXMLLoader.load(url);
@@ -326,7 +330,7 @@ public class QuizController {
                 e.printStackTrace();
             }
         } else {
-            counter++;
+            index++;
             displayAnswer();
         }
     }
