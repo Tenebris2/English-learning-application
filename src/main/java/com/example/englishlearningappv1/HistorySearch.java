@@ -10,7 +10,7 @@ import java.util.Formatter;
 import java.util.List;
 
 public class HistorySearch {
-    private static final String HISTORY_FILE_PATH = "C:\\Users\\admin\\Desktop\\BTL\\English-learning-application\\src\\main\\resources\\files\\history.txt";
+    private static final String HISTORY_FILE_PATH = "history.txt";
     private static List<String> wordSearchList = new ArrayList<>();
     private List<String> historySearch = new ArrayList<>();
     private final short MAX_HISTORY_WORD = 30;

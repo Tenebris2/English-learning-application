@@ -13,22 +13,25 @@
 <?import javafx.scene.web.WebView?>
 
 <AnchorPane id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #131f24; -fx-border-color: transparent; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.SceneController">
+    <children>
+        <HBox layoutX="193.0" layoutY="113.0" prefHeight="564.0" prefWidth="821.0" style="-fx-border-width: 3px;">
+            <children>
+                <ListView fx:id="wordView" prefHeight="564.0" prefWidth="245.0" style="-fx-border-width: 5px; -fx-background-color: transaparent;" stylesheets="@../styles/DictionaryStyles.css" />
+                <Pane prefHeight="558.0" prefWidth="770.0" style="-fx-background-color: transaprent;">
                     <children>
-                        <HBox layoutX="181.0" layoutY="115.0" prefHeight="564.0" prefWidth="893.0" style="-fx-border-width: 3px;">
-                            <children>
-                                <ListView fx:id="wordView" prefHeight="564.0" prefWidth="190.0" style="-fx-border-width: 5px; -fx-background-color: transaprent;" stylesheets="@../styles/DictionaryStyles.css" />
-                                <Pane prefHeight="558.0" prefWidth="770.0" style="-fx-background-color: transaprent;">
-                                    <children>
-                                        <WebView fx:id="defView" prefHeight="564.0" prefWidth="601.0" style="visibility: 0.5;" stylesheets="@../styles/WebViewStyles.css" />
-                    <ListView fx:id="searchView" layoutX="28.0" layoutY="-40.0" prefHeight="553.0" prefWidth="529.0" />
-                                    </children>
-                                </Pane>
+                        <WebView fx:id="defView" prefHeight="564.0" prefWidth="571.0" style="visibility: 0.5;" stylesheets="@../styles/WebViewStyles.css" />
+                        <ListView fx:id="searchView" layoutX="21.0" layoutY="-43.0" prefHeight="553.0" prefWidth="529.0" stylesheets="@../styles/SearchViewStyles.css" />
+                    </children>
+                </Pane>
             </children>
         </HBox>
-        <TextField fx:id="textField" cache="true" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="346.0" layoutY="14.0" prefHeight="47.0" prefWidth="564.0" scaleShape="false" style="-fx-background-color: rgba(255, 255, 255, 0.24); -fx-background-radius: 100px; -fx-font-size: 15;">
+        <TextField fx:id="textField" cache="true" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="346.0" layoutY="17.0" prefHeight="47.0" prefWidth="564.0" scaleShape="false" style="-fx-background-color: #44B6F1; -fx-background-radius: 100px; -fx-font-size: 15;" stylesheets="@../styles/SearchViewStyles.css">
             <effect>
                 <Blend />
             </effect>
+            <font>
+                <Font size="13.0" />
+            </font>
         </TextField>
         <Button fx:id="change" layoutX="1015.0" layoutY="219.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="42.0">
             <graphic>
@@ -60,48 +63,62 @@
                 </ImageView>
             </graphic>
         </Button>
-      <AnchorPane fx:id="listOfButtons" prefHeight="720.0" prefWidth="135.0" style="-fx-background-color: transparent;" stylesheets="@../styles/DictionaryStyles.css">
-         <children>
-            <Button fx:id="user" layoutX="36.0" layoutY="22.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="54.0" style="-fx-background-color: rgba(255, 255, 255, 0.24); -fx-background-radius: 100px;" text="Button">
-               <graphic>
-                  <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../image/user.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="googleSearch" ellipsisString="" layoutX="36.0" layoutY="212.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="54.0" style="-fx-background-color: rgba(255, 255, 255, 0.24); -fx-background-radius: 100px;">
-               <graphic>
-                  <ImageView fitHeight="28.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../image/googleSearch.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-              <Button fx:id="add" layoutX="36.0" layoutY="88.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="54.0" style="-fx-background-radius: 100px; -fx-background-color: rgba(255, 255, 255, 0.24);">
-                  <graphic>
-                      <ImageView fitHeight="35.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
-                              <Image url="@../image/add.png" />
-                          </image>
-                      </ImageView>
-                  </graphic>
-              </Button>
-              <Button fx:id="find" ellipsisString="" layoutX="36.0" layoutY="152.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="54.0" style="-fx-background-radius: 100px; -fx-background-color: rgba(255, 255, 255, 0.24);">
-                  <font>
-                      <Font size="18.0" />
-                  </font>
-                  <graphic>
-                      <ImageView fitHeight="29.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
-                              <Image url="@../image/search.png" />
-                          </image>
-                      </ImageView>
-                  </graphic>
-              </Button>
-         </children>
-      </AnchorPane>
+        <AnchorPane fx:id="listOfButtons" prefHeight="720.0" prefWidth="135.0" style="-fx-background-color: transparent;" stylesheets="@../styles/DictionaryStyles.css">
+            <children>
+                <Button fx:id="user" alignment="BOTTOM_LEFT" layoutX="1.0" layoutY="51.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="182.0" style="-fx-background-radius: 100px;" text="USER" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/user_1.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="googleSearch" alignment="BOTTOM_LEFT" ellipsisString="" layoutX="1.0" layoutY="221.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="182.0" style="-fx-background-radius: 100px;" text="GOOGLE SEARCH" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@image/searchGoogle.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="add" alignment="BOTTOM_LEFT" layoutX="1.0" layoutY="108.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="182.0" text="ADD WORD" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="39.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@image/add.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="find" alignment="BOTTOM_LEFT" ellipsisString="" layoutX="1.0" layoutY="163.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="182.0" style="-fx-background-color: transaparent;" text="SEARCH" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="46.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@image/search.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </AnchorPane>
+        <ImageView fitHeight="60.0" fitWidth="42.0" layoutX="861.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@image/searchWord.png" />
+            </image>
+        </ImageView>
     </children>
 </AnchorPane>

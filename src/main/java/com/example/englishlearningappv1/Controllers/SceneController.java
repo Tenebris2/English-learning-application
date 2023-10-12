@@ -24,6 +24,7 @@ public class SceneController {
     private static final String DICTIONARY_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/JavaFx.fxml";
     final private static String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
 
+    final private static String CHAPTER_START_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/MultipleChoiceGame.fxml";
     public void switchtoMPC(ActionEvent event) throws IOException {
         URL url = new File(MULTIPLE_CHOICE_FXML_FILE_PATH).toURI().toURL();
         Parent root = FXMLLoader.load(url);
@@ -54,4 +55,12 @@ public class SceneController {
         stage.show();
     }
 
+    public void switchToChapterStart(ActionEvent event) throws IOException {
+        URL url = new File(CHAPTER_START_FXML_FILE_PATH).toURI().toURL();
+        Parent root = FXMLLoader.load(url);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
