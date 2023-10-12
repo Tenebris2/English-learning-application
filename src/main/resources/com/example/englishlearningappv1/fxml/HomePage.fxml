@@ -19,7 +19,7 @@
                <graphic>
                   <ImageView fitHeight="52.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="C:\Users\admin\Desktop\BTL\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\house.png" />
+                        <Image url="C:\files and projects\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\house.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -30,7 +30,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="C:\Users\admin\Desktop\BTL\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\icons8-dictionary-48.png" />
+                        <Image url="C:\files and projects\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\icons8-dictionary-48.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -42,7 +42,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="C:\Users\admin\Desktop\BTL\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\console.png" />
+                        <Image url="C:\files and projects\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\console.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -54,17 +54,19 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Button layoutX="414.0" layoutY="169.0" mnemonicParsing="false" />
-            <Button alignment="BOTTOM_LEFT" layoutX="158.0" layoutY="40.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="542.0" style="-fx-background-color: #44B6F1; -fx-background-radius: 10px;" text="BẮT ĐẦU" textFill="WHITE">
+            <Button alignment="BOTTOM_LEFT" contentDisplay="TOP" layoutX="157.0" layoutY="40.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="542.0" style="-fx-background-color: #44B6F1; -fx-background-radius: 10px;" text="BẮT ĐẦU" textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="21.0" />
                </font>
+               <graphic>
+                  <Label alignment="TOP_CENTER" opacity="0.51" text="PHẦN 1" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </graphic>
             </Button>
-            <Label layoutX="181.0" layoutY="50.0" opacity="0.51" text="PHẦN 1" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Button alignment="CENTER" contentDisplay="TOP" layoutX="363.0" layoutY="182.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="154.0" style="-fx-background-color: #0489B0; -fx-background-radius: 100px;" text="BẮT ĐẦU" textFill="WHITE">
+            <Button fx:id="startChapterButton" alignment="CENTER" contentDisplay="TOP" layoutX="363.0" layoutY="182.0" mnemonicParsing="false" onAction="#gotoChapterStart" prefHeight="67.0" prefWidth="154.0" style="-fx-background-color: #0489B0; -fx-background-radius: 100px;" text="BẮT ĐẦU" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="78.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -95,7 +97,7 @@
                <graphic>
                   <ImageView fitHeight="86.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="C:\Users\admin\Desktop\BTL\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\school.png" />
+                        <Image url="C:\files and projects\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\school.png" />
                      </image>
                   </ImageView>
                </graphic>

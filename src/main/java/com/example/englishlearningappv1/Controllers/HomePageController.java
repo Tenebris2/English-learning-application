@@ -12,13 +12,14 @@ public class HomePageController {
     @FXML
     private Circle introductionChapterCircle;
     private SceneController sceneController = new SceneController();
-
     @FXML
     private Button learnButton;
     @FXML
     private Button gamesButton;
     @FXML
     private Button dictionaryButton;
+    @FXML
+    private Button startChapterButton;
 
     public void gotoHome(ActionEvent event) throws IOException {
         sceneController.switchToHomePage(event);
@@ -31,5 +32,9 @@ public class HomePageController {
 
     public void gotoGames(ActionEvent event) throws IOException {
         sceneController.switchtoMPC(event);
+    }
+
+    public void gotoChapterStart(ActionEvent event) throws IOException {
+        sceneController.switchToChapterStart(event);
     }
 }

@@ -24,7 +24,6 @@ public class HomePage extends Application{
         primaryStage.setTitle("Dictionary");
         primaryStage.show();
 
-
     }
 
 }
