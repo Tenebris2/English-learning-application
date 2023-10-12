@@ -24,12 +24,13 @@ public class ResultController {
     public ProgressIndicator correct_progress, wrong_progress;
 
     @FXML
-    public Button mainMenu;
+    public Button playAgain, mainMenu;
 
     private Stage stage;
     private Scene scene;
 
-    final private static String MULTIPLE_CHOICE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
+    final private static String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/quiz.fxml";
+    final private static String MENU_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1//fxml/homepage.fxml";
 
     int correct;
     int wrong;
@@ -71,7 +72,7 @@ public class ResultController {
             QuizController quizController = new QuizController();
             quizController.playAgain();
 
-            URL url = new File(MULTIPLE_CHOICE_FXML_FILE_PATH).toURI().toURL();
+            URL url = new File(QUIZ_FXML_FILE_PATH).toURI().toURL();
             Parent root = FXMLLoader.load(url);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -83,4 +84,21 @@ public class ResultController {
         }
     }
 
+    @FXML
+    public void mainMenuClicked(ActionEvent event) {
+        try {
+            QuizController quizController = new QuizController();
+            quizController.playAgain();
+
+            URL url = new File(MENU_FXML_FILE_PATH).toURI().toURL();
+            Parent root = FXMLLoader.load(url);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

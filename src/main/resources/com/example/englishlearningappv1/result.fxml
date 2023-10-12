@@ -50,7 +50,12 @@
             <Font name="Open Sans Semibold" size="17.0" />
          </font>
       </Label>
-      <Button id="playAgain" fx:id="playAgain" layoutX="293" layoutY="382.5" mnemonicParsing="false" onAction="#playAgainClicked" prefHeight="236.5" prefWidth="264.5" style="-fx-background-color: #D5546D; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textFill="WHITE">
+      <Button id="playAgain" fx:id="playAgain" layoutX="88.0" layoutY="386.0" mnemonicParsing="false" onAction="#playAgainClicked" prefHeight="110.0" prefWidth="265.0" style="-fx-background-color: #D5546D; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Button>
+      <Button id="mainMenu" fx:id="mainMenu" layoutX="439.0" layoutY="386.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="286.0" style="-fx-background-color: #D5546D; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textFill="WHITE"  onAction="#mainMenuClicked" >
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
