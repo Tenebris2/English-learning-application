@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="611.0" prefWidth="996.0" style="-fx-background-color: #461A42;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.QuizController">
+   <children>
+      <Label fx:id="question" alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="95.0" prefHeight="83.0" prefWidth="788.0" text="1. How many consonants are there in the English Alphabets?" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Button fx:id="opt1" layoutX="10" layoutY="364.5" mnemonicParsing="false" onAction="#opt1clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-color: #2D70AE; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Button>
+      <Button id="opt2" fx:id="opt2" layoutX="256.5" layoutY="364.5" mnemonicParsing="false" onAction="#opt2clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-color: #2D9DA6; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Button>
+      <Button id="opt3" fx:id="opt3" layoutX="503" layoutY="364.5" mnemonicParsing="false" onAction="#opt3clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-color: #EFA929; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Button>
+      <Button id="opt4" fx:id="opt4" layoutX="749.5" layoutY="364.5" mnemonicParsing="false" onAction="#opt4clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-color: #D5546D; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

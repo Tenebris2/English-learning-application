@@ -13,7 +13,7 @@ import java.util.TreeMap;
 public class Dictionary extends CRUDFunctions {
 
     private final String SPLITTING_CHAR = "<html>";
-    private final String E_V_FILE_PATH = "C:\\Users\\Asus\\IdeaProjects\\English-learning-app-v1\\src\\main\\resources\\files\\text.txt";
+    private final String E_V_FILE_PATH = "C:\\Users\\admin\\Desktop\\BTL\\English-learning-application\\src\\main\\resources\\text.txt";
     private static Map<String, Word> wordList = new TreeMap<>();
 
     public Dictionary()

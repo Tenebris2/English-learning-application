@@ -19,7 +19,7 @@
                <graphic>
                   <ImageView fitHeight="52.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="C:\Users\Asus\IdeaProjects\English-learning-app-v1\src\main\resources\com\example\englishlearningappv1\image\house.png" />
+                        <Image url="C:\Users\admin\Desktop\BTL\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\house.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -30,7 +30,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="C:\Users\Asus\IdeaProjects\English-learning-app-v1\src\main\resources\com\example\englishlearningappv1\image\icons8-dictionary-48.png" />
+                        <Image url="C:\Users\admin\Desktop\BTL\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\icons8-dictionary-48.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -42,7 +42,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="C:\Users\Asus\IdeaProjects\English-learning-app-v1\src\main\resources\com\example\englishlearningappv1\image\console.png" />
+                        <Image url="C:\Users\admin\Desktop\BTL\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\console.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -95,7 +95,7 @@
                <graphic>
                   <ImageView fitHeight="86.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="C:/Users/Asus/IdeaProjects/English-learning-app-v1/src/main/resources/com/example/englishlearningappv1/image/school.png" />
+                        <Image url="C:\Users\admin\Desktop\BTL\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\school.png" />
                      </image>
                   </ImageView>
                </graphic>

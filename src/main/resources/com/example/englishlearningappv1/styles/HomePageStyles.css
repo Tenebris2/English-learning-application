@@ -2,7 +2,7 @@
     -fx-background-color:#131f24;
 }
 .button {
-    -fx-border-radius: 100px;
+    -fx-border-radius: 5px;
     -fx-background-color: transparent;
 }
 
@@ -18,7 +18,7 @@
 }
 
 #introductionChapterCircle {
-    -fx-background-image: url("C:\Users\Asus\IdeaProjects\English-learning-app-v1\src\main\resources\com\example\englishlearningappv1\image\light-bulb.png");
+    -fx-background-image: url("C:\Users\admin\Desktop\BTL\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\light-bulb.png");
 }
 
 
