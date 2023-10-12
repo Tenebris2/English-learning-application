@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="611.0" prefWidth="996.0" style="-fx-background-color: #461A42;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.QuizController">
    <children>
-      <Label fx:id="question" alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="95.0" prefHeight="83.0" prefWidth="788.0" text="1. How many consonants are there in the English Alphabets?" textFill="WHITE" wrapText="true">
+      <Label fx:id="question" alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="95.0" prefHeight="83.0" prefWidth="788.0" text="test" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
@@ -31,5 +31,10 @@
             <Font name="System Bold" size="27.0" />
          </font>
       </Button>
+      <Label fx:id="timer" alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" prefHeight="98.0" prefWidth="159.0" style="-fx-background-color: white;" text="timer">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
