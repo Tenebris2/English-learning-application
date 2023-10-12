@@ -12,14 +12,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-
 
 public class QuizController {
 
@@ -62,7 +60,10 @@ public class QuizController {
             'A'
     };
 
-    public int totalSec = 15;
+    public static int correct = 0;
+    public static int wrong = 0;
+    private int index = 0;
+    private int totalSec = 15;
 
     private Stage stage;
 
@@ -71,17 +72,10 @@ public class QuizController {
     final private static String RESULT_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/result.fxml";
 
     @FXML
-    public Label timer;
-
-    @FXML
-    public Label question;
+    public Label timer, question;
 
     @FXML
     public Button opt1, opt2, opt3, opt4;
-
-    static int index = 0;
-    static int correct = 0;
-    static int wrong = 0;
 
     @FXML
     private void initialize() {
@@ -99,7 +93,6 @@ public class QuizController {
             new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-
                     timer.setText("Time Left: " + String.valueOf(totalSec));
                     totalSec--;
                     if (totalSec < 0) {
@@ -109,12 +102,26 @@ public class QuizController {
             })
     );
 
-
-
     private void loadQuestions() {
+
+        opt1.setUserData('A');
+        opt2.setUserData('B');
+        opt3.setUserData('C');
+        opt4.setUserData('D');
+
+        opt1.getStyleClass().clear();
+        opt1.getStyleClass().setAll("opt1");
+        opt2.getStyleClass().clear();
+        opt2.getStyleClass().setAll("opt2");
+        opt3.getStyleClass().clear();
+        opt3.getStyleClass().setAll("opt3");
+        opt4.getStyleClass().clear();
+        opt4.getStyleClass().setAll("opt4");
+
         totalSec = 15;
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
+
         if (index < questions.length) {
             question.setText(questions[index]);
             opt1.setText(options[index][0]);
@@ -150,77 +157,9 @@ public class QuizController {
     }
 
 
-    boolean checkAnswer(String answer) {
-
-        if (index == 0) {
-            if (answer.equals("21")) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        if (index == 1) {
-            if (answer.equals("Thomas Alva Edison")) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        if (index == 2) {
-            if (answer.equals("Neptune")) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        if (index == 3) {
-            if (answer.equals("Ganymede")) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        if (index == 4) {
-            if (answer.equals("Non Ductile")) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        if (index == 5) {
-            if (answer.equals("Louis Pasteur")) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        if (index == 6) {
-            if (answer.equals("Stomach")) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        if (index == 7) {
-            if (answer.equals("Cheetah")) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        if (index == 8) {
-            if (answer.equals("Green")) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        if (index == 9) {
-            if (answer.equals("5th June")) {
-                return true;
-            } else {
-                return false;
-            }
+    boolean checkAnswer(Character c) {
+        if (c.equals(answers[index])) {
+            return true;
         }
         return false;
     }
@@ -228,13 +167,13 @@ public class QuizController {
 
     @FXML
     public void opt1clicked(ActionEvent event) {
-        displayAnswer();
-        checkAnswer(opt1.getText().toString());
-        if (checkAnswer(opt1.getText().toString())) {
+        Character c = (Character) opt1.getUserData();
+        if (checkAnswer(c)) {
             correct++;
         } else {
             wrong++;
         }
+        displayAnswer();
         if (index == 9) {
             try {
                 URL url = new File(RESULT_FXML_FILE_PATH).toURI().toURL();
@@ -258,11 +197,11 @@ public class QuizController {
 
     @FXML
     public void opt2clicked(ActionEvent event) {
-        checkAnswer(opt2.getText().toString());
-        if (checkAnswer(opt2.getText().toString())) {
-            correct = correct + 1;
+        Character c = (Character) opt1.getUserData();
+        if (checkAnswer(c)) {
+            correct++;
         } else {
-            wrong = wrong + 1;
+            wrong++;
         }
         if (index == 9) {
             try {
@@ -285,11 +224,22 @@ public class QuizController {
 
     @FXML
     public void opt3clicked(ActionEvent event) {
-        checkAnswer(opt3.getText().toString());
-        if (checkAnswer(opt3.getText().toString())) {
-            correct = correct + 1;
+        Character c = (Character) opt1.getUserData();
+        if (checkAnswer(c)) {
+            correct++;
+            opt1.getStyleClass().clear();
+            opt1.getStyleClass().setAll("null");
+            opt2.getStyleClass().clear();
+            opt2.getStyleClass().setAll("null");
+            opt3.getStyleClass().clear();
+            opt3.getStyleClass().setAll("correct-answer");
+            opt4.getStyleClass().clear();
+            opt4.getStyleClass().setAll("null");
+
+            System.out.println(c);
         } else {
-            wrong = wrong + 1;
+            opt3.getStyleClass().clear();
+            opt3.getStyleClass().setAll("wrong-answer");
         }
         if (index == 9) {
             try {
@@ -311,11 +261,11 @@ public class QuizController {
 
     @FXML
     public void opt4clicked(ActionEvent event) {
-        checkAnswer(opt4.getText().toString());
-        if (checkAnswer(opt4.getText().toString())) {
-            correct = correct + 1;
+        Character c = (Character) opt1.getUserData();
+        if (checkAnswer(c)) {
+            correct++;
         } else {
-            wrong = wrong + 1;
+            wrong++;
         }
         if (index == 9) {
             try {
@@ -333,6 +283,11 @@ public class QuizController {
             index++;
             displayAnswer();
         }
+    }
+
+    private void updateAnswerStyle() {
+        String styleClass;
+
     }
 }
 

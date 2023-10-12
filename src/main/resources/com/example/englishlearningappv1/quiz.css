@@ -1,0 +1,90 @@
+.null {
+    -fx-background-color: #461A42;
+    -fx-text-fill: #461A42;
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+    -fx-min-width: 236.5px;
+    -fx-min-height: 236.5px;
+    -fx-pref-width: 236.5px;
+    -fx-pref-height: 236.5px;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.opt1 {
+    -fx-background-color: #2D70AE;
+    -fx-text-fill: white;
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+    -fx-min-width: 236.5px;
+    -fx-min-height: 236.5px;
+    -fx-pref-width: 236.5px;
+    -fx-pref-height: 236.5px;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.opt2 {
+    -fx-background-color: #2D9DA6;
+    -fx-text-fill: white;
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+    -fx-min-width: 236.5px;
+    -fx-min-height: 236.5px;
+    -fx-pref-width: 236.5px;
+    -fx-pref-height: 236.5px;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.opt3 {
+    -fx-background-color: #EFA929;
+    -fx-text-fill: white;
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+    -fx-min-width: 236.5px;
+    -fx-min-height: 236.5px;
+    -fx-pref-width: 236.5px;
+    -fx-pref-height: 236.5px;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.opt4 {
+    -fx-background-color: #D5546D;
+    -fx-text-fill: white;
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+    -fx-min-width: 236.5px;
+    -fx-min-height: 236.5px;
+    -fx-pref-width: 236.5px;
+    -fx-pref-height: 236.5px;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.correct-answer {
+    -fx-background-color: #62C370;
+    -fx-text-fill: white;
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+    -fx-min-width: 236.5px;
+    -fx-min-height: 236.5px;
+    -fx-pref-width: 236.5px;
+    -fx-pref-height: 236.5px;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.wrong-answer {
+    -fx-background-color: #E63946;
+    -fx-text-fill: white;
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+    -fx-min-width: 236.5px;
+    -fx-min-height: 236.5px;
+    -fx-pref-width: 236.5px;
+    -fx-pref-height: 236.5px;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
