@@ -20,43 +20,41 @@ import java.net.URL;
 
 public class QuizController {
 
-     String[] questions = {
-            "1. How many consonants are there in the English alphabet?",
-            "2. Who invented the Light bulb?",
-            "3. In the Solar System, farthest planet from the Sun is",
-            "4. Largest moon in the Solar System?",
-            "5. Which of these is 'not' a property of metal?",
-            "6. Who discovered Pasteurisation?",
-            "7. Hydrochloric acid (HCl) is produced by -?",
-            "8. The fastest animal in the world is -",
-            "9. Complementary colour of Red is -",
-            "10. World Environment Day is on -"
+    String[] questions = {
+            "The little boy pleaded _____ not to leave him alone in the dark.",
+            "_____, the people who come to this club are in their twenties and thirties.",
+            "The TV station, in _______ to massive popular demand, decided not to discontinue the soap opera.",
+            "His emotional problems _______ from the attitudes he encountered as a child, I think.",
+            "Pete was born and brought up in Cornwall and he knows the place like the _________.",
+            "British and Australian people share the same language, but in other respects they are as different as _____.",
+            "Rows and silences are ______ and parcel of any marriage.",
+            "Ancient Egyptians mummified their dead through the use of chemicals, ______ ancient Peruvians did through natural processes.",
+            "Don’t _____ to any conclusion before you know the full facts.",
+            "A few animals sometimes fool their enemies _______ to be dead."
     };
-
-     String[][] options = {
-            {"19", "20", "21", "22"},
-            {"Thomas Alva Edison", "Alexander Fleming", "Charles Babbage", "Albert Einstein"},
-            {"Jupiter", "Saturn", "Uranus", "Neptune"},
-            {"Titan", "Ganymede", "Moon", "Europa"},
-            {"Good Conduction", "Malleable", "Non Ductile", "Sonourous"},
-            {"Alexander Fleming", "Louis Pasteur", "Simon Pasteur", "William Pasteur"},
-            {"Small Intestine", "Liver", "Oesophagus", "Stomach"},
-            {"Lion", "Blackbuck", "Cheetah", "Quarter Horse"},
-            {"Blue", "Green", "Yellow", "Pink"},
-            {"5th June", "5th July", "15th June", "25th June"}
+    String[][] options = {
+            {"on his mother", "his mother", "with his mother", "at his mother"},
+            {"By and large", "Altogether", "To a degree", "Virtually"},
+            {"reaction", "response", "answer", "rely"},
+            {"stem", "flourish", "root", "sprout"},
+            {"nose on his face", "back of his hand", "hairs on his head", "teeth of his mouth"},
+            {"cats and dogs", "salt and pepper", "chalk and cheese", "here and there"},
+            {"package", "stamps", "packet", "part"},
+            {"because", "whereas", "even though", "whether or not"},
+            {"rush", "dive", "leap", "fly"},
+            {"have been appearing", "to be appearing", "to appear", "by appearing"}
     };
-
     char[] answers = {
             'C',
             'A',
+            'B',
+            'A',
+            'B',
+            'C',
             'D',
             'B',
             'C',
-            'B',
-            'D',
-            'C',
-            'B',
-            'A'
+            'D'
     };
 
     public static int correct = 0;
@@ -192,8 +190,10 @@ public class QuizController {
 
     private void updateAnswerStyle(Character c) {
         if (answers[index] == 'A') {
+
             opt1.getStyleClass().clear();
             opt1.getStyleClass().setAll("correct-answer");
+
             if (c.equals('B')) {
                 opt2.getStyleClass().clear();
                 opt2.getStyleClass().setAll("wrong-answer");
@@ -216,6 +216,8 @@ public class QuizController {
                 opt4.getStyleClass().clear();
                 opt4.getStyleClass().setAll("wrong-answer");
             } else {
+                opt1.getStyleClass().clear();
+                opt1.getStyleClass().setAll("correct-answer-pick");
                 opt2.getStyleClass().clear();
                 opt2.getStyleClass().setAll("null");
                 opt3.getStyleClass().clear();
@@ -250,6 +252,8 @@ public class QuizController {
             } else {
                 opt1.getStyleClass().clear();
                 opt1.getStyleClass().setAll("null");
+                opt2.getStyleClass().clear();
+                opt2.getStyleClass().setAll("correct-answer-pick");
                 opt3.getStyleClass().clear();
                 opt3.getStyleClass().setAll("null");
                 opt4.getStyleClass().clear();
@@ -284,6 +288,8 @@ public class QuizController {
                 opt1.getStyleClass().setAll("null");
                 opt2.getStyleClass().clear();
                 opt2.getStyleClass().setAll("null");
+                opt3.getStyleClass().clear();
+                opt3.getStyleClass().setAll("correct-answer-pick");
                 opt4.getStyleClass().clear();
                 opt4.getStyleClass().setAll("null");
             }
@@ -318,8 +324,12 @@ public class QuizController {
                 opt2.getStyleClass().setAll("null");
                 opt3.getStyleClass().clear();
                 opt3.getStyleClass().setAll("null");
+                opt4.getStyleClass().clear();
+                opt4.getStyleClass().setAll("correct-answer-pick");
             }
         }
     }
 }
+
+
 

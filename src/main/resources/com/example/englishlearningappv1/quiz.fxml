@@ -10,27 +10,27 @@
       <URL value="@quiz.css" />
    </stylesheets>
    <children>
-      <Label fx:id="question" alignment="CENTER" contentDisplay="CENTER" layoutX="0" layoutY="98.0" prefHeight="276.5" prefWidth="996.0" text="Test" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Label fx:id="question" alignment="CENTER" contentDisplay="CENTER" layoutX="246.5" layoutY="98.0" prefHeight="278.0" prefWidth="503.0" text="Test" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <Button fx:id="opt1" layoutX="10" layoutY="364.5" mnemonicParsing="false" onAction="#opt1clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button fx:id="opt1" layoutX="10" layoutY="364.5" mnemonicParsing="false" onAction="#opt1clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Button>
-      <Button id="opt2" fx:id="opt2" layoutX="256.5" layoutY="364.5" mnemonicParsing="false" onAction="#opt2clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button id="opt2" fx:id="opt2" layoutX="256.5" layoutY="364.5" mnemonicParsing="false" onAction="#opt2clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Button>
-      <Button id="opt3" fx:id="opt3" layoutX="503" layoutY="364.5" mnemonicParsing="false" onAction="#opt3clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button id="opt3" fx:id="opt3" layoutX="503" layoutY="364.5" mnemonicParsing="false" onAction="#opt3clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Button>
-      <Button id="opt4" fx:id="opt4" layoutX="749.5" layoutY="364.5" mnemonicParsing="false" onAction="#opt4clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button id="opt4" fx:id="opt4" layoutX="749.5" layoutY="364.5" mnemonicParsing="false" onAction="#opt4clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
