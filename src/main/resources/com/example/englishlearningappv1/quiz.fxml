@@ -10,7 +10,7 @@
       <URL value="@quiz.css" />
    </stylesheets>
    <children>
-      <Label fx:id="question" alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="95.0" prefHeight="83.0" prefWidth="788.0" text="Test" textFill="WHITE" wrapText="true">
+      <Label fx:id="question" alignment="CENTER" contentDisplay="CENTER" layoutX="0" layoutY="98.0" prefHeight="276.5" prefWidth="996.0" text="Test" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>

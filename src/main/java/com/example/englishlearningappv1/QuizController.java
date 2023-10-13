@@ -93,36 +93,47 @@ public class QuizController {
             new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    timer.setText("Time Left: " + String.valueOf(totalSec));
                     totalSec--;
-                    if (totalSec < 0) {
-                        timeline.stop(); // Dừng đếm ngược khi đạt 0 giây
+                    timer.setText("Time Left: " + String.valueOf(totalSec));
+
+                    if (totalSec <= 0) {
+                        displayAnswer('A'); //need repair
                     }
                 }
             })
     );
 
     private void loadQuestions() {
+        if (index == 10) {
+            try {
+                URL url = new File(RESULT_FXML_FILE_PATH).toURI().toURL();
+                Parent root = FXMLLoader.load(url);
+                Stage stage = (Stage) timer.getScene().getWindow(); // Assuming 'timer' is a JavaFX element in the same scene
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            timer.setText("Time Left: 15");
+            opt1.setUserData('A');
+            opt2.setUserData('B');
+            opt3.setUserData('C');
+            opt4.setUserData('D');
 
-        opt1.setUserData('A');
-        opt2.setUserData('B');
-        opt3.setUserData('C');
-        opt4.setUserData('D');
+            opt1.getStyleClass().clear();
+            opt1.getStyleClass().setAll("opt1");
+            opt2.getStyleClass().clear();
+            opt2.getStyleClass().setAll("opt2");
+            opt3.getStyleClass().clear();
+            opt3.getStyleClass().setAll("opt3");
+            opt4.getStyleClass().clear();
+            opt4.getStyleClass().setAll("opt4");
 
-        opt1.getStyleClass().clear();
-        opt1.getStyleClass().setAll("opt1");
-        opt2.getStyleClass().clear();
-        opt2.getStyleClass().setAll("opt2");
-        opt3.getStyleClass().clear();
-        opt3.getStyleClass().setAll("opt3");
-        opt4.getStyleClass().clear();
-        opt4.getStyleClass().setAll("opt4");
+            timeline.setCycleCount(Timeline.INDEFINITE);
+            timeline.play();
 
-        totalSec = 15;
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
-
-        if (index < questions.length) {
             question.setText(questions[index]);
             opt1.setText(options[index][0]);
             opt2.setText(options[index][1]);
@@ -131,13 +142,14 @@ public class QuizController {
         }
     }
 
-    private void displayAnswer() {
+    private void displayAnswer(Character c) {
         timeline.stop();
 
         opt1.setDisable(true);
         opt2.setDisable(true);
         opt3.setDisable(true);
         opt4.setDisable(true);
+        updateAnswerStyle(c);
 
         PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
 
@@ -150,144 +162,169 @@ public class QuizController {
             opt3.setDisable(false);
             opt4.setDisable(false);
 
+            index++;
             loadQuestions();
         });
-
         pauseTransition.play();
     }
-
-
-    boolean checkAnswer(Character c) {
-        if (c.equals(answers[index])) {
-            return true;
-        }
-        return false;
-    }
-
 
     @FXML
     public void opt1clicked(ActionEvent event) {
         Character c = (Character) opt1.getUserData();
-        if (checkAnswer(c)) {
-            correct++;
-        } else {
-            wrong++;
-        }
-        displayAnswer();
-        if (index == 9) {
-            try {
-                URL url = new File(RESULT_FXML_FILE_PATH).toURI().toURL();
-                Parent root = FXMLLoader.load(url);
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-
-            } catch(IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            index++;
-            displayAnswer();
-        }
-
+        displayAnswer(c);
     }
 
 
 
     @FXML
     public void opt2clicked(ActionEvent event) {
-        Character c = (Character) opt1.getUserData();
-        if (checkAnswer(c)) {
-            correct++;
-        } else {
-            wrong++;
-        }
-        if (index == 9) {
-            try {
 
-                URL url = new File(RESULT_FXML_FILE_PATH).toURI().toURL();
-                Parent root = FXMLLoader.load(url);
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-
-            } catch(IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            index++;
-            displayAnswer();
-        }
+        Character c = (Character) opt2.getUserData();
+        displayAnswer(c);
     }
 
     @FXML
     public void opt3clicked(ActionEvent event) {
-        Character c = (Character) opt1.getUserData();
-        if (checkAnswer(c)) {
-            correct++;
-            opt1.getStyleClass().clear();
-            opt1.getStyleClass().setAll("null");
-            opt2.getStyleClass().clear();
-            opt2.getStyleClass().setAll("null");
-            opt3.getStyleClass().clear();
-            opt3.getStyleClass().setAll("correct-answer");
-            opt4.getStyleClass().clear();
-            opt4.getStyleClass().setAll("null");
-
-            System.out.println(c);
-        } else {
-            opt3.getStyleClass().clear();
-            opt3.getStyleClass().setAll("wrong-answer");
-        }
-        if (index == 9) {
-            try {
-                URL url = new File(RESULT_FXML_FILE_PATH).toURI().toURL();
-                Parent root = FXMLLoader.load(url);
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-
-            } catch(IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            index++;
-            displayAnswer();
-        }
+        Character c = (Character) opt3.getUserData();
+        displayAnswer(c);
     }
 
     @FXML
     public void opt4clicked(ActionEvent event) {
-        Character c = (Character) opt1.getUserData();
-        if (checkAnswer(c)) {
-            correct++;
-        } else {
-            wrong++;
-        }
-        if (index == 9) {
-            try {
-                URL url = new File(RESULT_FXML_FILE_PATH).toURI().toURL();
-                Parent root = FXMLLoader.load(url);
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-
-            } catch(IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            index++;
-            displayAnswer();
-        }
+        Character c = (Character) opt4.getUserData();
+        displayAnswer(c);
     }
 
-    private void updateAnswerStyle() {
-        String styleClass;
-
+    private void updateAnswerStyle(Character c) {
+        if (answers[index] == 'A') {
+            opt1.getStyleClass().clear();
+            opt1.getStyleClass().setAll("correct-answer");
+            if (c.equals('B')) {
+                opt2.getStyleClass().clear();
+                opt2.getStyleClass().setAll("wrong-answer");
+                opt3.getStyleClass().clear();
+                opt3.getStyleClass().setAll("null");
+                opt4.getStyleClass().clear();
+                opt4.getStyleClass().setAll("null");
+            } else if (c.equals('C')) {
+                opt2.getStyleClass().clear();
+                opt2.getStyleClass().setAll("null");
+                opt3.getStyleClass().clear();
+                opt3.getStyleClass().setAll("wrong-answer");
+                opt4.getStyleClass().clear();
+                opt4.getStyleClass().setAll("null");
+            } else if (c.equals('D')) {
+                opt2.getStyleClass().clear();
+                opt2.getStyleClass().setAll("null");
+                opt3.getStyleClass().clear();
+                opt3.getStyleClass().setAll("null");
+                opt4.getStyleClass().clear();
+                opt4.getStyleClass().setAll("wrong-answer");
+            } else {
+                opt2.getStyleClass().clear();
+                opt2.getStyleClass().setAll("null");
+                opt3.getStyleClass().clear();
+                opt3.getStyleClass().setAll("null");
+                opt4.getStyleClass().clear();
+                opt4.getStyleClass().setAll("null");
+            }
+        } else if (answers[index] == 'B') {
+            opt2.getStyleClass().clear();
+            opt2.getStyleClass().setAll("correct-answer");
+            if (c.equals('A')) {
+                opt1.getStyleClass().clear();
+                opt1.getStyleClass().setAll("wrong-answer");
+                opt3.getStyleClass().clear();
+                opt3.getStyleClass().setAll("null");
+                opt4.getStyleClass().clear();
+                opt4.getStyleClass().setAll("null");
+            } else if (c.equals('C')) {
+                opt1.getStyleClass().clear();
+                opt1.getStyleClass().setAll("null");
+                opt3.getStyleClass().clear();
+                opt3.getStyleClass().setAll("wrong-answer");
+                opt4.getStyleClass().clear();
+                opt4.getStyleClass().setAll("null");
+            } else if (c.equals('D')) {
+                opt1.getStyleClass().clear();
+                opt1.getStyleClass().setAll("null");
+                opt3.getStyleClass().clear();
+                opt3.getStyleClass().setAll("null");
+                opt4.getStyleClass().clear();
+                opt4.getStyleClass().setAll("wrong-answer");
+            } else {
+                opt1.getStyleClass().clear();
+                opt1.getStyleClass().setAll("null");
+                opt3.getStyleClass().clear();
+                opt3.getStyleClass().setAll("null");
+                opt4.getStyleClass().clear();
+                opt4.getStyleClass().setAll("null");
+            }
+        } else if (answers[index] == 'C') {
+            opt3.getStyleClass().clear();
+            opt3.getStyleClass().setAll("correct-answer");
+            if (c.equals('A')) {
+                opt1.getStyleClass().clear();
+                opt1.getStyleClass().setAll("wrong-answer");
+                opt2.getStyleClass().clear();
+                opt2.getStyleClass().setAll("null");
+                opt4.getStyleClass().clear();
+                opt4.getStyleClass().setAll("null");
+            } else if (c.equals('B')) {
+                opt1.getStyleClass().clear();
+                opt1.getStyleClass().setAll("null");
+                opt2.getStyleClass().clear();
+                opt2.getStyleClass().setAll("wrong-answer");
+                opt4.getStyleClass().clear();
+                opt4.getStyleClass().setAll("null");
+            } else if (c.equals('D')) {
+                opt1.getStyleClass().clear();
+                opt1.getStyleClass().setAll("null");
+                opt2.getStyleClass().clear();
+                opt2.getStyleClass().setAll("null");
+                opt4.getStyleClass().clear();
+                opt4.getStyleClass().setAll("wrong-answer");
+            } else {
+                opt1.getStyleClass().clear();
+                opt1.getStyleClass().setAll("null");
+                opt2.getStyleClass().clear();
+                opt2.getStyleClass().setAll("null");
+                opt4.getStyleClass().clear();
+                opt4.getStyleClass().setAll("null");
+            }
+        } else if (answers[index] == 'D') {
+            opt4.getStyleClass().clear();
+            opt4.getStyleClass().setAll("correct-answer");
+            if (c.equals('A')) {
+                opt1.getStyleClass().clear();
+                opt1.getStyleClass().setAll("wrong-answer");
+                opt2.getStyleClass().clear();
+                opt2.getStyleClass().setAll("null");
+                opt3.getStyleClass().clear();
+                opt3.getStyleClass().setAll("null");
+            } else if (c.equals('B')) {
+                opt1.getStyleClass().clear();
+                opt1.getStyleClass().setAll("null");
+                opt2.getStyleClass().clear();
+                opt2.getStyleClass().setAll("wrong-answer");
+                opt3.getStyleClass().clear();
+                opt3.getStyleClass().setAll("null");
+            } else if (c.equals('C')) {
+                opt1.getStyleClass().clear();
+                opt1.getStyleClass().setAll("null");
+                opt2.getStyleClass().clear();
+                opt2.getStyleClass().setAll("null");
+                opt3.getStyleClass().clear();
+                opt3.getStyleClass().setAll("wrong-answer");
+            } else {
+                opt1.getStyleClass().clear();
+                opt1.getStyleClass().setAll("null");
+                opt2.getStyleClass().clear();
+                opt2.getStyleClass().setAll("null");
+                opt3.getStyleClass().clear();
+                opt3.getStyleClass().setAll("null");
+            }
+        }
     }
 }
 
