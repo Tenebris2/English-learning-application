@@ -92,7 +92,7 @@ public class QuizController {
                     timer.setText("Time Left: " + totalSec);
 
                     if (totalSec <= 0) {
-                        displayAnswer(answers[index]); //need repair
+                        displayAnswer(answers[index]);
                     }
                 }
             })
