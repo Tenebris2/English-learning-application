@@ -5,7 +5,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -65,10 +64,6 @@ public class QuizController {
     private int index = 0;
     private int totalSec = 15;
 
-    private Stage stage;
-
-    private Scene scene;
-
     final private static String RESULT_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/result.fxml";
 
     @FXML
@@ -94,10 +89,10 @@ public class QuizController {
                 @Override
                 public void handle(ActionEvent event) {
                     totalSec--;
-                    timer.setText("Time Left: " + String.valueOf(totalSec));
+                    timer.setText("Time Left: " + totalSec);
 
                     if (totalSec <= 0) {
-                        displayAnswer('A'); //need repair
+                        displayAnswer(answers[index]); //need repair
                     }
                 }
             })
@@ -155,7 +150,7 @@ public class QuizController {
 
         pauseTransition.setOnFinished(event -> {
             totalSec = 15;
-            timer.setText("Time Left: " + String.valueOf(totalSec));
+            timer.setText("Time Left: " + totalSec);
 
             opt1.setDisable(false);
             opt2.setDisable(false);
@@ -169,7 +164,7 @@ public class QuizController {
     }
 
     @FXML
-    public void opt1clicked(ActionEvent event) {
+    public void opt1clicked() {
         Character c = (Character) opt1.getUserData();
         displayAnswer(c);
     }
@@ -177,20 +172,20 @@ public class QuizController {
 
 
     @FXML
-    public void opt2clicked(ActionEvent event) {
+    public void opt2clicked() {
 
         Character c = (Character) opt2.getUserData();
         displayAnswer(c);
     }
 
     @FXML
-    public void opt3clicked(ActionEvent event) {
+    public void opt3clicked() {
         Character c = (Character) opt3.getUserData();
         displayAnswer(c);
     }
 
     @FXML
-    public void opt4clicked(ActionEvent event) {
+    public void opt4clicked() {
         Character c = (Character) opt4.getUserData();
         displayAnswer(c);
     }
