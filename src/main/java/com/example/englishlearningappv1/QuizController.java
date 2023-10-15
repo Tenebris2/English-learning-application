@@ -32,6 +32,7 @@ public class QuizController {
             "Don’t _____ to any conclusion before you know the full facts.",
             "A few animals sometimes fool their enemies _______ to be dead."
     };
+
     String[][] options = {
             {"on his mother", "his mother", "with his mother", "at his mother"},
             {"By and large", "Altogether", "To a degree", "Virtually"},
@@ -44,6 +45,7 @@ public class QuizController {
             {"rush", "dive", "leap", "fly"},
             {"have been appearing", "to be appearing", "to appear", "by appearing"}
     };
+
     char[] answers = {
             'C',
             'A',
@@ -166,8 +168,6 @@ public class QuizController {
         Character c = (Character) opt1.getUserData();
         displayAnswer(c);
     }
-
-
 
     @FXML
     public void opt2clicked() {

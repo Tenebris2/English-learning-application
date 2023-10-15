@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<BorderPane maxHeight="Infinity" maxWidth="Infinity" prefHeight="715" prefWidth="500" styleClass="main-screen" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.game2.MainController">
+<BorderPane maxHeight="Infinity" maxWidth="Infinity" prefHeight="715" prefWidth="500" styleClass="main-screen" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.WordleController">
 
     <stylesheets>
         <URL value="@wordle.css" />
@@ -27,7 +27,7 @@
                     </padding>
                 </HBox>
                 <Pane>
-                    <ImageView fx:id="restartIcon" fitHeight="40" fitWidth="40" onMouseClicked="#restart"/>
+                    <ImageView fx:id="restartIcon" fitHeight="40" fitWidth="40" onMouseClicked="#restart" />
                 </Pane>
 
                 <padding>

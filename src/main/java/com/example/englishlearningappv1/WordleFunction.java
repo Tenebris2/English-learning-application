@@ -1,4 +1,4 @@
-package com.example.game2;
+package com.example.englishlearningappv1;
 
 import javafx.animation.*;
 import javafx.scene.Node;
@@ -12,11 +12,11 @@ import javafx.util.Duration;
 
 import java.util.*;
 
-import static com.example.game2.MainApplication.dictionaryWords;
-import static com.example.game2.MainApplication.winningWords;
+import static com.example.englishlearningappv1.WordleController.dictionaryWords;
+import static com.example.englishlearningappv1.WordleController.winningWords;
 
-public class MainFunction {
-    private static MainFunction INSTANCE = null;
+public class WordleFunction {
+    private static WordleFunction INSTANCE = null;
 
     private final String[] firstRowLetters = {"Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"};
     private final String[] secondRowLetters = {"A", "S", "D", "F", "G", "H", "J", "K", "L"};
@@ -30,13 +30,13 @@ public class MainFunction {
     private final int MAX_ROW = 6;
     private String winningWord;
 
-    private MainFunction() {
+    private WordleFunction() {
 
     }
 
-    public static MainFunction getInstance() {
+    public static WordleFunction getInstance() {
         if (INSTANCE == null)
-            INSTANCE = new MainFunction();
+            INSTANCE = new WordleFunction();
         return INSTANCE;
     }
 
@@ -44,7 +44,7 @@ public class MainFunction {
         ArrayList<Label> titleLetters = new ArrayList<>();
         for (String letter : new String[]{"W", "O", "R", "D", "L", "E"}) {
             Label label = new Label(letter);
-            label.getStyleClass().add("title-letter"); // Add CSS class to the label
+            label.getStyleClass().add("title-letter");
             titleLetters.add(label);
         }
         for (Label label : titleLetters)
@@ -280,28 +280,28 @@ public class MainFunction {
                 if (guess.equals(winningWord)) {
                     updateRowColors(gridPane, CURRENT_ROW);
                     updateKeyboardColors(gridPane, keyboardRow1, keyboardRow2, keyboardRow3);
-                    com.example.game2.ScoreWindow.display(true, winningWord);
+                    com.example.englishlearningappv1.ScoreWindow.display(true, winningWord);
                 } else if (isValidGuess(guess)) {
                     updateRowColors(gridPane, CURRENT_ROW);
                     updateKeyboardColors(gridPane, keyboardRow1, keyboardRow2, keyboardRow3);
                     if (CURRENT_ROW == MAX_ROW) {
-                        com.example.game2.ScoreWindow.display(false, winningWord);
+                        com.example.englishlearningappv1.ScoreWindow.display(false, winningWord);
                     }
                     CURRENT_ROW++;
                     CURRENT_COLUMN = 1;
                 } else {
-                    com.example.game2.MainApplication.showNotifyNotFound();
+                    com.example.englishlearningappv1.WordleApplication.showNotifyNotFound();
                 }
             } else {
-                com.example.game2.MainApplication.showNotifyShort();
+                com.example.englishlearningappv1.WordleApplication.showNotifyShort();
             }
         }
-        if (com.example.game2.ScoreWindow.resetGame.get()) {
+        if (com.example.englishlearningappv1.ScoreWindow.resetGame.get()) {
             resetGame(gridPane, keyboardRow1, keyboardRow2, keyboardRow3);
-            com.example.game2.ScoreWindow.resetGame.set(false);
+            com.example.englishlearningappv1.ScoreWindow.resetGame.set(false);
         }
-        if (com.example.game2.ScoreWindow.quitApplication.get())
-            com.example.game2.MainApplication.quit();
+        if (com.example.englishlearningappv1.ScoreWindow.quitApplication.get())
+            com.example.englishlearningappv1.WordleApplication.quit();
     }
 
     public void getRandomWord() {

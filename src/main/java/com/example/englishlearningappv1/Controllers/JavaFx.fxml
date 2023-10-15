@@ -108,7 +108,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="user1" layoutX="1047.0" layoutY="58.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchtoMPC" prefHeight="47.0" prefWidth="54.0" style="-fx-background-color: rgba(255, 255, 255, 0.24); -fx-background-radius: 100px;" text="GAME">
+      <Button fx:id="user1" layoutX="1047.0" layoutY="58.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchtoQuiz" prefHeight="47.0" prefWidth="54.0" style="-fx-background-color: rgba(255, 255, 255, 0.24); -fx-background-radius: 100px;" text="QUIZ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

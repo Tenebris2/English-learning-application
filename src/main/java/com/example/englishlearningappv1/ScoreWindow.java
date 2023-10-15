@@ -1,4 +1,4 @@
-package com.example.game2;
+package com.example.englishlearningappv1;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -6,7 +6,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
@@ -77,7 +76,6 @@ public class ScoreWindow {
         scene.getStylesheets()
                 .add(Objects.requireNonNull(ScoreWindow.class.getResource("wordle.css"))
                         .toExternalForm());
-        stage.getIcons().add(new Image(Objects.requireNonNull(ScoreWindow.class.getResourceAsStream("images/wordle.png"))));
         stage.setScene(scene);
         stage.showAndWait();
     }

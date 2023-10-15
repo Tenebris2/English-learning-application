@@ -11,6 +11,7 @@ import java.io.IOException;
 public class HomePageController {
     @FXML
     private Circle introductionChapterCircle;
+
     private SceneController sceneController = new SceneController();
     @FXML
     private Button learnButton;
@@ -30,8 +31,12 @@ public class HomePageController {
 
     }
 
-    public void gotoGames(ActionEvent event) throws IOException {
-        sceneController.switchtoMPC(event);
+    public void gotoQuiz(ActionEvent event) throws IOException {
+        sceneController.switchtoQuiz(event);
+    }
+
+    public void gotoWordle(ActionEvent event) throws IOException {
+        sceneController.switchtoWordle(event);
     }
 
     public void gotoChapterStart(ActionEvent event) throws IOException {
