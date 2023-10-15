@@ -1,15 +1,24 @@
 package com.example.englishlearningappv1;
 
 import javafx.animation.*;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.controlsfx.control.action.Action;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 import java.util.*;
 
 import static com.example.englishlearningappv1.WordleController.dictionaryWords;
@@ -30,6 +39,11 @@ public class WordleFunction {
     private final int MAX_ROW = 6;
     private String winningWord;
 
+    private Stage stage;
+    private Scene scene;
+    private static final String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
+
+
     private WordleFunction() {
 
     }
@@ -38,17 +52,6 @@ public class WordleFunction {
         if (INSTANCE == null)
             INSTANCE = new WordleFunction();
         return INSTANCE;
-    }
-
-    public void createTitleHBox(HBox titleHBox) {
-        ArrayList<Label> titleLetters = new ArrayList<>();
-        for (String letter : new String[]{"W", "O", "R", "D", "L", "E"}) {
-            Label label = new Label(letter);
-            label.getStyleClass().add("title-letter");
-            titleLetters.add(label);
-        }
-        for (Label label : titleLetters)
-            titleHBox.getChildren().add(label);
     }
 
     public void createGrid(GridPane gridPane) {
@@ -350,7 +353,16 @@ public class WordleFunction {
         CURRENT_ROW = 1;
     }
 
-    public void restart(ImageView restartIcon, GridPane gridPane, GridPane keyboardRow1,
+    public void backToMenu(ActionEvent event) throws IOException {
+        URL url = new File(HOME_PAGE_FXML_FILE_PATH).toURI().toURL();
+        Parent root = FXMLLoader.load(url);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void restart(GridPane gridPane, GridPane keyboardRow1,
                         GridPane keyboardRow2, GridPane keyboardRow3) {
         resetGame(gridPane, keyboardRow1, keyboardRow2, keyboardRow3);
     }

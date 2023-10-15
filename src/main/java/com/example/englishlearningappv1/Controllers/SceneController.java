@@ -27,7 +27,6 @@ public class SceneController {
     private static final String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
     private static final String DICTIONARY_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/JavaFx.fxml";
     private static final String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
-    private static final String WORDLE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/wordle.fxml";
     private static final String CHAPTER_START_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/MultipleChoiceGame.fxml";
 
     public void switchtoQuiz(ActionEvent event) throws IOException {
@@ -72,7 +71,6 @@ public class SceneController {
         wordleController.initializeWordLists();
         wordleController.createUI();
         wordleController.getRandomWord();
-//        wordleController.restartIcon.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/restart.png"))));
         wordleController.gridRequestFocus();
     }
 

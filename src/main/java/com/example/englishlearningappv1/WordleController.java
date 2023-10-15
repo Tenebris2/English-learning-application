@@ -1,20 +1,32 @@
 package com.example.englishlearningappv1;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.stream.Stream;
 
 public class WordleController {
+
+    private Stage stage;
+    private Scene scene;
+
+    private static final String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
+
 
     public static final ArrayList<String> winningWords = new ArrayList<>();
     public static final ArrayList<String> dictionaryWords = new ArrayList<>();
@@ -29,15 +41,10 @@ public class WordleController {
     public GridPane keyboardRow2;
     @FXML
     public GridPane keyboardRow3;
-    @FXML
-    public HBox titleHBox;
-    @FXML
-    public ImageView restartIcon;
 
     public void createUI() {
         createGrid();
         createKeyboard();
-        createTitleHBox();
     }
 
     public void createGrid() {
@@ -61,12 +68,8 @@ public class WordleController {
         wordleFunction.getRandomWord();
     }
 
-    public void createTitleHBox() {
-        wordleFunction.createTitleHBox(titleHBox);
-    }
-
     public void restart() {
-        wordleFunction.restart(restartIcon, gridPane, keyboardRow1, keyboardRow2, keyboardRow3);
+        wordleFunction.restart(gridPane, keyboardRow1, keyboardRow2, keyboardRow3);
     }
 
     public void initializeWordLists() {
@@ -81,6 +84,22 @@ public class WordleController {
         } else {
             WordleApplication wordleApplication = new WordleApplication();
             wordleApplication.quit();
+        }
+    }
+
+    @FXML
+    public void backClicked(ActionEvent event) {
+        try {
+            restart();
+
+            URL url = new File(HOME_PAGE_FXML_FILE_PATH).toURI().toURL();
+            Parent root = FXMLLoader.load(url);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch(IOException e) {
+            e.printStackTrace();
         }
     }
 }

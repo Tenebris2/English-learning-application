@@ -4,19 +4,13 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.stream.Stream;
+
 
 public class WordleApplication extends Application {
-
-//    public static final ArrayList<String> winningWords = new ArrayList<>();
-//    public static final ArrayList<String> dictionaryWords = new ArrayList<>();
 
     private static Stage stageReference;
 
@@ -36,12 +30,10 @@ public class WordleApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-
         WordleController wordleController = fxmlLoader.getController();
         wordleController.initializeWordLists();
         wordleController.createUI();
         wordleController.getRandomWord();
-        wordleController.restartIcon.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/restart.png"))));
         wordleController.gridRequestFocus();
     }
 
@@ -60,17 +52,4 @@ public class WordleApplication extends Application {
     public static void quit() {
         stageReference.close();
     }
-
-//    public void initializeWordLists() {
-//        InputStream winning_words = getClass().getResourceAsStream("winning-words.txt");
-//        InputStream dictionary = getClass().getResourceAsStream("dictionary.txt");
-//
-//        if (winning_words != null && dictionary != null) {
-//            Stream<String> winning_words_lines = new BufferedReader(new InputStreamReader(winning_words)).lines();
-//            winning_words_lines.forEach(winningWords::add);
-//            Stream<String> dictionary_lines = new BufferedReader(new InputStreamReader(dictionary)).lines();
-//            dictionary_lines.forEach(dictionaryWords::add);
-//        } else
-//            quit();
-//    }
 }
