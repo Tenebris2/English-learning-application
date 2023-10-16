@@ -60,7 +60,6 @@ public class QuizController {
     };
 
     public static int correct = 0;
-    public static int wrong = 0;
     private int index = 0;
     private int totalSec = 15;
 
@@ -81,7 +80,6 @@ public class QuizController {
     public void playAgain() {
         index = 0;
         correct = 0;
-        wrong = 0;
     }
 
     Timeline timeline = new Timeline(
@@ -216,6 +214,7 @@ public class QuizController {
                 opt4.getStyleClass().clear();
                 opt4.getStyleClass().setAll("wrong-answer");
             } else {
+                correct++;
                 opt1.getStyleClass().clear();
                 opt1.getStyleClass().setAll("correct-answer-pick");
                 opt2.getStyleClass().clear();
@@ -250,6 +249,7 @@ public class QuizController {
                 opt4.getStyleClass().clear();
                 opt4.getStyleClass().setAll("wrong-answer");
             } else {
+                correct++;
                 opt1.getStyleClass().clear();
                 opt1.getStyleClass().setAll("null");
                 opt2.getStyleClass().clear();
@@ -284,6 +284,7 @@ public class QuizController {
                 opt4.getStyleClass().clear();
                 opt4.getStyleClass().setAll("wrong-answer");
             } else {
+                correct++;
                 opt1.getStyleClass().clear();
                 opt1.getStyleClass().setAll("null");
                 opt2.getStyleClass().clear();
@@ -318,6 +319,7 @@ public class QuizController {
                 opt3.getStyleClass().clear();
                 opt3.getStyleClass().setAll("wrong-answer");
             } else {
+                correct++;
                 opt1.getStyleClass().clear();
                 opt1.getStyleClass().setAll("null");
                 opt2.getStyleClass().clear();

@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="611.0" prefWidth="996.0" style="-fx-background-color: #461A42;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.ResultController">
    <children>
-      <Label fx:id="marks" alignment="CENTER" layoutX="220.5" layoutY="112.0" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: skyblue; -fx-background-radius: 16px; -fx-border-radius: 16px;" text="not repair yet" textAlignment="CENTER" textFill="#1f3eff" wrapText="true">
+      <Label fx:id="marks" alignment="CENTER" layoutX="220.5" layoutY="176.0" prefHeight="130.0" prefWidth="580.0" style="-fx-background-color: white; -fx-background-radius: 16px; -fx-border-radius: 16px;" textAlignment="CENTER" textFill="#203bd7" wrapText="true">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -15,25 +15,29 @@
             <Insets bottom="32.0" left="32.0" right="32.0" top="32.0" />
          </padding>
       </Label>
-      <ProgressIndicator fx:id="correct_progress" layoutX="445.25" layoutY="112.0" minHeight="130.0" minWidth="130.0" prefHeight="130.0" prefWidth="144.0" progress="0.9" style="-fx-background-color: lightgreen; -fx-progress-color: green; -fx-font-weight: 900; -fx-font-size: 18px; -fx-background-radius: 16px; -fx-border-radius: 16px; -fx-box-border: green;">
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </ProgressIndicator>
-      <ProgressIndicator fx:id="wrong_progress" layoutX="670.0" layoutY="112.0" minHeight="130.0" minWidth="130.0" progress="0.1" style="-fx-background-color: FFCDD2; -fx-progress-color: red; -fx-font-weight: 900; -fx-font-size: 18px; -fx-background-radius: 16px; -fx-border-radius: 16px; -fx-box-border: red;">
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </ProgressIndicator>
-      <Button id="playAgain" fx:id="playAgain" layoutX="220.5" layoutY="354.0" mnemonicParsing="false" onAction="#playAgainClicked" prefHeight="110.0" prefWidth="265.0" style="-fx-background-color: #D5546D; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Play Again" textFill="WHITE">
+      <Button id="playAgain" fx:id="playAgain" layoutX="220.5" layoutY="354.0" mnemonicParsing="false" onAction="#playAgainClicked" prefHeight="110.0" prefWidth="265.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Play Again" textFill="WHITE">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Button>
-      <Button id="mainMenu" fx:id="mainMenu" layoutX="535.5" layoutY="354.0" mnemonicParsing="false" onAction="#mainMenuClicked" prefHeight="110.0" prefWidth="265.0" style="-fx-background-color: #D5546D; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Quit" textFill="WHITE">
+      <Button id="mainMenu" fx:id="mainMenu" layoutX="535.5" layoutY="354.0" mnemonicParsing="false" onAction="#mainMenuClicked" prefHeight="110.0" prefWidth="265.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Quit" textFill="WHITE">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Button>
+      <ProgressIndicator fx:id="correct_progress" layoutX="220.5" layoutY="176.0" minHeight="130.0" minWidth="130.0" prefHeight="232.0" prefWidth="258.0" progress="0.43" style="-fx-background-color: white; -fx-progress-color: green; -fx-font-weight: 900; -fx-font-size: 18px; -fx-background-radius: 16px; -fx-border-radius: 16px; -fx-box-border: green;">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </ProgressIndicator>
+      <Label layoutX="351.0" layoutY="241.0" prefHeight="66.0" prefWidth="420.0" text="Play again and let the same group improve their score or see if new players can beat this result." wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+      <Label layoutX="350.0" layoutY="176.0" prefHeight="29.0" prefWidth="450.0" text="Well Played!" wrapText="true">
+         <font>
+            <Font name="System Bold" size="44.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

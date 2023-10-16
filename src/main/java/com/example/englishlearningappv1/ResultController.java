@@ -38,7 +38,8 @@ public class ResultController {
     @FXML
     private void initialize() {
         correct = QuizController.correct;
-        wrong = QuizController.wrong;
+        float correctf = (float) correct/10;
+        correct_progress.setProgress(correctf);
     }
 
     @FXML
