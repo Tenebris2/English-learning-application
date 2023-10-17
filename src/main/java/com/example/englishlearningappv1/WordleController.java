@@ -102,4 +102,25 @@ public class WordleController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    public void restartClicked(ActionEvent event) {
+        try {
+            restart();
+            FXMLLoader fxmlLoader = new FXMLLoader(WordleApplication.class.getResource("wordle.fxml"));
+            Parent root = fxmlLoader.load();
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+            WordleController wordleController = fxmlLoader.getController();
+            wordleController.initializeWordLists();
+            wordleController.createUI();
+            wordleController.getRandomWord();
+            wordleController.gridRequestFocus();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
