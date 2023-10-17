@@ -1,24 +1,15 @@
 package com.example.englishlearningappv1;
 
 import javafx.animation.*;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import org.controlsfx.control.action.Action;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
 import java.util.*;
 
 import static com.example.englishlearningappv1.WordleController.dictionaryWords;
@@ -351,15 +342,6 @@ public class WordleFunction {
 
         CURRENT_COLUMN = 1;
         CURRENT_ROW = 1;
-    }
-
-    public void backToMenu(ActionEvent event) throws IOException {
-        URL url = new File(HOME_PAGE_FXML_FILE_PATH).toURI().toURL();
-        Parent root = FXMLLoader.load(url);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
     }
 
     public void restart(GridPane gridPane, GridPane keyboardRow1,
