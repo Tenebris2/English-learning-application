@@ -89,7 +89,7 @@
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="add" alignment="BOTTOM_LEFT" layoutX="1.0" layoutY="108.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="182.0" text="ADD WORD" textFill="WHITE">
+                <Button fx:id="add" alignment="BOTTOM_LEFT" layoutX="1.0" layoutY="108.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="182.0" style="-fx-background-radius: 100px;" text="ADD WORD" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="39.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -101,7 +101,7 @@
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="find" alignment="BOTTOM_LEFT" ellipsisString="" layoutX="1.0" layoutY="163.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="182.0" style="-fx-background-color: transaparent;" text="SEARCH" textFill="WHITE">
+                <Button fx:id="find" alignment="BOTTOM_LEFT" ellipsisString="" layoutX="1.0" layoutY="163.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="182.0" style="-fx-background-radius: 100px;" text="SEARCH" textFill="WHITE">
                     <font>
                         <Font size="18.0" />
                     </font>

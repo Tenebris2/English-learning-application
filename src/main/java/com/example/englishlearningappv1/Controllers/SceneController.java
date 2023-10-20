@@ -9,13 +9,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.controlsfx.control.action.Action;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 
 public class SceneController {
 
@@ -24,13 +23,15 @@ public class SceneController {
     @FXML
     private Parent root;
 
-    private static final String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
+    final private static String MULTIPLE_CHOICE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
     private static final String DICTIONARY_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/JavaFx.fxml";
-    private static final String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
-    private static final String CHAPTER_START_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/MultipleChoiceGame.fxml";
+    final private static String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
+    private static final String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
+    final private static String CHAPTER_START_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/MultipleChoiceGame.fxml";
 
-    public void switchtoQuiz(ActionEvent event) throws IOException {
-        URL url = new File(QUIZ_FXML_FILE_PATH).toURI().toURL();
+    final private static String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
+    public void switchtoMPC(ActionEvent event) throws IOException {
+        URL url = new File(MULTIPLE_CHOICE_FXML_FILE_PATH).toURI().toURL();
         Parent root = FXMLLoader.load(url);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -59,6 +60,15 @@ public class SceneController {
         stage.show();
     }
 
+    public void switchToChapterStart(ActionEvent event) throws IOException {
+        URL url = new File(CHAPTER_START_FXML_FILE_PATH).toURI().toURL();
+        Parent root = FXMLLoader.load(url);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void switchtoWordle(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(WordleApplication.class.getResource("wordle.fxml"));
         Parent root = fxmlLoader.load();
@@ -73,10 +83,17 @@ public class SceneController {
         wordleController.getRandomWord();
         wordleController.gridRequestFocus();
     }
+    public void switchtoQuiz(ActionEvent event) throws IOException {
+        URL url = new File(QUIZ_FXML_FILE_PATH).toURI().toURL();
+        Parent root = FXMLLoader.load(url);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
-
-    public void switchToChapterStart(ActionEvent event) throws IOException {
-        URL url = new File(CHAPTER_START_FXML_FILE_PATH).toURI().toURL();
+    public void switchToGameHub(ActionEvent event) throws IOException {
+        URL url = new File(GAME_HUB_FXML_FILE_PATH).toURI().toURL();
         Parent root = FXMLLoader.load(url);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
