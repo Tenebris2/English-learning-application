@@ -10,7 +10,7 @@
 
 <BorderPane fx:id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/HomePageStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.GameHubController">
     <left>
-        <AnchorPane fx:id="anchorPane1" prefHeight="730.0" prefWidth="200.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+        <AnchorPane fx:id="anchorPane1" prefHeight="730.0" prefWidth="200.0" stylesheets="@../styles/GameHubStyles.css" BorderPane.alignment="CENTER">
             <children>
                 <Button fx:id="learnButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="60.0" mnemonicParsing="false" onAction="#gotoHome" prefHeight="58.0" prefWidth="181.0" text="LEARN" textFill="WHITE">
                     <font>
@@ -63,7 +63,7 @@
         </AnchorPane>
     </left>
     <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@../styles/GameHubStyles.css" BorderPane.alignment="CENTER">
+        <AnchorPane fx:id="pane1" prefHeight="720.0" prefWidth="859.0" stylesheets="@../styles/GameHubStyles.css" BorderPane.alignment="CENTER">
             <children>
                 <Button layoutX="414.0" layoutY="169.0" mnemonicParsing="false" />
             <ImageView fx:id="imageView" fitHeight="535.0" fitWidth="763.0" layoutX="64.0" layoutY="29.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
