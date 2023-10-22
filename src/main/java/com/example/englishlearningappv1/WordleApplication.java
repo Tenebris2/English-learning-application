@@ -2,17 +2,22 @@ package com.example.englishlearningappv1;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.net.URL;
 
 
 public class WordleApplication extends Application {
 
     private static Stage stageReference;
+
+    final private static String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
+
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -50,6 +55,15 @@ public class WordleApplication extends Application {
     }
 
     public static void quit() {
-        stageReference.close();
+        try {
+            URL url = new File(HOME_PAGE_FXML_FILE_PATH).toURI().toURL();
+            Parent root = FXMLLoader.load(url);
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
