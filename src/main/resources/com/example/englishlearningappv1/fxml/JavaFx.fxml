@@ -61,18 +61,6 @@
         </Button>
         <AnchorPane fx:id="listOfButtons" prefHeight="720.0" prefWidth="135.0" style="-fx-background-color: transparent;" stylesheets="@../styles/DictionaryStyles.css">
             <children>
-                <Button fx:id="user" alignment="BOTTOM_LEFT" layoutX="1.0" layoutY="51.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="182.0" style="-fx-background-radius: 100px;" text="USER" textFill="WHITE">
-                    <graphic>
-                        <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../image/user_1.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Button>
                 <Button fx:id="googleSearch" alignment="BOTTOM_LEFT" ellipsisString="" layoutX="1.0" layoutY="221.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="182.0" style="-fx-background-radius: 100px;" text="GOOGLE SEARCH" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="41.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
@@ -85,7 +73,7 @@
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="add" alignment="BOTTOM_LEFT" layoutX="1.0" layoutY="108.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="182.0" style="-fx-background-radius: 100px;" text="ADD WORD" textFill="WHITE">
+                <Button fx:id="add" alignment="BOTTOM_LEFT" layoutX="1.0" layoutY="107.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="182.0" style="-fx-background-radius: 100px;" text="ADD WORD" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="39.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -109,7 +97,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-            <Button fx:id="backButton" alignment="BOTTOM_LEFT" ellipsisString="" layoutX="31.0" layoutY="658.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHomePage" prefHeight="47.0" prefWidth="122.0" style="-fx-background-radius: 100px;" text="BACK" textFill="WHITE">
+            <Button fx:id="backButton" alignment="BOTTOM_LEFT" ellipsisString="" layoutX="1.0" layoutY="7.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHomePage" prefHeight="47.0" prefWidth="182.0" style="-fx-background-radius: 100px;" text="BACK" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -123,5 +111,10 @@
             </Button>
             </children>
         </AnchorPane>
+      <ImageView fitHeight="47.0" fitWidth="49.0" layoutX="299.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/searchWord.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
