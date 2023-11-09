@@ -28,6 +28,8 @@ public class CRUDFunctions{
         if (rowsInserted > 0) {
             System.out.println("A new user was inserted successfully!");
         }
+
+        statement.close();
     }
     public static void CRUDsearchWord(String searchedWord) throws SQLException {
 
@@ -46,6 +48,9 @@ public class CRUDFunctions{
 
             System.out.println(word + "\t"  + definition + "\t" + id);
         }
+
+        statement.close();
+        result.close();
     }
     public static void CRUDshowAllWords() throws SQLException {
         String sql = "SELECT * FROM wordlist";
@@ -60,6 +65,9 @@ public class CRUDFunctions{
 
             System.out.println(word + "\t"  + definition + "\t" + id);
         }
+
+        statement.close();
+        result.close();
     }
     public static void CRUDdeleteWord(String word) throws SQLException {
         String sql = "DELETE FROM wordlist WHERE english=?";
@@ -71,6 +79,8 @@ public class CRUDFunctions{
         if (rowsDeleted > 0) {
             System.out.println("A word was deleted successfully!");
         }
+
+        statement.close();
     }
     public static void CRUDupdateWord(String word,String definition) throws SQLException {
         String sql = "UPDATE wordlist SET english=?,definition=?";
@@ -83,6 +93,9 @@ public class CRUDFunctions{
         if (rowsUpdated > 0) {
             System.out.println("An existing word was updated successfully!");
         }
+
+        statement.close();
+
     }
     public static void CRUDAddQuestion(String Question,String answerList,String correctAnswer) throws SQLException {
         String sql = "INSERT INTO question_list (question,answer_list,correct_answer) VALUES (?, ?, ?)";
@@ -96,6 +109,8 @@ public class CRUDFunctions{
         if (rowsInserted > 0) {
             System.out.println("A new question was inserted successfully!");
         }
+
+        statement.close();
     }
     public static void CRUDShowAllQuestions() throws SQLException {
         String sql = "SELECT * FROM question_list";
@@ -110,6 +125,8 @@ public class CRUDFunctions{
 
             System.out.println(question + "\n"  + answerList + "\n" + correct_answer);
         }
+        statement.close();
+        result.close();
     }
 
 }

@@ -35,30 +35,6 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button fx:id="quizButton" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="195.0" mnemonicParsing="false" onAction="#gotoQuiz" prefHeight="58.0" prefWidth="181.0" text="QUIZ" textFill="WHITE">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                    <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="C:\files and projects\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\console.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button fx:id="wordleButton" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="263.0" mnemonicParsing="false" onAction="#gotoWordle" prefHeight="58.0" prefWidth="181.0" text="WORDLE" textFill="WHITE">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                    <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="C:\files and projects\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\console.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
             </children>
         </AnchorPane>
     </left>

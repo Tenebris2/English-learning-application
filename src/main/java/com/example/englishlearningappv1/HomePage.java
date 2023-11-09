@@ -23,7 +23,7 @@ public class HomePage extends Application{
         primaryStage.setScene(scene);
         primaryStage.setTitle("Dictionary");
         primaryStage.show();
-
+        
     }
 
 }

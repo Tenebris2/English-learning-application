@@ -11,12 +11,12 @@
   -fx-background-color: #44B6F1;
   transition: -fx-background-color 0.5s ease;
                   -fx-text-fill 1s ease,
-                  -fx-scale-x 0.5s ease,
-                  -fx-scale-y 0.5s ease;
-                  -fx-scale-z 0.5s ease;
+                  -fx-scale-x 2s ease,
+                  -fx-scale-y 2s ease;
+                  -fx-scale-z 2s ease;
                   -fx-opacity: 0.8;
                   -fx-translate-y: 5;
-                  transition: all 0.1s;
+                  transition: all 5s;
 }
 
 
