@@ -23,21 +23,21 @@ public class Dictionary extends CRUDFunctions {
     //Load từ và nghĩa từ file vào TreeMap
 
     public void createWordList() throws IOException, SQLException {
-        String sql = "SELECT * FROM wordlist";
+            String sql = "SELECT * FROM wordlist";
 
-        Statement statement = connection.createStatement();
-        ResultSet result = statement.executeQuery(sql);
-        String line;
+            Statement statement = connection.createStatement();
+            ResultSet result = statement.executeQuery(sql);
+            String line;
 
-        while (result.next()){
-            String word = result.getString("english");
-            String definition = result.getString("definition");
-            line = word + definition;
+            while (result.next()){
+                String word = result.getString("english");
+                String definition = result.getString("definition");
+                line = word + definition;
 
-            String[] parts = line.split(SPLITTING_CHAR);
-            parts[1] = "<html>" + parts[1];
-            wordList.put(parts[0], new Word(parts[0], parts[1]));
-        }
+                String[] parts = line.split(SPLITTING_CHAR);
+                parts[1] = "<html>" + parts[1];
+                wordList.put(parts[0], new Word(parts[0], parts[1]));
+            }
     }
 
 

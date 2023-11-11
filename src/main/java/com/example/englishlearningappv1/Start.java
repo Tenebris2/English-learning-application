@@ -9,6 +9,7 @@ public class Start {
     public static void main(String[] args) throws SQLException, IOException {
         connectDB();
         HomePage.main(args);
+
     }
 }
 

@@ -18,7 +18,9 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-public class QuizController {
+public class
+
+QuizController {
 
     String[] questions = {
             "The little boy pleaded _____ not to leave him alone in the dark.",

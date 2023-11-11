@@ -56,7 +56,6 @@ public class Controller {
         changingFunction.setChangingBtn(wordViewList, defView);
         googleSearchingFunction.setGoogleSearchBtn(defView, findField);
 //        vipFunction.setVipBtn();
-        user.setUserBtn();
     }
 
     public void hideSearchView(Parent root) {

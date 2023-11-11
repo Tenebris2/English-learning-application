@@ -12,11 +12,6 @@ public class User {
         userBtn = (Button) scene.lookup(USER_TAG);
     }
 
-    public void setUserBtn() {
-        userBtn.setOnMouseClicked(e -> {
-            showInformation();
-        });
-    }
 
     public void showInformation(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

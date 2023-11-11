@@ -22,6 +22,7 @@ public class SceneController {
     private Scene scene;
     @FXML
     private Parent root;
+    private DictionaryApp dictionaryApp;
 
     final private static String MULTIPLE_CHOICE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
     private static final String DICTIONARY_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/JavaFx.fxml";
@@ -37,18 +38,25 @@ public class SceneController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
     }
 
     public void switchtoDictionary(ActionEvent event) throws Exception {
+        // Load the FXML file
         URL url = new File(DICTIONARY_FXML_FILE_PATH).toURI().toURL();
         Parent root = FXMLLoader.load(url);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+
+        // Get the current stage
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Set the new scene on the existing stage
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
 
-        DictionaryApp dictionaryApp = new DictionaryApp();
+        dictionaryApp = new DictionaryApp();
         dictionaryApp.start(stage);
+
     }
 
     public void switchToHomePage(ActionEvent event) throws IOException {

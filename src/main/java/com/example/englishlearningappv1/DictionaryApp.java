@@ -36,6 +36,7 @@ public class DictionaryApp extends Application {
         controller.initData();
         controller.hideSearchView(root);
         controller.addFunction();
+
     }
 
     @Override

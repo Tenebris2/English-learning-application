@@ -11,6 +11,7 @@ public class HomePage extends Application{
     final private static String HOME_PAGE_FXML_FILE_PATH = "fxml/HomePage.fxml";
 
     private static Controller controller = new Controller();
+    private Dictionary dic = new Dictionary();
 
     public static void main(String[] args) {
         Application.launch(args);
@@ -23,7 +24,7 @@ public class HomePage extends Application{
         primaryStage.setScene(scene);
         primaryStage.setTitle("Dictionary");
         primaryStage.show();
-        
+
     }
 
 }

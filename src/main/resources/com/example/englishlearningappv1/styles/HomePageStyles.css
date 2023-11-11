@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'DuneRise';
+    src: url("fonts/Dune_Rise.ttf");
+}
+
+#logoText {
+    -fx-font-family: 'serif';
+    -fx-text-fill: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+    -fx-font-size: 22;
+    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
 #homePage {
     -fx-background-color:#131f24;
 }
@@ -7,26 +18,33 @@
 }
 
 /* hover state */
-.button:hover {
-  -fx-background-color: #44B6F1;
-  transition: -fx-background-color 0.5s ease;
-                  -fx-text-fill 1s ease,
-                  -fx-scale-x 2s ease,
-                  -fx-scale-y 2s ease;
-                  -fx-scale-z 2s ease;
-                  -fx-opacity: 0.8;
-                  -fx-translate-y: 5;
-                  transition: all 5s;
-}
-
+/*.button:hover {*/
+/*  -fx-background-color: #44B6F1;*/
+/*  transition: -fx-background-color 0.5s ease;*/
+/*                  -fx-text-fill 1s ease,*/
+/*                  -fx-scale-x 2s ease,*/
+/*                  -fx-scale-y 2s ease;*/
+/*                  -fx-scale-z 2s ease;*/
+/*                  -fx-opacity: 0.8;*/
+/*                  -fx-translate-y: 5;*/
+/*                  transition: all 5s;*/
+/*}*/
 
 #anchorPane1 {
     -fx-border-color:  #253239;
     -fx-border-width: 0 1px 0 0;
 }
 
-#introductionChapterCircle {
-    -fx-background-image: url("C:\Users\Asus\IdeaProjects\English-learning-app-v1\src\main\resources\com\example\englishlearningappv1\image\light-bulb.png");
+#getHelloChapterButton, #getSchoolChapterButton, #startChapterButton, #displayButton {
+    -fx-background-color: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    -fx-background-radius: 5; /* Adjust the radius as needed */
+    -fx-border-radius: 5; /* Adjust the radius as needed */
+    -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
 }
 
+.button:hover {
+    -fx-translate-y: -0.25em;
+    -fx-background-color: #0489B0;
+    transition: -fx-background-color 0.5s ease;
+}
 
