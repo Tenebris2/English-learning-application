@@ -5,13 +5,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.sql.Time;
 
 
 public class HomePageController {
@@ -130,5 +134,80 @@ public class HomePageController {
         // Play the animation
         parallelTransition.play();
 
+    }
+
+    public void inEffects1(MouseEvent event) {
+        String baseStyle = """
+                    -fx-border-radius: 100px;
+                    -fx-background-color: transparent;
+                """;
+        Button button = (Button) event.getSource();
+        button.setStyle(baseStyle
+                + "-fx-background-color: #0489B0;");
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(800), button);
+        fadeTransition.setFromValue(1.0);
+        fadeTransition.setToValue(0.8);
+        fadeTransition.setCycleCount(Timeline.INDEFINITE);
+        fadeTransition.setAutoReverse(true);
+        fadeTransition.play();
+    }
+
+    public void outEffects1(MouseEvent event) {
+        String baseStyle = """
+                    -fx-border-radius: 100px;
+                    -fx-background-color: transparent;
+                """;
+
+        Button button = (Button) event.getSource();
+        button.setStyle(baseStyle);
+    }
+
+    public void inEffects2(MouseEvent event) {
+        String baseStyle = """
+        -fx-background-color: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+        -fx-background-radius: 200px; /* Adjust the radius as needed */
+        -fx-border-radius: 5; /* Adjust the radius as needed */
+        -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+                """;
+        Button button = (Button) event.getSource();
+
+        button.setStyle(baseStyle);
+
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(500), button);
+        fadeTransition.setFromValue(1.0);
+        fadeTransition.setToValue(0.7);
+        fadeTransition.setCycleCount(0);
+        fadeTransition.setAutoReverse(true);
+
+        ParallelTransition parallelTransition = new ParallelTransition(fadeTransition);
+
+        parallelTransition.play();
+
+    }
+
+    public void outEffects2(MouseEvent event) {
+        String baseStyle = """
+        -fx-background-color: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+        -fx-background-radius: 200px; /* Adjust the radius as needed */
+        -fx-border-radius: 5; /* Adjust the radius as needed */
+        -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+                """;
+
+        Button button = (Button) event.getSource();
+        button.setStyle(baseStyle);
+
+        button.setStyle(baseStyle);
+
+
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(500), button);
+        fadeTransition.setFromValue(0.7);
+        fadeTransition.setToValue(1);
+        fadeTransition.setCycleCount(0);
+        fadeTransition.setAutoReverse(true);
+        fadeTransition.play();
+
+        ParallelTransition parallelTransition = new ParallelTransition(fadeTransition);
+
+        parallelTransition.play();
     }
 }

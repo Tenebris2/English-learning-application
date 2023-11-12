@@ -11,9 +11,9 @@
 
 <BorderPane fx:id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/HomePageStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.HomePageController">
    <left>
-      <AnchorPane fx:id="anchorPane1" prefHeight="730.0" prefWidth="200.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="anchorPane1" prefHeight="730.0" prefWidth="200.0" style="-fx-background-color: #131f24;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="learnButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="119.0" mnemonicParsing="false" onAction="#gotoHome" prefHeight="58.0" prefWidth="181.0" text="LEARN" textFill="WHITE">
+            <Button fx:id="learnButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="119.0" mnemonicParsing="false" onAction="#gotoHome" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="LEARN" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -23,8 +23,11 @@
                         <Image url="C:\files and projects\English-learning-application\src\main\resources\com\example\englishlearningappv1\image\house.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
-            <Button fx:id="dictionaryButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="186.0" mnemonicParsing="false" onAction="#gotoDictionary" prefHeight="58.0" prefWidth="181.0" text="DICTIONARY" textFill="WHITE">
+               </graphic>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="dictionaryButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="186.0" mnemonicParsing="false" onAction="#gotoDictionary" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="DICTIONARY" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -35,8 +38,11 @@
                      </image>
                   </ImageView>
                </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
             </Button>
-            <Button fx:id="wordleButton1" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="244.0" mnemonicParsing="false" onAction="#gotoGameHub" prefHeight="58.0" prefWidth="181.0" text="GAME HUB" textFill="WHITE">
+            <Button fx:id="wordleButton1" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="244.0" mnemonicParsing="false" onAction="#gotoGameHub" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="GAME HUB" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -47,6 +53,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
             </Button>
             <Label fx:id="logoText" layoutX="11.0" layoutY="21.0" prefHeight="63.0" prefWidth="177.0" text="Hanoi Ghoul" textFill="WHITE">
                <graphic>
@@ -59,15 +68,21 @@
                <font>
                   <Font name="Arial" size="1.0" />
                </font>
+               <effect>
+                  <DropShadow />
+               </effect>
             </Label>
          </children>
+         <effect>
+            <DropShadow />
+         </effect>
       </AnchorPane>
    </left>
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@../styles/HomePageStyles.css" BorderPane.alignment="CENTER">
          <children>
             <Button layoutX="414.0" layoutY="169.0" mnemonicParsing="false" />
-            <Button fx:id="displayButton" alignment="CENTER" contentDisplay="CENTER" layoutX="157.0" layoutY="40.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="542.0" style="-fx-background-radius: 10px;" text="BẮT ĐẦU" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="displayButton" alignment="CENTER" contentDisplay="CENTER" layoutX="157.0" layoutY="40.0" mnemonicParsing="false" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" prefHeight="70.0" prefWidth="542.0" style="-fx-background-radius: 200px;" text="BẮT ĐẦU" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="32.0" />
                </font>
@@ -79,7 +94,7 @@
                   </Label>
                </graphic>
             </Button>
-            <Button fx:id="getHelloChapterButton" alignment="CENTER" contentDisplay="TOP" layoutX="146.0" layoutY="342.0" mnemonicParsing="false" onAction="#initLabel" prefHeight="67.0" prefWidth="154.0" style="-fx-background-radius: 200px;" text="XIN CHÀO" textFill="WHITE">
+            <Button fx:id="getHelloChapterButton" alignment="CENTER" contentDisplay="TOP" layoutX="146.0" layoutY="342.0" mnemonicParsing="false" onAction="#initLabel" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" prefHeight="67.0" prefWidth="154.0" style="-fx-background-radius: 200px;" text="XIN CHÀO" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -90,11 +105,8 @@
                      </image>
                   </ImageView>
                </graphic>
-               <effect>
-                  <DropShadow />
-               </effect>
             </Button>
-            <Button fx:id="getSchoolChapterButton" alignment="CENTER" contentDisplay="TOP" layoutX="574.0" layoutY="342.0" mnemonicParsing="false" onAction="#initLabel" prefHeight="67.0" prefWidth="154.0" style="-fx-background-radius: 100px;" text="TRƯỜNG HỌC" textFill="WHITE">
+            <Button fx:id="getSchoolChapterButton" alignment="CENTER" contentDisplay="TOP" layoutX="574.0" layoutY="342.0" mnemonicParsing="false" onAction="#initLabel" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" prefHeight="67.0" prefWidth="154.0" style="-fx-background-radius: 100px;" text="TRƯỜNG HỌC" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -105,11 +117,8 @@
                      </image>
                   </ImageView>
                </graphic>
-               <effect>
-                  <DropShadow />
-               </effect>
             </Button>
-            <Button fx:id="startChapterButton" alignment="CENTER" contentDisplay="TOP" layoutX="363.0" layoutY="182.0" mnemonicParsing="false" onAction="#initLabel" prefHeight="67.0" prefWidth="154.0" style="-fx-background-radius: 100px;" text="BẮT ĐẦU" textFill="WHITE">
+            <Button fx:id="startChapterButton" alignment="CENTER" contentDisplay="TOP" layoutX="363.0" layoutY="182.0" mnemonicParsing="false" onAction="#initLabel" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" prefHeight="67.0" prefWidth="154.0" style="-fx-background-radius: 100px;" text="BẮT ĐẦU" textFill="WHITE">
                <graphic>
                   <ImageView fx:id="startButton" fitHeight="78.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -120,9 +129,6 @@
                <font>
                   <Font size="14.0" />
                </font>
-               <effect>
-                  <DropShadow />
-               </effect>
             </Button>
             <AnchorPane fx:id="popupPane" layoutX="336.0" layoutY="316.0" opacity="0.0" prefHeight="118.0" prefWidth="207.0" style="-fx-background-radius: 10px; -fx-background-color: #44B6F1;">
                <children>
@@ -145,6 +151,9 @@
                </effect>
             </AnchorPane>
          </children>
+         <effect>
+            <DropShadow />
+         </effect>
       </AnchorPane>
    </center>
 </BorderPane>

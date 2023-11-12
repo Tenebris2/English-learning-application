@@ -10,25 +10,13 @@
     box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
 }
 #homePage {
-    -fx-background-color:#131f24;
+    -fx-background-color: linear-gradient(to top, #131f24, #1b2a34, #131f24);
 }
 .button {
     -fx-border-radius: 100px;
     -fx-background-color: transparent;
+    -fx-transition: -fx-background-color 0.5s ease;
 }
-
-/* hover state */
-/*.button:hover {*/
-/*  -fx-background-color: #44B6F1;*/
-/*  transition: -fx-background-color 0.5s ease;*/
-/*                  -fx-text-fill 1s ease,*/
-/*                  -fx-scale-x 2s ease,*/
-/*                  -fx-scale-y 2s ease;*/
-/*                  -fx-scale-z 2s ease;*/
-/*                  -fx-opacity: 0.8;*/
-/*                  -fx-translate-y: 5;*/
-/*                  transition: all 5s;*/
-/*}*/
 
 #anchorPane1 {
     -fx-border-color:  #253239;
@@ -43,8 +31,7 @@
 }
 
 .button:hover {
-    -fx-translate-y: -0.25em;
+
     -fx-background-color: #0489B0;
-    transition: -fx-background-color 0.5s ease;
 }
 
