@@ -173,7 +173,7 @@ public class HomePageController {
 
         button.setStyle(baseStyle);
 
-        FadeTransition fadeTransition = new FadeTransition(Duration.millis(500), button);
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(150), button);
         fadeTransition.setFromValue(1.0);
         fadeTransition.setToValue(0.7);
         fadeTransition.setCycleCount(0);
@@ -199,7 +199,7 @@ public class HomePageController {
         button.setStyle(baseStyle);
 
 
-        FadeTransition fadeTransition = new FadeTransition(Duration.millis(500), button);
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(150), button);
         fadeTransition.setFromValue(0.7);
         fadeTransition.setToValue(1);
         fadeTransition.setCycleCount(0);
