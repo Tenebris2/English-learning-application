@@ -61,8 +61,8 @@ public class GameHubController extends HomePageController{
         Image image = new Image(new File(quizImageURL).toURI().toString());
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.seconds(0), new KeyValue(imageView.opacityProperty(), 1.0)),
-                new KeyFrame(Duration.seconds(1), new KeyValue(imageView.opacityProperty(), 0.0)),
-                new KeyFrame(Duration.seconds(1), e -> {
+                new KeyFrame(Duration.seconds(0.2), new KeyValue(imageView.opacityProperty(), 0.0)),
+                new KeyFrame(Duration.seconds(0.2), e -> {
                     imageView.setImage(image);
                     gameLabel.setText("A game where one must take their knowledge to the test.");
                     pane1.setStyle(
@@ -72,7 +72,7 @@ public class GameHubController extends HomePageController{
                             "-fx-background-color: linear-gradient(to bottom, #02022E, #36108B, BLACK);"
                     );
                 }),
-                new KeyFrame(Duration.seconds(2), new KeyValue(imageView.opacityProperty(), 1.0))
+                new KeyFrame(Duration.seconds(1), new KeyValue(imageView.opacityProperty(), 1.0))
         );
         timeline.setCycleCount(1);
         timeline.play();
@@ -84,8 +84,8 @@ public class GameHubController extends HomePageController{
         gameLabel.setTextFill(Color.WHITESMOKE);
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.seconds(0), new KeyValue(imageView.opacityProperty(), 1.0)),
-                new KeyFrame(Duration.seconds(1), new KeyValue(imageView.opacityProperty(), 0.0)),
-                new KeyFrame(Duration.seconds(1), e -> {
+                new KeyFrame(Duration.seconds(0.2), new KeyValue(imageView.opacityProperty(), 0.0)),
+                new KeyFrame(Duration.seconds(0.2), e -> {
                     imageView.setImage(image);
                     gameLabel.setText("Your challenge is to guess a five-letter word in six attempts.");
                     pane1.setStyle(
@@ -95,7 +95,7 @@ public class GameHubController extends HomePageController{
                             "-fx-background-color: linear-gradient(to bottom, #003C8C, #001D29, BLACK);"
                     );
                 }),
-                new KeyFrame(Duration.seconds(2), new KeyValue(imageView.opacityProperty(), 1.0))
+                new KeyFrame(Duration.seconds(1), new KeyValue(imageView.opacityProperty(), 1.0))
         );
         timeline.setCycleCount(1);
         timeline.play();

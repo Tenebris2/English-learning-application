@@ -17,9 +17,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.sql.Time;
 
-
 public class HomePageController {
-
     enum Buttons {
         startChapterButton,
         getHelloChapterButton,
@@ -27,21 +25,30 @@ public class HomePageController {
     }
 
     private boolean clicked;
+
     @FXML
     private Circle introductionChapterCircle;
+
     private SceneController sceneController = new SceneController();
+
     @FXML
     private Button learnButton;
+
     @FXML
     private Button gamesButton;
+
     @FXML
     private Button dictionaryButton;
+
     @FXML
     private Button startChapterButton;
+
     @FXML
     private Button displayButton;
+
     @FXML
     private Label initLabel;
+
     @FXML
     private AnchorPane popupPane;
 
@@ -53,6 +60,7 @@ public class HomePageController {
 
     @FXML
     private Button getSchoolChapterButton;
+
     @FXML
     private Label logoText;
 
@@ -62,8 +70,8 @@ public class HomePageController {
 
     public void gotoDictionary(ActionEvent event) throws Exception {
         sceneController.switchtoDictionary(event);
-
     }
+
     public void gotoChapterStart(ActionEvent event) throws IOException {
         sceneController.switchToChapterStart(event);
     }
@@ -81,48 +89,34 @@ public class HomePageController {
     }
 
     public void initLabel(ActionEvent event) {
-
         Button source = (Button) event.getSource();
         initLabel.setText(source.getText());
         displayButton.setText(source.getText());
-
         popupPane.setLayoutX(source.getLayoutX() - 25);
         popupPane.setLayoutY(source.getLayoutY() + 135);
-
-
         double popupPanePrefHeight = 118;
         double popupPanePrefWidth = 207;
-
-        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.5), popupPane);
-
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.15), popupPane);
         popupPane.setOpacity(1);
-
         double move = 0;
-
         String id = source.getId();
         if (!clicked) {
-
             // Set the scaling factors
             scaleTransition.setToX(1.0);
             scaleTransition.setToY(1.0);
             move = 0;
         } else {
-
             // Set the scaling factors
             scaleTransition.setToX(0);
             scaleTransition.setToY(0);
             move = -popupPane.getPrefHeight() * 0.5;
         }
-
         // Play the animation
-        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.5), popupPane);
+        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.15), popupPane);
         translateTransition.setToY(move); // Move the full height upwards
-
         // Create a ParallelTransition to play both animations in parallel
         ParallelTransition parallelTransition = new ParallelTransition(scaleTransition, translateTransition);
-
         clicked  = !clicked;
-
         if (clicked) {
             // Set opacity to 1 (visible) when expanding
             parallelTransition.setOnFinished(e -> popupPane.setOpacity(1));
@@ -130,10 +124,8 @@ public class HomePageController {
             // Set opacity to 0 (invisible) when shrinking
             parallelTransition.setOnFinished(e -> popupPane.setOpacity(0));
         }
-
         // Play the animation
         parallelTransition.play();
-
     }
 
     public void inEffects1(MouseEvent event) {
@@ -157,7 +149,6 @@ public class HomePageController {
                     -fx-border-radius: 100px;
                     -fx-background-color: transparent;
                 """;
-
         Button button = (Button) event.getSource();
         button.setStyle(baseStyle);
     }
@@ -170,19 +161,14 @@ public class HomePageController {
         -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
                 """;
         Button button = (Button) event.getSource();
-
         button.setStyle(baseStyle);
-
         FadeTransition fadeTransition = new FadeTransition(Duration.millis(150), button);
         fadeTransition.setFromValue(1.0);
         fadeTransition.setToValue(0.7);
         fadeTransition.setCycleCount(0);
         fadeTransition.setAutoReverse(true);
-
         ParallelTransition parallelTransition = new ParallelTransition(fadeTransition);
-
         parallelTransition.play();
-
     }
 
     public void outEffects2(MouseEvent event) {
@@ -192,22 +178,16 @@ public class HomePageController {
         -fx-border-radius: 5; /* Adjust the radius as needed */
         -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
                 """;
-
         Button button = (Button) event.getSource();
         button.setStyle(baseStyle);
-
         button.setStyle(baseStyle);
-
-
         FadeTransition fadeTransition = new FadeTransition(Duration.millis(150), button);
         fadeTransition.setFromValue(0.7);
         fadeTransition.setToValue(1);
         fadeTransition.setCycleCount(0);
         fadeTransition.setAutoReverse(true);
         fadeTransition.play();
-
         ParallelTransition parallelTransition = new ParallelTransition(fadeTransition);
-
         parallelTransition.play();
     }
 }
