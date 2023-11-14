@@ -36,4 +36,11 @@
                 -fx-opacity: 0.8;
 }
 
+#logoText {
+    -fx-font-family: 'serif';
+    -fx-text-fill: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+    -fx-font-size: 22;
+    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
+
 
