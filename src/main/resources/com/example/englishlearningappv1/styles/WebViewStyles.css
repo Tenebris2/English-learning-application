@@ -1,6 +1,7 @@
 body {
     color: white;
 }
+
 web-view {
     -fx-background-radius: 10;
 }

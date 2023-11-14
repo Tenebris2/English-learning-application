@@ -39,7 +39,7 @@
                         <DropShadow />
                     </effect>
                 </Button>
-                <Button fx:id="wordleButton1" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="251.0" mnemonicParsing="false" onAction="#gotoGameHub" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="GAME HUB" textFill="WHITE">
+                <Button fx:id="wordleButton1" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="251.0" mnemonicParsing="false" onAction="#gotoGameHub" prefHeight="58.0" prefWidth="181.0" style="-fx-background-color: #0489B0;" text="GAME HUB" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="17.0" />
                     </font>
@@ -84,7 +84,7 @@
                   <Image url="@image/quiz-image.png" />
                </image>
             </ImageView>
-            <Button fx:id="gameButton1" layoutX="62.0" layoutY="619.0" mnemonicParsing="false" onAction="#clickOnGame1" prefHeight="78.0" prefWidth="200.0" text="QUIZ TIME" textFill="WHITE" wrapText="true">
+            <Button fx:id="gameButton1" layoutX="62.0" layoutY="619.0" mnemonicParsing="false" onAction="#clickOnGame1" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #026E90;" text="QUIZ TIME" textFill="WHITE" wrapText="true">
                <graphic>
                   <ImageView fitHeight="53.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -96,7 +96,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="gotoGames" layoutX="94.0" layoutY="468.0" mnemonicParsing="false" onAction="#gotoGames" prefHeight="63.0" prefWidth="171.0" style="-fx-background-color: white; -fx-background-radius: 10px;" text="PLAY NOW">
+            <Button fx:id="gotoGames" layoutX="94.0" layoutY="468.0" mnemonicParsing="false" onAction="#gotoGames" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" prefHeight="63.0" prefWidth="171.0" style="-fx-background-color: white;" text="PLAY NOW">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -106,7 +106,7 @@
                   <Font name="System Bold" size="19.0" />
                </font>
             </Label>
-            <Button fx:id="gameButton2" layoutX="274.0" layoutY="619.0" mnemonicParsing="false" onAction="#clickOnGame2" prefHeight="78.0" prefWidth="200.0" text="WORDLE" textFill="WHITE" wrapText="true">
+            <Button fx:id="gameButton2" layoutX="274.0" layoutY="619.0" mnemonicParsing="false" onAction="#clickOnGame2" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #026E90;" text="WORDLE" textFill="WHITE" wrapText="true">
                <graphic>
                   <ImageView fitHeight="53.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
                      <image>
