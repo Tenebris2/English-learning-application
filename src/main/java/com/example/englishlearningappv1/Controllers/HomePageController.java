@@ -136,12 +136,6 @@ public class HomePageController {
         Button button = (Button) event.getSource();
         button.setStyle(baseStyle
                 + "-fx-background-color: #0489B0;");
-        FadeTransition fadeTransition = new FadeTransition(Duration.millis(800), button);
-        fadeTransition.setFromValue(1.0);
-        fadeTransition.setToValue(0.8);
-        fadeTransition.setCycleCount(Timeline.INDEFINITE);
-        fadeTransition.setAutoReverse(true);
-        fadeTransition.play();
     }
 
     public void outEffects1(MouseEvent event) {
