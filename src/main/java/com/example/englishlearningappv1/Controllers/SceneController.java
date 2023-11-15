@@ -184,11 +184,14 @@ public class SceneController {
     }
 
     public void openGoogleTranslate(ActionEvent event) throws IOException {
+        Stage secondaryStage = new Stage();
         URL url = new File(GOOGLE_TRANSLATE_WINDOW_FXML_FILE_PATH).toURI().toURL();
         Parent root = FXMLLoader.load(url);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+        Scene scene = new Scene(root);
+
+        secondaryStage.setScene(scene);
+        secondaryStage.show();
     }
+
 }
