@@ -36,14 +36,13 @@ public class GoogleTranslateController extends GoogleTranslate {
     private static String langFrom;
     private static String langTo;
 
+    @FXML
+    public void initialize() {
+            langFrom = "en";
+            langTo = "vi";
+    }
     public void translateFunction(KeyEvent event) {// Initialize the translation timeline
         // Reset the timeline on every key typed
-        if (langFrom == null) {
-            langFrom = "en";
-        }
-        if (langTo == null) {
-            langTo = "vi";
-        }
         translationTimeline.stop();
         // Start the timeline to wait for a pause
         translationTimeline.getKeyFrames().setAll(
