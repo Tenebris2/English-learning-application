@@ -15,4 +15,7 @@ module com.example.englishlearningappv1 {
     requires javafx.web;
     requires freetts;
     requires java.sql;
+    requires com.google.gson;
+    requires org.apache.httpcomponents.httpcore;
+    requires org.apache.httpcomponents.httpclient;
 }

@@ -18,7 +18,6 @@ public class Controller {
     private DeletingFunction deletingFunction;
     private AddingFunction addingFunction;
     private ChangingFunction changingFunction;
-    private GoogleSearchingFunction googleSearchingFunction;
     private User user;
     private VipFunction vipFunction;
 
@@ -31,7 +30,6 @@ public class Controller {
         deletingFunction = new DeletingFunction(scene);
         addingFunction = new AddingFunction(scene);
         changingFunction = new ChangingFunction(scene);
-        googleSearchingFunction = new GoogleSearchingFunction(scene);
         vipFunction = new VipFunction(scene);
         user = new User(scene);
     }
@@ -54,7 +52,6 @@ public class Controller {
         deletingFunction.setDeletingFunction(wordViewList, defView);
         addingFunction.setAddingBtn(wordViewList);
         changingFunction.setChangingBtn(wordViewList, defView);
-        googleSearchingFunction.setGoogleSearchBtn(defView, findField);
 //        vipFunction.setVipBtn();
     }
 

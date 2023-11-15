@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="485.0" prefWidth="764.0" style="-fx-background-color: #131f24; -fx-border-radius: 100px;" stylesheets="@../styles/GoogleTranslateStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.GoogleTranslateController">
+   <effect>
+      <DropShadow />
+   </effect>
+   <children>
+      <TextArea fx:id="translatingTextArea" layoutX="13.0" layoutY="80.0" onKeyTyped="#translateFunction" prefHeight="346.0" prefWidth="342.0" promptText="Enter text" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextArea>
+      <TextArea fx:id="translatedTextArea" layoutX="407.0" layoutY="80.0" prefHeight="346.0" prefWidth="342.0" promptText="Translation" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextArea>
+      <Label fx:id="translatingLabel" layoutX="16.0" layoutY="22.0" prefHeight="43.0" prefWidth="336.0" style="-fx-background-color: #424B4F; -fx-background-radius: 10px;" text="English" textFill="#bcbcbc">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="translatedLabel" layoutX="408.0" layoutY="22.0" prefHeight="43.0" prefWidth="342.0" style="-fx-background-color: #424B4F; -fx-background-radius: 10px;" text="Vietnamese" textFill="#bcbcbc">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </Label>
+      <ImageView fx:id="imageView" fitHeight="35.0" fitWidth="30.0" layoutX="367.0" layoutY="29.0" onMouseClicked="#changeTranslationDirection" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/sort.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

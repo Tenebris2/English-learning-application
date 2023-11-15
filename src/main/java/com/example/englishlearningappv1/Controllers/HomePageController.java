@@ -96,7 +96,7 @@ public class HomePageController {
         popupPane.setLayoutY(source.getLayoutY() + 135);
         double popupPanePrefHeight = 118;
         double popupPanePrefWidth = 207;
-        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.15), popupPane);
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.20), popupPane);
         popupPane.setOpacity(1);
         double move = 0;
         String id = source.getId();
@@ -112,7 +112,7 @@ public class HomePageController {
             move = -popupPane.getPrefHeight() * 0.5;
         }
         // Play the animation
-        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.15), popupPane);
+        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.20), popupPane);
         translateTransition.setToY(move); // Move the full height upwards
         // Create a ParallelTransition to play both animations in parallel
         ParallelTransition parallelTransition = new ParallelTransition(scaleTransition, translateTransition);

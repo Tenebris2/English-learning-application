@@ -34,7 +34,7 @@ public class SceneController {
     final private static String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
     private static final String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
     final private static String CHAPTER_START_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/MultipleChoiceGame.fxml";
-
+    final private static String GOOGLE_TRANSLATE_WINDOW_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/GoogleTranslatePage.fxml";
     final private static String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
     public void switchtoMPC(ActionEvent event) throws IOException {
         URL url = new File(MULTIPLE_CHOICE_FXML_FILE_PATH).toURI().toURL();
@@ -181,5 +181,14 @@ public class SceneController {
 
     public void gotoGameHub(ActionEvent event) throws IOException {
         switchToGameHub(event);
+    }
+
+    public void openGoogleTranslate(ActionEvent event) throws IOException {
+        URL url = new File(GOOGLE_TRANSLATE_WINDOW_FXML_FILE_PATH).toURI().toURL();
+        Parent root = FXMLLoader.load(url);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }
