@@ -6,13 +6,13 @@ import javafx.scene.control.ListView;
 public class WordViewList extends Root{
     private final String tag = "#wordView";
     private ListView<String> wordView;
-
     //Khởi tạo wordView để xem từ
+
     public WordViewList(Scene scene){
         wordView = (ListView<String>) scene.lookup(tag);
     }
-
     //load các từ lên
+
     public void loadWords() {
         wordView.getItems().clear();
         wordView.getItems().addAll(getWordList().keySet());

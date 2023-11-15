@@ -3,13 +3,18 @@ package com.example.englishlearningappv1.Controllers;
 import com.example.englishlearningappv1.DictionaryApp;
 import com.example.englishlearningappv1.WordleApplication;
 import com.example.englishlearningappv1.WordleController;
+import javafx.animation.FadeTransition;
+import javafx.animation.ParallelTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import org.controlsfx.control.action.Action;
 
 import java.io.File;
@@ -107,5 +112,74 @@ public class SceneController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void gotoHome(ActionEvent event) throws IOException {
+        switchToHomePage(event);
+    }
+
+    public void gotoDictionary(ActionEvent event) throws Exception {
+        switchtoDictionary(event);
+    }
+
+    public void inEffects1(MouseEvent event) {
+        String baseStyle = """
+                    -fx-border-radius: 100px;
+                    -fx-background-color: transparent;
+                """;
+        Button button = (Button) event.getSource();
+        button.setStyle(baseStyle
+                + "-fx-background-color: #0489B0;");
+    }
+
+    public void outEffects1(MouseEvent event) {
+        String baseStyle = """
+                    -fx-border-radius: 100px;
+                    -fx-background-color: transparent;
+                """;
+        Button button = (Button) event.getSource();
+        button.setStyle(baseStyle);
+    }
+
+    public void inEffects2(MouseEvent event) {
+        String baseStyle = """
+        -fx-background-color: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+        -fx-background-radius: 200px; /* Adjust the radius as needed */
+        -fx-border-radius: 5; /* Adjust the radius as needed */
+        -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+                """;
+        Button button = (Button) event.getSource();
+        button.setStyle(baseStyle);
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(150), button);
+        fadeTransition.setFromValue(1.0);
+        fadeTransition.setToValue(0.7);
+        fadeTransition.setCycleCount(0);
+        fadeTransition.setAutoReverse(true);
+        ParallelTransition parallelTransition = new ParallelTransition(fadeTransition);
+        parallelTransition.play();
+    }
+
+    public void outEffects2(MouseEvent event) {
+        String baseStyle = """
+        -fx-background-color: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+        -fx-background-radius: 200px; /* Adjust the radius as needed */
+        -fx-border-radius: 5; /* Adjust the radius as needed */
+        -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+                """;
+        Button button = (Button) event.getSource();
+        button.setStyle(baseStyle);
+        button.setStyle(baseStyle);
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(150), button);
+        fadeTransition.setFromValue(0.7);
+        fadeTransition.setToValue(1);
+        fadeTransition.setCycleCount(0);
+        fadeTransition.setAutoReverse(true);
+        fadeTransition.play();
+        ParallelTransition parallelTransition = new ParallelTransition(fadeTransition);
+        parallelTransition.play();
+    }
+
+    public void gotoGameHub(ActionEvent event) throws IOException {
+        switchToGameHub(event);
     }
 }
