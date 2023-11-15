@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.web.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
-<AnchorPane id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1082.0" style="-fx-background-color: linear-gradient(to top, #131f24, #1b2a34, #131f24); -fx-border-color: transparent; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.SceneController">
+<AnchorPane id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1082.0" style="-fx-background-color: linear-gradient(to top, #131f24, #1b2a34, #131f24); -fx-border-color: transparent; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.SceneController">
     <children>
         <HBox layoutX="217.0" layoutY="113.0" prefHeight="564.0" prefWidth="821.0" style="-fx-border-width: 3px;">
             <children>
@@ -36,7 +44,7 @@
                 <DropShadow />
             </effect>
         </TextField>
-        <Button fx:id="googleSearch" alignment="BOTTOM_LEFT" ellipsisString="" layoutX="941.0" layoutY="230.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="139.0" onAction="#openGoogleTranslate" style="-fx-background-radius: 100px;" text="GOOGLE SEARCH" textFill="WHITE">
+        <Button fx:id="googleSearch" alignment="BOTTOM_LEFT" ellipsisString="" layoutX="941.0" layoutY="230.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openGoogleTranslate" prefHeight="47.0" prefWidth="139.0" style="-fx-background-radius: 100px;" text="GOOGLE SEARCH" textFill="WHITE">
             <graphic>
                 <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                     <image>
