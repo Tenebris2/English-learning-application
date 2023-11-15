@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane fx:id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/HomePageStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.HomePageController">
+<BorderPane fx:id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/HomePageStyles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.HomePageController">
    <left>
       <AnchorPane fx:id="anchorPane1" prefHeight="730.0" prefWidth="200.0" style="-fx-background-color: #131f24;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="learnButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="119.0" mnemonicParsing="false" onAction="#gotoHome" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="LEARN" textFill="WHITE">
+            <Button fx:id="learnButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="119.0" mnemonicParsing="false" onAction="#gotoHome" prefHeight="58.0" prefWidth="181.0" style="-fx-background-color: #0489B0;" text="LEARN" textFill="WHITE">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="52.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
@@ -27,9 +24,9 @@
                <effect>
                   <DropShadow />
                </effect></Button>
-            <Button fx:id="dictionaryButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="186.0" mnemonicParsing="false" onAction="#gotoDictionary" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="DICTIONARY" textFill="WHITE">
+            <Button fx:id="dictionaryButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="185.0" mnemonicParsing="false" onAction="#gotoDictionary" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="DICTIONARY" textFill="WHITE">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
@@ -42,9 +39,9 @@
                   <DropShadow />
                </effect>
             </Button>
-            <Button fx:id="wordleButton1" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="244.0" mnemonicParsing="false" onAction="#gotoGameHub" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="GAME HUB" textFill="WHITE">
+            <Button fx:id="wordleButton1" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="251.0" mnemonicParsing="false" onAction="#gotoGameHub" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="GAME HUB" textFill="WHITE">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
@@ -82,7 +79,7 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@../styles/HomePageStyles.css" BorderPane.alignment="CENTER">
          <children>
             <Button layoutX="414.0" layoutY="169.0" mnemonicParsing="false" />
-            <Button fx:id="displayButton" alignment="CENTER" contentDisplay="CENTER" layoutX="157.0" layoutY="40.0" mnemonicParsing="false" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" prefHeight="70.0" prefWidth="542.0" style="-fx-background-radius: 200px;" text="BẮT ĐẦU" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="displayButton" alignment="CENTER" contentDisplay="CENTER" layoutX="157.0" layoutY="40.0" mnemonicParsing="false" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" prefHeight="70.0" prefWidth="542.0" style="-fx-background-radius: 200px;" text="START" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="32.0" />
                </font>
@@ -94,9 +91,9 @@
                   </Label>
                </graphic>
             </Button>
-            <Button fx:id="getHelloChapterButton" alignment="CENTER" contentDisplay="TOP" layoutX="146.0" layoutY="342.0" mnemonicParsing="false" onAction="#initLabel" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" prefHeight="67.0" prefWidth="154.0" style="-fx-background-radius: 200px;" text="XIN CHÀO" textFill="WHITE">
+            <Button fx:id="getHelloChapterButton" alignment="CENTER" contentDisplay="TOP" layoutX="146.0" layoutY="342.0" mnemonicParsing="false" onAction="#initLabel" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" prefHeight="67.0" prefWidth="154.0" style="-fx-background-radius: 200px;" text="HELLO" textFill="WHITE">
                <font>
-                  <Font size="14.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="289.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
@@ -106,9 +103,9 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="getSchoolChapterButton" alignment="CENTER" contentDisplay="TOP" layoutX="574.0" layoutY="342.0" mnemonicParsing="false" onAction="#initLabel" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" prefHeight="67.0" prefWidth="154.0" style="-fx-background-radius: 100px;" text="TRƯỜNG HỌC" textFill="WHITE">
+            <Button fx:id="getSchoolChapterButton" alignment="CENTER" contentDisplay="TOP" layoutX="574.0" layoutY="342.0" mnemonicParsing="false" onAction="#initLabel" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" prefHeight="67.0" prefWidth="154.0" style="-fx-background-radius: 100px;" text="SCHOOL" textFill="WHITE">
                <font>
-                  <Font size="14.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="86.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
@@ -118,7 +115,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="startChapterButton" alignment="CENTER" contentDisplay="TOP" layoutX="363.0" layoutY="182.0" mnemonicParsing="false" onAction="#initLabel" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" prefHeight="67.0" prefWidth="154.0" style="-fx-background-radius: 100px;" text="BẮT ĐẦU" textFill="WHITE">
+            <Button fx:id="startChapterButton" alignment="CENTER" contentDisplay="TOP" layoutX="363.0" layoutY="182.0" mnemonicParsing="false" onAction="#initLabel" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" prefHeight="67.0" prefWidth="154.0" style="-fx-background-radius: 100px;" text="START" textFill="WHITE">
                <graphic>
                   <ImageView fx:id="startButton" fitHeight="78.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -127,7 +124,7 @@
                   </ImageView>
                </graphic>
                <font>
-                  <Font size="14.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
             </Button>
             <AnchorPane fx:id="popupPane" layoutX="336.0" layoutY="316.0" opacity="0.0" prefHeight="118.0" prefWidth="207.0" style="-fx-background-radius: 10px; -fx-background-color: #44B6F1;">
