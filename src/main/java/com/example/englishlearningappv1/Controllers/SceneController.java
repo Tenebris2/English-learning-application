@@ -53,9 +53,6 @@ public class SceneController {
 
         stage.setScene(scene);
 
-        scene.setFill(Color.TRANSPARENT);
-        stage.initStyle(StageStyle.TRANSPARENT);
-
         stage.show();
     }
 
@@ -69,15 +66,12 @@ public class SceneController {
         // Set the new scene on the existing stage
         Scene scene = new Scene(root);
 
-        scene.setFill(Color.TRANSPARENT);
-
         stage.setScene(scene);
 
         stage.show();
 
-        stage.initStyle(StageStyle.TRANSPARENT);
-
         dictionaryApp = new DictionaryApp();
+
         dictionaryApp.start(stage);
 
 

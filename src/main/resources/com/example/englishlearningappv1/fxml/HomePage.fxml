@@ -11,7 +11,7 @@
 
 <BorderPane fx:id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-radius: 10px;" stylesheets="@../styles/HomePageStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.HomePageController">
    <left>
-      <AnchorPane fx:id="anchorPane1" prefHeight="730.0" prefWidth="200.0" style="-fx-background-color: #131f24; -fx-background-radius: 10px; -fx-border-color: none;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="anchorPane1" prefHeight="730.0" prefWidth="200.0" style="-fx-background-color: #131f24; -fx-border-color: none; -fx-background-radius: 10px;" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="learnButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="119.0" mnemonicParsing="false" onAction="#gotoHome" prefHeight="58.0" prefWidth="181.0" style="-fx-background-color: #0489B0;" text="LEARN" textFill="WHITE">
                <font>
@@ -79,7 +79,7 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane onMouseClicked="#handleClickMovement" prefHeight="200.0" prefWidth="200.0" stylesheets="@../styles/HomePageStyles.css" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@../styles/HomePageStyles.css" BorderPane.alignment="CENTER">
          <children>
             <Button layoutX="414.0" layoutY="169.0" mnemonicParsing="false" />
             <Button fx:id="displayButton" alignment="CENTER" contentDisplay="CENTER" layoutX="157.0" layoutY="40.0" mnemonicParsing="false" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" prefHeight="70.0" prefWidth="542.0" style="-fx-background-radius: 200px;" text="START" textAlignment="CENTER" textFill="WHITE">

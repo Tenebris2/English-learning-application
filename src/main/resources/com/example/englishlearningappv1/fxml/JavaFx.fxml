@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1082.0" style="-fx-background-color: linear-gradient(to top, #131f24, #1b2a34, #131f24); -fx-border-color: transparent; -fx-border-width: 5px; -fx-background-radius: 10px;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.HomePageController">
+<AnchorPane id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1082.0" style="-fx-background-color: linear-gradient(to top, #131f24, #1b2a34, #131f24); -fx-border-color: transparent; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.HomePageController">
     <children>
         <HBox layoutX="217.0" layoutY="113.0" prefHeight="564.0" prefWidth="821.0" style="-fx-border-width: 3px;">
             <children>
@@ -119,7 +119,7 @@
                 </ImageView>
             </graphic>
         </Button>
-        <AnchorPane fx:id="listOfButtons" prefHeight="720.0" prefWidth="200.0" style="-fx-background-color: #131f24; -fx-background-radius: 10px; -fx-border-color: none; -fx-border-width: 5px;" stylesheets="@../styles/HomePageStyles.css">
+        <AnchorPane fx:id="listOfButtons" prefHeight="720.0" prefWidth="200.0" style="-fx-background-color: #131f24; -fx-background-radius: 10px; -fx-border-color: none;" stylesheets="@../styles/HomePageStyles.css">
             <children>
                 <Button fx:id="learnButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="119.0" mnemonicParsing="false" onAction="#gotoHome" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="LEARN" textFill="WHITE">
                     <font>
