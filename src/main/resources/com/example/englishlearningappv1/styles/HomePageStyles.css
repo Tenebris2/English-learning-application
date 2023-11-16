@@ -31,7 +31,13 @@
 }
 
 .button:hover {
-
     -fx-background-color: #0489B0;
+}
+
+#closeButton {
+    -fx-border-radius: 0 0 0 25;
+}
+#listOfButtons {
+    -fx-background-radius: 10px;
 }
 

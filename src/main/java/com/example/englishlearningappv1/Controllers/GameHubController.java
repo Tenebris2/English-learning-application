@@ -25,7 +25,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Time;
 
-public class GameHubController extends HomePageController{
+public class GameHubController extends HomePageController {
 
     static final String quizImageURL = "src\\main\\resources\\com\\example\\englishlearningappv1\\image\\quiz-image.png";
     static final String wordleImageURL = "src\\main\\resources\\com\\example\\englishlearningappv1\\image\\wordle-image.png";

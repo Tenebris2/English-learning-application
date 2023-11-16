@@ -1,39 +1,38 @@
 package com.example.englishlearningappv1.Controllers;
 
+import com.example.englishlearningappv1.Utils.FunctionEffects;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Effect;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.sql.Time;
 
-public class HomePageController {
-    enum Buttons {
-        startChapterButton,
-        getHelloChapterButton,
-        getSchoolChapterButton
-    }
+public class HomePageController extends TitlebarController {
 
+    private final FunctionEffects functionEffects = new FunctionEffects();
     private boolean clicked;
-
     @FXML
     private Circle introductionChapterCircle;
-
-    private SceneController sceneController = new SceneController();
-
+    private final SceneController sceneController = new SceneController();
+    @FXML
+    private BorderPane homePage;
     @FXML
     private Button learnButton;
-
     @FXML
     private Button gamesButton;
 
@@ -64,6 +63,16 @@ public class HomePageController {
     @FXML
     private Label logoText;
 
+    private static final String firstBaseStyle =
+            "-fx-border-radius: 100px;\n" +
+            "-fx-background-color: transparent;";
+    private static final String secondBaseStyle = """
+        -fx-background-color: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+        -fx-background-radius: 200px; /* Adjust the radius as needed */
+        -fx-border-radius: 5; /* Adjust the radius as needed */
+        -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+                """;
+
     public void gotoHome(ActionEvent event) throws IOException {
         sceneController.switchToHomePage(event);
     }
@@ -86,6 +95,10 @@ public class HomePageController {
 
     public void gotoGameHub(ActionEvent event) throws IOException {
         sceneController.switchToGameHub(event);
+    }
+
+    public void openGoogleTranslate(ActionEvent event) throws IOException {
+        sceneController.openGoogleTranslate(event);
     }
 
     public void initLabel(ActionEvent event) {
@@ -129,59 +142,31 @@ public class HomePageController {
     }
 
     public void inEffects1(MouseEvent event) {
-        String baseStyle = """
-                    -fx-border-radius: 100px;
-                    -fx-background-color: transparent;
-                """;
         Button button = (Button) event.getSource();
-        button.setStyle(baseStyle
+        button.setStyle(firstBaseStyle
                 + "-fx-background-color: #0489B0;");
     }
 
     public void outEffects1(MouseEvent event) {
-        String baseStyle = """
-                    -fx-border-radius: 100px;
-                    -fx-background-color: transparent;
-                """;
         Button button = (Button) event.getSource();
-        button.setStyle(baseStyle);
+        button.setStyle(firstBaseStyle);
     }
 
     public void inEffects2(MouseEvent event) {
-        String baseStyle = """
-        -fx-background-color: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
-        -fx-background-radius: 200px; /* Adjust the radius as needed */
-        -fx-border-radius: 5; /* Adjust the radius as needed */
-        -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
-                """;
-        Button button = (Button) event.getSource();
-        button.setStyle(baseStyle);
-        FadeTransition fadeTransition = new FadeTransition(Duration.millis(150), button);
-        fadeTransition.setFromValue(1.0);
-        fadeTransition.setToValue(0.7);
-        fadeTransition.setCycleCount(0);
-        fadeTransition.setAutoReverse(true);
-        ParallelTransition parallelTransition = new ParallelTransition(fadeTransition);
-        parallelTransition.play();
+        functionEffects.inEffects2(event, secondBaseStyle);
     }
 
     public void outEffects2(MouseEvent event) {
-        String baseStyle = """
-        -fx-background-color: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
-        -fx-background-radius: 200px; /* Adjust the radius as needed */
-        -fx-border-radius: 5; /* Adjust the radius as needed */
-        -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
-                """;
-        Button button = (Button) event.getSource();
-        button.setStyle(baseStyle);
-        button.setStyle(baseStyle);
-        FadeTransition fadeTransition = new FadeTransition(Duration.millis(150), button);
-        fadeTransition.setFromValue(0.7);
-        fadeTransition.setToValue(1);
-        fadeTransition.setCycleCount(0);
-        fadeTransition.setAutoReverse(true);
-        fadeTransition.play();
-        ParallelTransition parallelTransition = new ParallelTransition(fadeTransition);
-        parallelTransition.play();
+        functionEffects.outEffects2(event, secondBaseStyle);
+    }
+
+    @FXML
+    public void handleClickMovement(MouseEvent mouseEvent) {
+        super.handleClickMovement(mouseEvent,homePage);
+    }
+
+    @FXML
+    public void handleMovementAction(MouseEvent mouseEvent) {
+        super.handleMovementAction(mouseEvent, homePage);
     }
 }

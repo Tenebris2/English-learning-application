@@ -38,6 +38,9 @@ public class Dictionary extends CRUDFunctions {
                 parts[1] = "<html>" + parts[1];
                 wordList.put(parts[0], new Word(parts[0], parts[1]));
             }
+
+            statement.close();
+            result.close();
     }
 
 

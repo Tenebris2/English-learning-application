@@ -6,6 +6,7 @@ import com.example.englishlearningappv1.WordleController;
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -13,7 +14,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import org.controlsfx.control.action.Action;
 
@@ -36,19 +39,10 @@ public class SceneController {
     final private static String CHAPTER_START_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/MultipleChoiceGame.fxml";
     final private static String GOOGLE_TRANSLATE_WINDOW_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/GoogleTranslatePage.fxml";
     final private static String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
-    public void switchtoMPC(ActionEvent event) throws IOException {
-        URL url = new File(MULTIPLE_CHOICE_FXML_FILE_PATH).toURI().toURL();
-        Parent root = FXMLLoader.load(url);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
 
-    }
-
-    public void switchtoDictionary(ActionEvent event) throws Exception {
+    public void switchScene(ActionEvent event, String filepath) throws IOException {
         // Load the FXML file
-        URL url = new File(DICTIONARY_FXML_FILE_PATH).toURI().toURL();
+        URL url = new File(filepath).toURI().toURL();
         Parent root = FXMLLoader.load(url);
 
         // Get the current stage
@@ -56,30 +50,28 @@ public class SceneController {
 
         // Set the new scene on the existing stage
         Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
 
+        stage.setScene(scene);
+
+        scene.setFill(Color.TRANSPARENT);
+        stage.initStyle(StageStyle.TRANSPARENT);
+
+        stage.show();
+    }
+
+    public void switchtoDictionary(ActionEvent event) throws Exception {
+        switchScene(event, DICTIONARY_FXML_FILE_PATH);
         dictionaryApp = new DictionaryApp();
         dictionaryApp.start(stage);
 
     }
 
     public void switchToHomePage(ActionEvent event) throws IOException {
-        URL url = new File(HOME_PAGE_FXML_FILE_PATH).toURI().toURL();
-        Parent root = FXMLLoader.load(url);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        switchScene(event, HOME_PAGE_FXML_FILE_PATH);
     }
 
     public void switchToChapterStart(ActionEvent event) throws IOException {
-        URL url = new File(CHAPTER_START_FXML_FILE_PATH).toURI().toURL();
-        Parent root = FXMLLoader.load(url);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        switchScene(event, CHAPTER_START_FXML_FILE_PATH);
     }
 
     public void switchtoWordle(ActionEvent event) throws IOException {
@@ -102,93 +94,35 @@ public class SceneController {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+
         stage.show();
     }
 
     public void switchToGameHub(ActionEvent event) throws IOException {
-        URL url = new File(GAME_HUB_FXML_FILE_PATH).toURI().toURL();
-        Parent root = FXMLLoader.load(url);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        switchScene(event, GAME_HUB_FXML_FILE_PATH);
     }
 
     public void gotoHome(ActionEvent event) throws IOException {
         switchToHomePage(event);
+        scene.setFill(Color.TRANSPARENT);
     }
 
     public void gotoDictionary(ActionEvent event) throws Exception {
         switchtoDictionary(event);
-    }
-
-    public void inEffects1(MouseEvent event) {
-        String baseStyle = """
-                    -fx-border-radius: 100px;
-                    -fx-background-color: transparent;
-                """;
-        Button button = (Button) event.getSource();
-        button.setStyle(baseStyle
-                + "-fx-background-color: #0489B0;");
-    }
-
-    public void outEffects1(MouseEvent event) {
-        String baseStyle = """
-                    -fx-border-radius: 100px;
-                    -fx-background-color: transparent;
-                """;
-        Button button = (Button) event.getSource();
-        button.setStyle(baseStyle);
-    }
-
-    public void inEffects2(MouseEvent event) {
-        String baseStyle = """
-        -fx-background-color: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
-        -fx-background-radius: 200px; /* Adjust the radius as needed */
-        -fx-border-radius: 5; /* Adjust the radius as needed */
-        -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
-                """;
-        Button button = (Button) event.getSource();
-        button.setStyle(baseStyle);
-        FadeTransition fadeTransition = new FadeTransition(Duration.millis(150), button);
-        fadeTransition.setFromValue(1.0);
-        fadeTransition.setToValue(0.7);
-        fadeTransition.setCycleCount(0);
-        fadeTransition.setAutoReverse(true);
-        ParallelTransition parallelTransition = new ParallelTransition(fadeTransition);
-        parallelTransition.play();
-    }
-
-    public void outEffects2(MouseEvent event) {
-        String baseStyle = """
-        -fx-background-color: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
-        -fx-background-radius: 200px; /* Adjust the radius as needed */
-        -fx-border-radius: 5; /* Adjust the radius as needed */
-        -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
-                """;
-        Button button = (Button) event.getSource();
-        button.setStyle(baseStyle);
-        button.setStyle(baseStyle);
-        FadeTransition fadeTransition = new FadeTransition(Duration.millis(150), button);
-        fadeTransition.setFromValue(0.7);
-        fadeTransition.setToValue(1);
-        fadeTransition.setCycleCount(0);
-        fadeTransition.setAutoReverse(true);
-        fadeTransition.play();
-        ParallelTransition parallelTransition = new ParallelTransition(fadeTransition);
-        parallelTransition.play();
+        scene.setFill(Color.TRANSPARENT);
     }
 
     public void gotoGameHub(ActionEvent event) throws IOException {
         switchToGameHub(event);
+        scene.setFill(Color.TRANSPARENT);
     }
 
     public void openGoogleTranslate(ActionEvent event) throws IOException {
         Stage secondaryStage = new Stage();
         URL url = new File(GOOGLE_TRANSLATE_WINDOW_FXML_FILE_PATH).toURI().toURL();
         Parent root = FXMLLoader.load(url);
-
         Scene scene = new Scene(root);
+        scene.setFill(Color.TRANSPARENT);
 
         secondaryStage.setScene(scene);
         secondaryStage.show();

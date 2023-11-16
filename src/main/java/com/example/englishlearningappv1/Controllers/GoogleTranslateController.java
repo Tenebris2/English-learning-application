@@ -1,12 +1,14 @@
 package com.example.englishlearningappv1.Controllers;
 
 import com.example.englishlearningappv1.GoogleTranslate;
+import com.example.englishlearningappv1.Utils.FunctionEffects;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.ParallelTransition;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -17,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 
 import java.sql.Time;
+import java.util.Objects;
 
 public class GoogleTranslateController extends GoogleTranslate {
     @FXML
@@ -46,7 +49,7 @@ public class GoogleTranslateController extends GoogleTranslate {
         translationTimeline.stop();
         // Start the timeline to wait for a pause
         translationTimeline.getKeyFrames().setAll(
-                new KeyFrame(Duration.seconds(0.5), e -> {
+                new KeyFrame(Duration.seconds(0.25), e -> {
                     // Perform translation logic here
                     translatedTextArea.setText(translate(translatingTextArea.getText(), langFrom, langTo));
                 })
@@ -54,34 +57,23 @@ public class GoogleTranslateController extends GoogleTranslate {
         translationTimeline.playFromStart();
     }
     public void inEffects2(MouseEvent event) {
-        FadeTransition fadeTransition = new FadeTransition(Duration.millis(150), imageView);
-        fadeTransition.setFromValue(1.0);
-        fadeTransition.setToValue(0.7);
-        fadeTransition.setCycleCount(0);
-        fadeTransition.setAutoReverse(true);
-        ParallelTransition parallelTransition = new ParallelTransition(fadeTransition);
-        parallelTransition.play();
+        FunctionEffects functionEffects = new FunctionEffects();
+        functionEffects.inEffects3(event);
     }
 
     public void outEffects2(MouseEvent event) {
-        FadeTransition fadeTransition = new FadeTransition(Duration.millis(150), imageView);
-        fadeTransition.setFromValue(0.7);
-        fadeTransition.setToValue(1);
-        fadeTransition.setCycleCount(0);
-        fadeTransition.setAutoReverse(true);
-        fadeTransition.play();
-        ParallelTransition parallelTransition = new ParallelTransition(fadeTransition);
-        parallelTransition.play();
+        FunctionEffects functionEffects = new FunctionEffects();
+        functionEffects.outEffects3(event);
     }
 
     public void changeTranslationDirection(MouseEvent event) {
 
-        if (langFrom == "en") {
+        if (Objects.equals(langFrom, "en")) {
             translatedLabel.setText("English");
         } else {
             translatedLabel.setText("Vietnamese");
         }
-        if (langTo == "vi") {
+        if (Objects.equals(langTo, "vi")) {
             translatingLabel.setText("Vietnamese");
         } else {
             translatingLabel.setText("English");

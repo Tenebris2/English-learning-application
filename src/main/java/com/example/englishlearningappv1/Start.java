@@ -10,7 +10,6 @@ public class Start {
         connectDB();
         HomePage.main(args);
 
-
     }
 }
 

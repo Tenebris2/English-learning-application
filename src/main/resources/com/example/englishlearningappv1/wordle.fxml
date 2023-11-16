@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="Infinity" maxWidth="Infinity" prefHeight="720" prefWidth="1080.0" styleClass="main-screen" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.WordleController">
+<AnchorPane maxHeight="Infinity" maxWidth="Infinity" prefHeight="720" prefWidth="1080.0" style="-fx-background-color: black;" styleClass="main-screen" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.WordleController">
 
     <stylesheets>
         <URL value="@wordle.css" />
