@@ -46,7 +46,7 @@ public class SceneController {
         Parent root = FXMLLoader.load(url);
 
         // Get the current stage
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         // Set the new scene on the existing stage
         Scene scene = new Scene(root);
@@ -60,9 +60,26 @@ public class SceneController {
     }
 
     public void switchtoDictionary(ActionEvent event) throws Exception {
-        switchScene(event, DICTIONARY_FXML_FILE_PATH);
+        URL url = new File(DICTIONARY_FXML_FILE_PATH).toURI().toURL();
+        Parent root = FXMLLoader.load(url);
+
+        // Get the current stage
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Set the new scene on the existing stage
+        Scene scene = new Scene(root);
+
+        scene.setFill(Color.TRANSPARENT);
+
+        stage.setScene(scene);
+
+        stage.show();
+
+        stage.initStyle(StageStyle.TRANSPARENT);
+
         dictionaryApp = new DictionaryApp();
         dictionaryApp.start(stage);
+
 
     }
 
