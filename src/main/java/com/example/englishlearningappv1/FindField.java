@@ -104,6 +104,9 @@ public class FindField extends Root {
             String searchingWord = result.getString("english");
             searchList.add(searchingWord);
         }
+
+        statement.close();
+        result.close();
     }
 
     //Load danh sách các từ cần tìm

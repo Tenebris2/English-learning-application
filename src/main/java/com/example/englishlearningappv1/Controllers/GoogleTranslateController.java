@@ -16,12 +16,15 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 import java.sql.Time;
 import java.util.Objects;
 
-public class GoogleTranslateController extends GoogleTranslate {
+import static com.example.englishlearningappv1.GoogleTranslate.translate;
+
+public class GoogleTranslateController extends HomePageController{
     @FXML
     private TextArea translatingTextArea;
     @FXML

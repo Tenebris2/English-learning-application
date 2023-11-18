@@ -1,5 +1,6 @@
 package com.example.englishlearningappv1.Controllers;
 
+import com.example.englishlearningappv1.Utils.BackgroundEffects;
 import com.example.englishlearningappv1.Utils.FunctionEffects;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
@@ -26,6 +27,8 @@ public class HomePageController extends TitlebarController {
 
     private final FunctionEffects functionEffects = new FunctionEffects();
     private boolean clicked;
+    @FXML
+    private AnchorPane mainPane;
     @FXML
     private Circle introductionChapterCircle;
     private final SceneController sceneController = new SceneController();
@@ -67,11 +70,16 @@ public class HomePageController extends TitlebarController {
             "-fx-border-radius: 100px;\n" +
             "-fx-background-color: transparent;";
     private static final String secondBaseStyle = """
-        -fx-background-color: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
-        -fx-background-radius: 200px; /* Adjust the radius as needed */
-        -fx-border-radius: 5; /* Adjust the radius as needed */
-        -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+    -fx-background-color: linear-gradient(to right top, #302b63, #351d44, #2c1429, #1d0c15, #000000);
+    -fx-background-radius: 100px; /* Adjust the radius as needed */
+    -fx-border-radius: 100px; /* Adjust the radius as needed */
+    -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
                 """;
+
+    public void initialize() {
+        BackgroundEffects backgroundEffects = new BackgroundEffects();
+        backgroundEffects.backgroundEffects(mainPane);
+    }
 
     public void gotoHome(ActionEvent event) throws IOException {
         sceneController.switchToHomePage(event);
@@ -144,7 +152,7 @@ public class HomePageController extends TitlebarController {
     public void inEffects1(MouseEvent event) {
         Button button = (Button) event.getSource();
         button.setStyle(firstBaseStyle
-                + "-fx-background-color: #0489B0;");
+                + "-fx-background-color: #948eaf;");
     }
 
     public void outEffects1(MouseEvent event) {

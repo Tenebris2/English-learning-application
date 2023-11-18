@@ -37,7 +37,7 @@ public class SceneController {
     final private static String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
     private static final String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
     final private static String CHAPTER_START_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/MultipleChoiceGame.fxml";
-    final private static String GOOGLE_TRANSLATE_WINDOW_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/GoogleTranslatePage.fxml";
+    final private static String GOOGLE_TRANSLATE_WINDOW_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/GoogleTranslate.fxml";
     final private static String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
 
     public void switchScene(ActionEvent event, String filepath) throws IOException {
@@ -115,28 +115,19 @@ public class SceneController {
 
     public void gotoHome(ActionEvent event) throws IOException {
         switchToHomePage(event);
-        scene.setFill(Color.TRANSPARENT);
     }
 
     public void gotoDictionary(ActionEvent event) throws Exception {
         switchtoDictionary(event);
-        scene.setFill(Color.TRANSPARENT);
     }
 
     public void gotoGameHub(ActionEvent event) throws IOException {
         switchToGameHub(event);
-        scene.setFill(Color.TRANSPARENT);
     }
 
     public void openGoogleTranslate(ActionEvent event) throws IOException {
-        Stage secondaryStage = new Stage();
-        URL url = new File(GOOGLE_TRANSLATE_WINDOW_FXML_FILE_PATH).toURI().toURL();
-        Parent root = FXMLLoader.load(url);
-        Scene scene = new Scene(root);
+        switchScene(event, GOOGLE_TRANSLATE_WINDOW_FXML_FILE_PATH);
         scene.setFill(Color.TRANSPARENT);
-
-        secondaryStage.setScene(scene);
-        secondaryStage.show();
     }
 
 }

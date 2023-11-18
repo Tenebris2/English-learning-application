@@ -24,8 +24,8 @@
     -fx-border-radius: 10px;
 }
 
-#translatedTextArea {
-    -fx-background-color: #424B4F;
+#translatedTextArea, #translatingLabel, #translatedLabel {
+    -fx-background-color: #130f1d;
     -fx-background-radius: 10px;
     -fx-text-fill: white;
 
@@ -43,5 +43,4 @@
 #translatedTextArea .scroll-pane .content{
     -fx-background-color: transparent;
     -fx-text-fill: white;
-
 }

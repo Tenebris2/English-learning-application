@@ -11,7 +11,7 @@
 
 <BorderPane fx:id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/HomePageStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.GameHubController">
     <left>
-        <AnchorPane fx:id="anchorPane1" prefHeight="730.0" prefWidth="200.0" style="-fx-background-color: #131F24; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-border-color: none;" stylesheets="@../styles/GameHubStyles.css" BorderPane.alignment="CENTER">
+        <AnchorPane fx:id="anchorPane1" prefHeight="730.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
                 <Button fx:id="learnButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="119.0" mnemonicParsing="false" onAction="#gotoHome" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="LEARN" textFill="WHITE">
                     <font>
@@ -42,7 +42,7 @@
                         <DropShadow />
                     </effect>
                 </Button>
-                <Button fx:id="wordleButton1" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="251.0" mnemonicParsing="false" onAction="#gotoGameHub" prefHeight="58.0" prefWidth="181.0" style="-fx-background-color: #0489B0;" text="GAME HUB" textFill="WHITE">
+                <Button fx:id="wordleButton1" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="251.0" mnemonicParsing="false" onAction="#gotoGameHub" prefHeight="58.0" prefWidth="181.0" style="-fx-background-color: #948eaf;" text="GAME HUB" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="17.0" />
                     </font>
@@ -79,7 +79,7 @@
         </AnchorPane>
     </left>
     <center>
-        <AnchorPane fx:id="pane1" prefHeight="720.0" prefWidth="859.0" style="-fx-background-color: blac;" stylesheets="@../styles/GameHubStyles.css" BorderPane.alignment="CENTER">
+        <AnchorPane fx:id="mainPane" prefHeight="720.0" prefWidth="859.0" stylesheets="@../styles/HomePageStyles.css" BorderPane.alignment="CENTER">
             <children>
                 <Button layoutX="414.0" layoutY="169.0" mnemonicParsing="false" />
                 <ImageView fx:id="imageView" fitHeight="515.0" fitWidth="708.0" layoutX="46.0" layoutY="62.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
@@ -87,7 +87,7 @@
                         <Image url="@image/quiz-image.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="gameButton1" layoutX="62.0" layoutY="619.0" mnemonicParsing="false" onAction="#clickOnGame1" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #026E90;" text="QUIZ TIME" textFill="WHITE" wrapText="true">
+                <Button fx:id="gameButton1" layoutX="62.0" layoutY="619.0" mnemonicParsing="false" onAction="#clickOnGame1" prefHeight="70.0" prefWidth="200.0" text="QUIZ TIME" textFill="WHITE" wrapText="true">
                     <graphic>
                         <ImageView fitHeight="53.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -109,7 +109,7 @@
                         <Font name="System Bold" size="19.0" />
                     </font>
                 </Label>
-                <Button fx:id="gameButton2" layoutX="274.0" layoutY="619.0" mnemonicParsing="false" onAction="#clickOnGame2" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #026E90;" text="WORDLE" textFill="WHITE" wrapText="true">
+                <Button fx:id="gameButton2" layoutX="274.0" layoutY="619.0" mnemonicParsing="false" onAction="#clickOnGame2" prefHeight="70.0" prefWidth="200.0" text="WORDLE" textFill="WHITE" wrapText="true">
                     <graphic>
                         <ImageView fitHeight="53.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
                             <image>
