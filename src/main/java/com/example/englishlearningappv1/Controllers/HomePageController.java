@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.Effect;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -19,6 +20,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.Time;
 
@@ -168,5 +170,11 @@ public class HomePageController extends TitlebarController {
     @FXML
     public void handleMovementAction(MouseEvent mouseEvent) {
         super.handleMovementAction(mouseEvent, homePage);
+    }
+
+    @FXML
+    public void goToQuiz(ActionEvent event) throws IOException {
+        SceneController sceneController = new SceneController();
+        sceneController.switchtoQuiz(event);
     }
 }
