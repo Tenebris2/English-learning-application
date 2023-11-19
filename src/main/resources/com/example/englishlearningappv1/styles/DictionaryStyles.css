@@ -1,20 +1,27 @@
 .list-view .list-cell:even {
     -fx-text-fill: white;
     -fx-background-color: transparent;
-    -fx-border-color:  #253239;
 
 }
 
 .list-view .list-cell:odd {
     -fx-text-fill: white;
     -fx-background-color: transparent;
-    -fx-border-color:  #253239;
 }
 
 .list-view .list-cell:odd:focus{
     -fx-background-color: white;
 }
+.list-view .scroll-bar:vertical .increment-arrow,
+.list-view .scroll-bar:vertical .decrement-arrow,
+.list-view .scroll-bar:vertical .increment-button,
+.list-view .scroll-bar:vertical .decrement-button {
+    -fx-padding: 0px;
+}
 
+.list-view .scroll-bar:vertical {
+    -fx-padding: 0px;
+}
 #listOfButtons {
     -fx-border-color:  #253239;
     -fx-border-width: 0 1px 0 0;
@@ -44,4 +51,8 @@
 
 .list-view {
     -fx-cursor: hand;
+}
+
+#change, #speak, #delete, #add {
+    -fx-background-color: #ffcbf2;
 }

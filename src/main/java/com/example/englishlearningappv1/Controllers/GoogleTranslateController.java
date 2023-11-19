@@ -1,6 +1,7 @@
 package com.example.englishlearningappv1.Controllers;
 
 import com.example.englishlearningappv1.GoogleTranslate;
+import com.example.englishlearningappv1.Utils.BackgroundEffects;
 import com.example.englishlearningappv1.Utils.FunctionEffects;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
@@ -38,6 +39,8 @@ public class GoogleTranslateController extends HomePageController{
     @FXML
     private ImageView imageView;
     private Timeline translationTimeline = new Timeline();
+    @FXML
+    private AnchorPane mainPane;
 
     private static String langFrom;
     private static String langTo;
@@ -46,6 +49,9 @@ public class GoogleTranslateController extends HomePageController{
     public void initialize() {
             langFrom = "en";
             langTo = "vi";
+            BackgroundEffects backgroundEffects = new BackgroundEffects();
+            backgroundEffects.backgroundEffects(mainPane, 100);
+            backgroundEffects.shootingStarsEffect(mainPane);
     }
     public void translateFunction(KeyEvent event) {// Initialize the translation timeline
         // Reset the timeline on every key typed

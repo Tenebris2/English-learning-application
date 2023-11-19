@@ -8,31 +8,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane id="AnchorPane" fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1082.0" style="-fx-background-color: radial-gradient(focus-angle 0deg, focus-distance 0%, center 50% 0%, radius 220%, #131f24 10%, #302b63 40%, #24243e 65%); -fx-border-color: transparent; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.HomePageController">
+<AnchorPane id="AnchorPane" fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1082.0" style="-fx-background-color: radial-gradient(focus-angle 0deg, focus-distance 0%, center 50% 0%, radius 220%, #131f24 10%, #302b63 40%, #24243e 65%); -fx-border-color: transparent; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.DictionaryController">
     <children>
-        <HBox layoutX="217.0" layoutY="113.0" prefHeight="564.0" prefWidth="821.0" style="-fx-border-width: 3px;">
-            <children>
-                <ListView fx:id="wordView" prefHeight="564.0" prefWidth="245.0" style="-fx-border-width: 5px; -fx-background-color: transaparent;" stylesheets="@../styles/DictionaryStyles.css" />
-                <Pane prefHeight="558.0" prefWidth="770.0" style="-fx-background-color: transaprent;">
-                    <children>
-                        <WebView fx:id="defView" prefHeight="564.0" prefWidth="571.0" style="visibility: 0.5;" stylesheets="@../styles/WebViewStyles.css">
-                            <effect>
-                                <DropShadow />
-                            </effect></WebView>
-                        <ListView fx:id="searchView" layoutX="21.0" layoutY="-43.0" prefHeight="553.0" prefWidth="529.0" stylesheets="@../styles/SearchViewStyles.css">
-                            <effect>
-                                <DropShadow />
-                            </effect>
-                        </ListView>
-                    </children>
-                </Pane>
-            </children>
-        </HBox>
         <TextField fx:id="textField" cache="true" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="364.0" layoutY="17.0" prefHeight="47.0" prefWidth="571.0" promptText="SEARCH..." scaleShape="false" style="-fx-background-color: transparent; -fx-font-size: 15;" stylesheets="@../styles/SearchViewStyles.css">
             <font>
                 <Font size="13.0" />
@@ -41,81 +21,6 @@
                 <DropShadow />
             </effect>
         </TextField>
-        <Button fx:id="googleSearch" alignment="BOTTOM_LEFT" ellipsisString="" layoutX="941.0" layoutY="230.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openGoogleTranslate" prefHeight="47.0" prefWidth="139.0" style="-fx-background-radius: 100px;" text="GOOGLE SEARCH" textFill="WHITE">
-            <graphic>
-                <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@image/searchGoogle.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-            <font>
-                <Font name="System Bold" size="19.0" />
-            </font>
-            <effect>
-                <DropShadow />
-            </effect>
-        </Button>
-        <Button fx:id="add" alignment="BOTTOM_LEFT" layoutX="941.0" layoutY="120.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="139.0" style="-fx-background-radius: 100px;" text="ADD" textFill="WHITE">
-            <graphic>
-                <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@image/add.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-            <font>
-                <Font name="System Bold" size="19.0" />
-            </font>
-            <effect>
-                <DropShadow />
-            </effect>
-        </Button>
-        <Button fx:id="find" alignment="BOTTOM_LEFT" ellipsisString="" layoutX="941.0" layoutY="175.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="139.0" style="-fx-background-radius: 100px;" text="SEARCH" textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="19.0" />
-            </font>
-            <graphic>
-                <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@image/search.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-            <effect>
-                <DropShadow />
-            </effect>
-        </Button>
-        <Button fx:id="change" layoutX="850.0" layoutY="120.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="33.0">
-            <graphic>
-                <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../image/change.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-        </Button>
-        <Button fx:id="delete" layoutX="895.0" layoutY="120.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="33.0">
-            <graphic>
-                <ImageView fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../image/delete.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-        </Button>
-        <Button fx:id="speak" cacheShape="false" ellipsisString="" layoutX="805.0" layoutY="120.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="33.0">
-            <font>
-                <Font size="18.0" />
-            </font>
-            <graphic>
-                <ImageView fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../image/speaker.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-        </Button>
         <AnchorPane fx:id="anchorPane1" prefHeight="720.0" prefWidth="200.0" stylesheets="@../styles/HomePageStyles.css">
             <children>
                 <Button fx:id="learnButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="119.0" mnemonicParsing="false" onAction="#gotoHome" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="LEARN" textFill="WHITE">
@@ -132,7 +37,7 @@
                     <effect>
                         <DropShadow />
                     </effect></Button>
-                <Button fx:id="dictionaryButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="185.0" mnemonicParsing="false" onAction="#gotoDictionary" prefHeight="58.0" prefWidth="181.0" style="-fx-background-color: #948eaf;" text="DICTIONARY" textFill="WHITE">
+                <Button fx:id="dictionaryButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="185.0" mnemonicParsing="false" onAction="#gotoDictionary" prefHeight="58.0" prefWidth="181.0" style="-fx-background-color: linear-gradient(to right top, #ffcbf2, #ec38bc, #7303c0, #03001e);" text="DICTIONARY" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="17.0" />
                     </font>
@@ -177,19 +82,26 @@
                         <DropShadow />
                     </effect>
                 </Label>
+            <Button fx:id="googleSearch" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="319.0" mnemonicParsing="false" onAction="#openGoogleTranslate" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="GOOGLE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/ggtranss.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
             </children>
             <effect>
                 <DropShadow />
             </effect>
         </AnchorPane>
-        <ImageView fitHeight="47.0" fitWidth="47.0" layoutX="310.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@image/searchWord.png" />
-            </image>
-            <effect>
-                <DropShadow />
-            </effect>
-        </ImageView>
       <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="1047.0" layoutY="17.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/icons8-close-50.png" />
@@ -200,6 +112,73 @@
             <Image url="@image/icons8-minimize-50.png" />
          </image>
       </ImageView>
+      <AnchorPane layoutX="234.0" layoutY="120.0" prefHeight="483.0" prefWidth="829.0" stylesheets="@../styles/DictionaryStyles.css">
+         <children>
+                <ListView fx:id="wordView" prefHeight="564.0" prefWidth="302.0" style="-fx-border-width: 5px; -fx-background-color: transaparent;" stylesheets="@../styles/DictionaryStyles.css" />
+                  <ListView fx:id="searchView" layoutX="108.0" layoutY="-43.0" prefHeight="286.0" prefWidth="529.0" stylesheets="@../styles/SearchViewStyles.css">
+                      <effect>
+                          <DropShadow />
+                      </effect>
+                  </ListView>
+                  <WebView fx:id="defView" layoutX="300.0" prefHeight="523.0" prefWidth="530.0" style="-fx-opacity: 0.8;" stylesheets="@../styles/WebViewStyles.css">
+                      <effect>
+                          <DropShadow />
+                      </effect>
+            </WebView>
+              <Button fx:id="change" layoutX="344.0" layoutY="532.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#fixButtonInEffects" onMouseExited="#fixButtonOutEffects" prefHeight="33.0" prefWidth="33.0">
+                  <graphic>
+                      <ImageView fx:id="fix" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icons8-fix-unscreen(1).png" />
+                     </image>
+                      </ImageView>
+                  </graphic>
+              </Button>
+              <Button fx:id="delete" layoutX="385.0" layoutY="532.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="33.0">
+                  <graphic>
+                      <ImageView fx:id="delete" fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../image/delete.png" />
+                          </image>
+                      </ImageView>
+                  </graphic>
+              </Button>
+              <Button fx:id="speak" cacheShape="false" ellipsisString="" layoutX="302.0" layoutY="532.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#speakButtonInEffects" onMouseExited="#speakButtonOutEffects" prefHeight="33.0" prefWidth="33.0">
+                  <font>
+                      <Font size="18.0" />
+                  </font>
+                  <graphic>
+                      <ImageView fitHeight="22.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@image/icons8-voice-unscreen.png" />
+                          </image>
+                      </ImageView>
+                  </graphic>
+              </Button>
+            <Button fx:id="add" layoutX="426.0" layoutY="532.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="33.0">
+               <graphic>
+                  <ImageView fx:id="add" fitHeight="25.0" fitWidth="24.0" onMouseEntered="#addButtonInEffects" onMouseExited="#addButtonOutEffects" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icons8-add-to-favorites-unscreen.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+        <Button fx:id="find" alignment="BOTTOM_LEFT" ellipsisString="" layoutX="305.0" layoutY="17.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-radius: 100px;" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="19.0" />
+            </font>
+            <effect>
+                <DropShadow />
+            </effect>
+        </Button>
+          <ImageView fitHeight="46.0" fitWidth="58.0" layoutX="306.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                  <Image url="@image/searchWord.png" />
+              </image>
+          </ImageView>
     </children>
     <effect>
         <DropShadow />

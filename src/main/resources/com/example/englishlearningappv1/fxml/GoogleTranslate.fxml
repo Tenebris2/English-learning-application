@@ -15,7 +15,7 @@
     <left>
         <AnchorPane fx:id="anchorPane1" prefHeight="730.0" prefWidth="200.0" style="-fx-border-color: none; -fx-background-radius: 10px;" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="learnButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="119.0" mnemonicParsing="false" onAction="#gotoHome" prefHeight="58.0" prefWidth="181.0" style="-fx-background-color: #0489B0;" text="LEARN" textFill="WHITE">
+                <Button fx:id="learnButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="119.0" mnemonicParsing="false" onAction="#gotoHome" prefHeight="58.0" prefWidth="181.0" text="LEARN" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="17.0" />
                     </font>
@@ -74,6 +74,21 @@
                         <DropShadow />
                     </effect>
                 </Label>
+            <Button fx:id="googleSearch" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="309.0" mnemonicParsing="false" onAction="#openGoogleTranslate" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" style="-fx-background-color: linear-gradient(to right top, #ffcbf2, #ec38bc, #7303c0, #03001e);" text="GOOGLE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/ggtranss.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
             </children>
             <effect>
                 <DropShadow />
@@ -82,7 +97,7 @@
     </left>
     <center>
         <AnchorPane fx:id="mainPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../styles/HomePageStyles.css" BorderPane.alignment="CENTER">
-            <AnchorPane layoutX="24.0" layoutY="54.0" prefHeight="637.0" prefWidth="831.0" style="-fx-border-radius: 100px; -fx-background-radius: 10px;" stylesheets="@../styles/GoogleTranslateStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+            <AnchorPane layoutX="24.0" layoutY="54.0" prefHeight="637.0" prefWidth="831.0" style="-fx-border-radius: 100px; -fx-background-radius: 10px; -fx-background-color: transparent;" stylesheets="@../styles/GoogleTranslateStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
                 <effect>
                     <DropShadow />
                 </effect>

@@ -67,20 +67,22 @@ public class HomePageController extends TitlebarController {
 
     @FXML
     private Label logoText;
-
+    @FXML
     private static final String firstBaseStyle =
             "-fx-border-radius: 100px;\n" +
             "-fx-background-color: transparent;";
     private static final String secondBaseStyle = """
-    -fx-background-color: linear-gradient(to right top, #302b63, #351d44, #2c1429, #1d0c15, #000000);
-    -fx-background-radius: 100px; /* Adjust the radius as needed */
-    -fx-border-radius: 100px; /* Adjust the radius as needed */
-    -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
-                """;
+                    -fx-background-color: linear-gradient(to right top, #ffcbf2, #ec38bc, #7303c0, #03001e);
+                                                                              -fx-background-radius: 100px; /* Adjust the radius as needed */
+            -fx-border-radius: 100px; /* Adjust the radius as needed */
+            -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+                        """;
 
     public void initialize() {
         BackgroundEffects backgroundEffects = new BackgroundEffects();
-        backgroundEffects.backgroundEffects(mainPane);
+        backgroundEffects.backgroundEffects(mainPane, 100);
+        backgroundEffects.shootingStarsEffect(mainPane);
+
     }
 
     public void gotoHome(ActionEvent event) throws IOException {
@@ -154,7 +156,7 @@ public class HomePageController extends TitlebarController {
     public void inEffects1(MouseEvent event) {
         Button button = (Button) event.getSource();
         button.setStyle(firstBaseStyle
-                + "-fx-background-color: #948eaf;");
+                + "-fx-background-color: linear-gradient(to right top, #ffcbf2, #ec38bc, #7303c0, #03001e)");
     }
 
     public void outEffects1(MouseEvent event) {
@@ -185,4 +187,5 @@ public class HomePageController extends TitlebarController {
         SceneController sceneController = new SceneController();
         sceneController.switchtoQuiz(event);
     }
+
 }

@@ -10,4 +10,6 @@ public interface Effects {
     public void outEffects3(MouseEvent keyEvent);
     public void inEffects2(MouseEvent event, String baseStyle);
     public void outEffects2(MouseEvent event, String baseStyle);
+
+
 }
