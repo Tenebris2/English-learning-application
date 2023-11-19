@@ -15,22 +15,22 @@
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <Button fx:id="opt1" layoutX="26.8" layoutY="456.7" mnemonicParsing="false" onAction="#opt1clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button fx:id="opt1" layoutX="26.8" layoutY="456.7" mnemonicParsing="false" onAction="#opt1clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px; -fx-cursor: hand;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Button>
-      <Button id="opt2" fx:id="opt2" layoutX="290.1" layoutY="456.7" mnemonicParsing="false" onAction="#opt2clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button id="opt2" fx:id="opt2" layoutX="290.1" layoutY="456.7" mnemonicParsing="false" onAction="#opt2clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px; -fx-cursor: hand;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Button>
-      <Button id="opt3" fx:id="opt3" layoutX="553.4" layoutY="456.7" mnemonicParsing="false" onAction="#opt3clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button id="opt3" fx:id="opt3" layoutX="553.4" layoutY="456.7" mnemonicParsing="false" onAction="#opt3clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px; -fx-cursor: hand;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Button>
-      <Button id="opt4" fx:id="opt4" layoutX="816.7" layoutY="456.7" mnemonicParsing="false" onAction="#opt4clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button id="opt4" fx:id="opt4" layoutX="816.7" layoutY="456.7" mnemonicParsing="false" onAction="#opt4clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px; -fx-cursor: hand;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>

@@ -1,5 +1,6 @@
 package com.example.englishlearningappv1;
 
+import com.example.englishlearningappv1.Utils.GameBackgroundEffects;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -41,6 +43,8 @@ public class WordleController {
     public GridPane keyboardRow2;
     @FXML
     public GridPane keyboardRow3;
+    @FXML
+    private AnchorPane mainPane;
 
     public void createUI() {
         createGrid();
@@ -73,6 +77,9 @@ public class WordleController {
     }
 
     public void initializeWordLists() {
+        GameBackgroundEffects gameBackgroundEffects = new GameBackgroundEffects();
+        gameBackgroundEffects.backgroundEffects(mainPane, 500);
+        gameBackgroundEffects.shootingStarsEffect(mainPane);
         InputStream winning_words = getClass().getResourceAsStream("winning-words.txt");
         InputStream dictionary = getClass().getResourceAsStream("dictionary.txt");
 

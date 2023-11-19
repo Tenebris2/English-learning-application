@@ -11,12 +11,12 @@
             <Font name="System Bold" size="73.0" />
          </font>
       </Label>
-      <Button fx:id="playquizbtn" layoutX="388.0" layoutY="425.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="304.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 32px;; -fx-border-radius: 32px;" text="Play" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button fx:id="playquizbtn" layoutX="388.0" layoutY="425.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="304.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 32px; -fx-border-radius: 32px; -fx-cursor: hand;" text="Play" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Button>
-      <Button fx:id="quitquizbtn" layoutX="388.0" layoutY="515.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="304.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 32px;; -fx-border-radius: 32px;" text="Quit" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button fx:id="quitquizbtn" layoutX="388.0" layoutY="515.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="304.0" style="-fx-background-color: dodgerblue; -fx-background-radius: 32px; -fx-border-radius: 32px; -fx-cursor: hand;" text="Quit" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
