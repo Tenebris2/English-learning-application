@@ -82,7 +82,7 @@
                         <DropShadow />
                     </effect>
                 </Label>
-            <Button fx:id="googleSearch" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="319.0" mnemonicParsing="false" onAction="#openGoogleTranslate" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="GOOGLE" textFill="WHITE">
+            <Button fx:id="googleSearch" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="317.0" mnemonicParsing="false" onAction="#openGoogleTranslate" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="GOOGLE" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>

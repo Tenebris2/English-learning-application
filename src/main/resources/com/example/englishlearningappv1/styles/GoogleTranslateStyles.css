@@ -24,7 +24,7 @@
     -fx-border-radius: 10px;
 }
 
-#translatedTextArea, #translatingLabel, #translatedLabel {
+#translatedTextArea, #translatingLabel, #translatedLabel, #translatingTextArea {
     -fx-background-color: #302b63;
     -fx-background-radius: 10px;
     -fx-text-fill: white;
