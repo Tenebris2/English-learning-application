@@ -1,5 +1,7 @@
 package com.example.englishlearningappv1;
 
+import com.example.englishlearningappv1.Utils.BackgroundEffects;
+import com.example.englishlearningappv1.Utils.GameBackgroundEffects;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.animation.KeyFrame;
@@ -74,9 +77,15 @@ QuizController {
     public Button opt1, opt2, opt3, opt4;
 
     @FXML
+    private AnchorPane mainPane;
+
+    @FXML
     private void initialize() {
         loadQuestions();
         timeline.play();
+        GameBackgroundEffects gameBackgroundEffects = new GameBackgroundEffects();
+        gameBackgroundEffects.backgroundEffects(mainPane, 500);
+        gameBackgroundEffects.shootingStarsEffect(mainPane);
     }
 
     public void playAgain() {
@@ -130,6 +139,10 @@ QuizController {
             timeline.play();
 
             question.setText(questions[index]);
+            opt1.setVisible(true);
+            opt2.setVisible(true);
+            opt3.setVisible(true);
+            opt4.setVisible(true);
             opt1.setText(options[index][0]);
             opt2.setText(options[index][1]);
             opt3.setText(options[index][2]);
@@ -197,34 +210,25 @@ QuizController {
             if (c.equals('B')) {
                 opt2.getStyleClass().clear();
                 opt2.getStyleClass().setAll("wrong-answer");
-                opt3.getStyleClass().clear();
-                opt3.getStyleClass().setAll("null");
-                opt4.getStyleClass().clear();
-                opt4.getStyleClass().setAll("null");
+                opt3.setVisible(false);
+                opt4.setVisible(false);
             } else if (c.equals('C')) {
-                opt2.getStyleClass().clear();
-                opt2.getStyleClass().setAll("null");
                 opt3.getStyleClass().clear();
                 opt3.getStyleClass().setAll("wrong-answer");
-                opt4.getStyleClass().clear();
-                opt4.getStyleClass().setAll("null");
+                opt2.setVisible(false);
+                opt4.setVisible(false);
             } else if (c.equals('D')) {
-                opt2.getStyleClass().clear();
-                opt2.getStyleClass().setAll("null");
-                opt3.getStyleClass().clear();
-                opt3.getStyleClass().setAll("null");
+                opt2.setVisible(false);
+                opt3.setVisible(false);
                 opt4.getStyleClass().clear();
                 opt4.getStyleClass().setAll("wrong-answer");
             } else {
                 correct++;
                 opt1.getStyleClass().clear();
                 opt1.getStyleClass().setAll("correct-answer-pick");
-                opt2.getStyleClass().clear();
-                opt2.getStyleClass().setAll("null");
-                opt3.getStyleClass().clear();
-                opt3.getStyleClass().setAll("null");
-                opt4.getStyleClass().clear();
-                opt4.getStyleClass().setAll("null");
+                opt2.setVisible(false);
+                opt3.setVisible(false);
+                opt4.setVisible(false);
             }
         } else if (answers[index] == 'B') {
             opt2.getStyleClass().clear();
@@ -232,34 +236,25 @@ QuizController {
             if (c.equals('A')) {
                 opt1.getStyleClass().clear();
                 opt1.getStyleClass().setAll("wrong-answer");
-                opt3.getStyleClass().clear();
-                opt3.getStyleClass().setAll("null");
-                opt4.getStyleClass().clear();
-                opt4.getStyleClass().setAll("null");
+                opt3.setVisible(false);
+                opt4.setVisible(false);
             } else if (c.equals('C')) {
-                opt1.getStyleClass().clear();
-                opt1.getStyleClass().setAll("null");
                 opt3.getStyleClass().clear();
                 opt3.getStyleClass().setAll("wrong-answer");
-                opt4.getStyleClass().clear();
-                opt4.getStyleClass().setAll("null");
+                opt1.setVisible(false);
+                opt4.setVisible(false);
             } else if (c.equals('D')) {
-                opt1.getStyleClass().clear();
-                opt1.getStyleClass().setAll("null");
-                opt3.getStyleClass().clear();
-                opt3.getStyleClass().setAll("null");
+                opt1.setVisible(false);
+                opt3.setVisible(false);
                 opt4.getStyleClass().clear();
                 opt4.getStyleClass().setAll("wrong-answer");
             } else {
                 correct++;
-                opt1.getStyleClass().clear();
-                opt1.getStyleClass().setAll("null");
                 opt2.getStyleClass().clear();
                 opt2.getStyleClass().setAll("correct-answer-pick");
-                opt3.getStyleClass().clear();
-                opt3.getStyleClass().setAll("null");
-                opt4.getStyleClass().clear();
-                opt4.getStyleClass().setAll("null");
+                opt1.setVisible(false);
+                opt3.setVisible(false);
+                opt4.setVisible(false);
             }
         } else if (answers[index] == 'C') {
             opt3.getStyleClass().clear();
@@ -267,34 +262,25 @@ QuizController {
             if (c.equals('A')) {
                 opt1.getStyleClass().clear();
                 opt1.getStyleClass().setAll("wrong-answer");
-                opt2.getStyleClass().clear();
-                opt2.getStyleClass().setAll("null");
-                opt4.getStyleClass().clear();
-                opt4.getStyleClass().setAll("null");
+                opt2.setVisible(false);
+                opt4.setVisible(false);
             } else if (c.equals('B')) {
-                opt1.getStyleClass().clear();
-                opt1.getStyleClass().setAll("null");
                 opt2.getStyleClass().clear();
                 opt2.getStyleClass().setAll("wrong-answer");
-                opt4.getStyleClass().clear();
-                opt4.getStyleClass().setAll("null");
+                opt1.setVisible(false);
+                opt4.setVisible(false);
             } else if (c.equals('D')) {
-                opt1.getStyleClass().clear();
-                opt1.getStyleClass().setAll("null");
-                opt2.getStyleClass().clear();
-                opt2.getStyleClass().setAll("null");
+                opt1.setVisible(false);
+                opt2.setVisible(false);
                 opt4.getStyleClass().clear();
                 opt4.getStyleClass().setAll("wrong-answer");
             } else {
                 correct++;
-                opt1.getStyleClass().clear();
-                opt1.getStyleClass().setAll("null");
-                opt2.getStyleClass().clear();
-                opt2.getStyleClass().setAll("null");
                 opt3.getStyleClass().clear();
                 opt3.getStyleClass().setAll("correct-answer-pick");
-                opt4.getStyleClass().clear();
-                opt4.getStyleClass().setAll("null");
+                opt1.setVisible(false);
+                opt2.setVisible(false);
+                opt4.setVisible(false);
             }
         } else if (answers[index] == 'D') {
             opt4.getStyleClass().clear();
@@ -302,32 +288,23 @@ QuizController {
             if (c.equals('A')) {
                 opt1.getStyleClass().clear();
                 opt1.getStyleClass().setAll("wrong-answer");
-                opt2.getStyleClass().clear();
-                opt2.getStyleClass().setAll("null");
-                opt3.getStyleClass().clear();
-                opt3.getStyleClass().setAll("null");
+                opt2.setVisible(false);
+                opt3.setVisible(false);
             } else if (c.equals('B')) {
-                opt1.getStyleClass().clear();
-                opt1.getStyleClass().setAll("null");
                 opt2.getStyleClass().clear();
                 opt2.getStyleClass().setAll("wrong-answer");
-                opt3.getStyleClass().clear();
-                opt3.getStyleClass().setAll("null");
+                opt1.setVisible(false);
+                opt3.setVisible(false);
             } else if (c.equals('C')) {
-                opt1.getStyleClass().clear();
-                opt1.getStyleClass().setAll("null");
-                opt2.getStyleClass().clear();
-                opt2.getStyleClass().setAll("null");
+                opt1.setVisible(false);
+                opt2.setVisible(false);
                 opt3.getStyleClass().clear();
                 opt3.getStyleClass().setAll("wrong-answer");
             } else {
                 correct++;
-                opt1.getStyleClass().clear();
-                opt1.getStyleClass().setAll("null");
-                opt2.getStyleClass().clear();
-                opt2.getStyleClass().setAll("null");
-                opt3.getStyleClass().clear();
-                opt3.getStyleClass().setAll("null");
+                opt1.setVisible(false);
+                opt2.setVisible(false);
+                opt3.setVisible(false);
                 opt4.getStyleClass().clear();
                 opt4.getStyleClass().setAll("correct-answer-pick");
             }

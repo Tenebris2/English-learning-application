@@ -15,12 +15,12 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.util.Duration;
 
-public class BackgroundEffects implements Effects {
+public class GameBackgroundEffects implements Effects {
     private static final int numberOfShootingStars = 100;
-    static final double minDistance = 2;
+    private static final double minDistance = 2;
 
     private static final int heightOfMainPane = 720;
-    private static final int widthOfMainPane = 880;
+    private static final int widthOfMainPane = 1080;
     @Override
     public void inEffects1(MouseEvent keyEvent, String baseStyle) {
     }
