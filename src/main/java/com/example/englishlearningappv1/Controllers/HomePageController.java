@@ -80,9 +80,8 @@ public class HomePageController extends TitlebarController {
 
     public void initialize() {
         BackgroundEffects backgroundEffects = new BackgroundEffects();
-        backgroundEffects.backgroundEffects(mainPane, 100);
+        backgroundEffects.backgroundEffects(mainPane, 500);
         backgroundEffects.shootingStarsEffect(mainPane);
-
     }
 
     public void gotoHome(ActionEvent event) throws IOException {

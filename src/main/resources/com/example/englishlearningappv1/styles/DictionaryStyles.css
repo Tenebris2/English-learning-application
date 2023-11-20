@@ -56,3 +56,7 @@
 #change, #speak, #delete, #add {
     -fx-background-color: #ffcbf2;
 }
+
+.button:hover {
+    -fx-cursor: hand;
+}

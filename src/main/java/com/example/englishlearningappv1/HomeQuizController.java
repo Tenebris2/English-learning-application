@@ -1,5 +1,7 @@
 package com.example.englishlearningappv1;
 
+import com.example.englishlearningappv1.Utils.BackgroundEffects;
+import com.example.englishlearningappv1.Utils.GameBackgroundEffects;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -8,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -20,6 +23,8 @@ public class HomeQuizController {
 
     @FXML
     private Button quitquizbtn;
+    @FXML
+    private AnchorPane mainPane;
 
     private Stage stage;
 
@@ -31,6 +36,9 @@ public class HomeQuizController {
     @FXML
     private void initialize() {
 
+        GameBackgroundEffects gameBackgroundEffects = new GameBackgroundEffects();
+        gameBackgroundEffects.backgroundEffects(mainPane, 500);
+        gameBackgroundEffects.shootingStarsEffect(mainPane);
         playquizbtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {

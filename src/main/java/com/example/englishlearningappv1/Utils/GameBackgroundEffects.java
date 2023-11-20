@@ -15,12 +15,12 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.util.Duration;
 
-public class BackgroundEffects implements Effects {
+public class GameBackgroundEffects implements Effects {
     private static final int numberOfShootingStars = 100;
-    static final double minDistance = 2;
+    private static final double minDistance = 2;
 
     private static final int heightOfMainPane = 720;
-    private static final int widthOfMainPane = 880;
+    private static final int widthOfMainPane = 1080;
     @Override
     public void inEffects1(MouseEvent keyEvent, String baseStyle) {
     }
@@ -65,7 +65,7 @@ public class BackgroundEffects implements Effects {
 
                 FadeTransition fadeTransition = new FadeTransition(Duration.seconds(2), star);
                 fadeTransition.setFromValue(randomOpacity);
-                fadeTransition.setToValue(0.3);
+                fadeTransition.setToValue(0.1);
                 fadeTransition.setCycleCount(FadeTransition.INDEFINITE);
                 fadeTransition.setAutoReverse(true);
                 fadeTransition.play();
@@ -99,11 +99,11 @@ public class BackgroundEffects implements Effects {
                 pathTransition.setPath(path);
                 pathTransition.setInterpolator(javafx.animation.Interpolator.EASE_OUT);
                 pathTransition.setCycleCount(PathTransition.INDEFINITE);
-                pathTransition.setDuration(Duration.seconds(10));
+                pathTransition.setDuration(Duration.seconds(7));
 
                 FadeTransition fadeTransition = new FadeTransition(Duration.seconds(3), star);
                 fadeTransition.setFromValue(randomOpacity);
-                fadeTransition.setToValue(0.4);
+                fadeTransition.setToValue(0.3);
                 fadeTransition.setCycleCount(FadeTransition.INDEFINITE);
                 fadeTransition.setAutoReverse(true);
 

@@ -52,7 +52,7 @@ public class GoogleTranslateController extends HomePageController{
             langFrom = "en";
             langTo = "vi";
             BackgroundEffects backgroundEffects = new BackgroundEffects();
-            backgroundEffects.backgroundEffects(mainPane, 100);
+            backgroundEffects.backgroundEffects(mainPane, 500);
             backgroundEffects.shootingStarsEffect(mainPane);
     }
     public void translateFunction(KeyEvent event) {// Initialize the translation timeline
@@ -67,6 +67,7 @@ public class GoogleTranslateController extends HomePageController{
         );
         translationTimeline.playFromStart();
     }
+
     public void inEffects2(MouseEvent event) {
         FunctionEffects functionEffects = new FunctionEffects();
         functionEffects.inEffects3(event);
