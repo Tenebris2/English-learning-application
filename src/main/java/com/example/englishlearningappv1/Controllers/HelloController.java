@@ -1,4 +1,4 @@
-package com.example.englishlearningappv1;
+package com.example.englishlearningappv1.Controllers;
 
 import com.example.englishlearningappv1.Utils.BackgroundEffects;
 import com.example.englishlearningappv1.Utils.GameBackgroundEffects;
@@ -21,7 +21,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-public class QuizController {
+public class HelloController {
 
     String[] questions = {
             "The little boy pleaded _____ not to leave him alone in the dark.",
@@ -64,9 +64,9 @@ public class QuizController {
 
     public static int correct = 0;
     private int index = 0;
-    private int totalSec = 15;
+    private int totalSec = 1000000;
 
-    final private static String RESULT_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/result.fxml";
+    private static final String HELLO_RESULT_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HelloResult.fxml";
 
     @FXML
     public Label timer, question;
@@ -108,7 +108,7 @@ public class QuizController {
     private void loadQuestions() {
         if (index == 10) {
             try {
-                URL url = new File(RESULT_FXML_FILE_PATH).toURI().toURL();
+                URL url = new File(HELLO_RESULT_FXML_FILE_PATH).toURI().toURL();
                 Parent root = FXMLLoader.load(url);
                 Stage stage = (Stage) timer.getScene().getWindow(); // Assuming 'timer' is a JavaFX element in the same scene
                 Scene scene = new Scene(root);
@@ -160,7 +160,7 @@ public class QuizController {
         PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
 
         pauseTransition.setOnFinished(event -> {
-            totalSec = 15;
+            totalSec = 1000000;
             timer.setText("Time Left: " + totalSec);
 
             opt1.setDisable(false);

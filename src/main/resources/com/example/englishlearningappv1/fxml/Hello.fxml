@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: radial-gradient(focus-angle 0deg, focus-distance 0%, center 50% 0%, radius 220%, #131f24 10%, #302b63 40%, #24243e 65%);" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.HelloController">
+    <stylesheets>
+        <URL value="@../quiz.css" />
+    </stylesheets>
+    <children>
+        <Label fx:id="question" alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="50.0" prefHeight="406.7" prefWidth="620.0" text="Test" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <font>
+                <Font name="System Bold" size="27.0" />
+            </font>
+        </Label>
+        <Button fx:id="opt1" layoutX="26.8" layoutY="456.7" mnemonicParsing="false" onAction="#opt1clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px; -fx-cursor: hand;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <font>
+                <Font name="System Bold" size="27.0" />
+            </font>
+        </Button>
+        <Button id="opt2" fx:id="opt2" layoutX="290.1" layoutY="456.7" mnemonicParsing="false" onAction="#opt2clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px; -fx-cursor: hand;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <font>
+                <Font name="System Bold" size="27.0" />
+            </font>
+        </Button>
+        <Button id="opt3" fx:id="opt3" layoutX="553.4" layoutY="456.7" mnemonicParsing="false" onAction="#opt3clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px; -fx-cursor: hand;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <font>
+                <Font name="System Bold" size="27.0" />
+            </font>
+        </Button>
+        <Button id="opt4" fx:id="opt4" layoutX="816.7" layoutY="456.7" mnemonicParsing="false" onAction="#opt4clicked" prefHeight="236.5" prefWidth="236.5" style="-fx-background-radius: 10px; -fx-border-radius: 5px; -fx-cursor: hand;" text="Button" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <font>
+                <Font name="System Bold" size="27.0" />
+            </font>
+        </Button>
+        <Label fx:id="timer" alignment="CENTER" contentDisplay="CENTER" prefHeight="0.0" prefWidth="1080.0" style="-fx-background-color: white;">
+            <font>
+                <Font name="System Bold" size="0.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
