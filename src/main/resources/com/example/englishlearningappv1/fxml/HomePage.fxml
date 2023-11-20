@@ -144,7 +144,7 @@
             </Button>
             <AnchorPane fx:id="popupPane" layoutX="336.0" layoutY="316.0" opacity="0.0" prefHeight="118.0" prefWidth="207.0" style="-fx-background-radius: 10px; -fx-background-color: linear-gradient(to right top, #ffcbf2, #ec38bc, #7303c0, #03001e);">
                <children>
-                  <Button fx:id="startingButton" layoutX="11.0" layoutY="50.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="186.0" style="-fx-background-radius: 20px; -fx-background-color: white;" text="BẮT ĐẦU">
+                  <Button fx:id="startingButton" layoutX="11.0" layoutY="50.0" mnemonicParsing="false" onAction="#goToHello" prefHeight="54.0" prefWidth="186.0" style="-fx-background-radius: 20px; -fx-background-color: white;" text="BẮT ĐẦU" textFill="#130f1d">
                      <effect>
                         <DropShadow />
                      </effect>

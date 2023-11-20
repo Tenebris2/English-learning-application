@@ -32,13 +32,14 @@ public class SceneController {
     private Parent root;
     private DictionaryApp dictionaryApp;
 
-    final private static String MULTIPLE_CHOICE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
+    private static final String MULTIPLE_CHOICE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
     private static final String DICTIONARY_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/JavaFx.fxml";
-    final private static String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
+    private static final String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
     private static final String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
-    final private static String CHAPTER_START_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/MultipleChoiceGame.fxml";
-    final private static String GOOGLE_TRANSLATE_WINDOW_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/GoogleTranslate.fxml";
-    final private static String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
+    private static final String CHAPTER_START_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/MultipleChoiceGame.fxml";
+    private static final String GOOGLE_TRANSLATE_WINDOW_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/GoogleTranslate.fxml";
+    private static final String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
+    private static final String HELLO_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/Hello.fxml";
 
     public void switchScene(ActionEvent event, String filepath) throws IOException {
         // Load the FXML file
@@ -130,4 +131,7 @@ public class SceneController {
         scene.setFill(Color.TRANSPARENT);
     }
 
+    public void switchToHello(ActionEvent event) throws IOException {
+        switchScene(event, HELLO_FXML_FILE_PATH);
+    }
 }

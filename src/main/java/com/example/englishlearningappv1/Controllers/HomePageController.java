@@ -187,4 +187,9 @@ public class HomePageController extends TitlebarController {
         sceneController.switchtoQuiz(event);
     }
 
+    @FXML
+    public void goToHello(ActionEvent event) throws IOException {
+        SceneController sceneController = new SceneController();
+        sceneController.switchToHello(event);
+    }
 }
