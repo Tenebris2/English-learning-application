@@ -49,11 +49,8 @@ public class Dictionary extends CRUDFunctions {
         return wordList;
     }
 
-    public String getDef(String word) {
-        if (wordList.containsKey(word)) {
-            return wordList.get(word).getDef();
-        }
-        return null;
+    public String getDef(String word) throws SQLException {
+        return CRUDFunctions.CRUDsearchWord(word);
     }
 
     //Lưu vào file
@@ -70,5 +67,10 @@ public class Dictionary extends CRUDFunctions {
             System.out.println("Error");
         }
     }
+
+    public void setWordListToNull() {
+        wordList = null;
+    }
+
 }
 

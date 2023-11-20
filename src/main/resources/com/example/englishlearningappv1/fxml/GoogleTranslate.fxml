@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.DropShadow?>
@@ -74,7 +74,7 @@
                         <DropShadow />
                     </effect>
                 </Label>
-            <Button fx:id="googleSearch" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="309.0" mnemonicParsing="false" onAction="#openGoogleTranslate" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" style="-fx-background-color: linear-gradient(to right top, #ffcbf2, #ec38bc, #7303c0, #03001e);" text="GOOGLE" textFill="WHITE">
+            <Button fx:id="googleSearch" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="322.0" mnemonicParsing="false" onAction="#openGoogleTranslate" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" style="-fx-background-color: linear-gradient(to right top, #ffcbf2, #ec38bc, #7303c0, #03001e);" text="GOOGLE" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
@@ -97,11 +97,11 @@
     </left>
     <center>
         <AnchorPane fx:id="mainPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../styles/HomePageStyles.css" BorderPane.alignment="CENTER">
-            <AnchorPane layoutX="24.0" layoutY="54.0" prefHeight="637.0" prefWidth="831.0" style="-fx-border-radius: 100px; -fx-background-radius: 10px; -fx-background-color: transparent;" stylesheets="@../styles/GoogleTranslateStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+            <AnchorPane fx:id="container" layoutX="24.0" layoutY="54.0" prefHeight="637.0" prefWidth="831.0" style="-fx-background-color: transparent;" stylesheets="@../styles/GoogleTranslateStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
                 <effect>
                     <DropShadow />
                 </effect>
-                <TextArea fx:id="translatingTextArea" layoutX="16.0" layoutY="101.0" onKeyTyped="#translateFunction" prefHeight="454.0" prefWidth="372.0" promptText="Enter text" wrapText="true">
+                <TextArea fx:id="translatingTextArea" layoutX="29.0" layoutY="101.0" onKeyTyped="#translateFunction" prefHeight="454.0" prefWidth="372.0" promptText="Enter text" wrapText="true">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -111,27 +111,13 @@
                         <Font size="24.0" />
                     </font>
                 </TextArea>
-                <Label fx:id="translatingLabel" layoutX="16.0" layoutY="22.0" prefHeight="43.0" prefWidth="371.0" style="-fx-background-radius: 10px;" text="English" textFill="#bcbcbc">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                    <padding>
-                        <Insets left="10.0" />
-                    </padding>
-                </Label>
-                <Label fx:id="translatedLabel" layoutX="450.0" layoutY="22.0" prefHeight="43.0" prefWidth="366.0" style="-fx-background-radius: 10px;" text="Vietnamese" textFill="#bcbcbc">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                    <padding>
-                        <Insets left="10.0" />
-                    </padding>
-                </Label>
                 <ImageView fx:id="imageView" fitHeight="35.0" fitWidth="30.0" layoutX="401.0" layoutY="29.0" onMouseClicked="#changeTranslationDirection" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../image/sort.png" />
                     </image>
                 </ImageView>
+            <ComboBox fx:id="translatedChoiceBox" layoutX="443.0" layoutY="20.0" onAction="#setLangTo" prefHeight="47.0" prefWidth="375.0" />
+            <ComboBox fx:id="translatingChoiceBox" layoutX="14.0" layoutY="20.0" onAction="#setLangFrom" prefHeight="47.0" prefWidth="375.0" />
             </AnchorPane>
          <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="845.0" layoutY="14.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" pickOnBounds="true" preserveRatio="true">
             <image>

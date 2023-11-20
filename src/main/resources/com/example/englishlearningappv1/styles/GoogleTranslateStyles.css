@@ -24,13 +24,16 @@
     -fx-border-radius: 10px;
 }
 
-#translatedTextArea, #translatingLabel, #translatedLabel {
+#translatedTextArea, #translatingLabel, #translatedLabel, #translatingChoiceBox {
     -fx-background-color: linear-gradient(to right top, #000000, #14060d, #1c0c1a, #1f1228, #1b1939);
     -fx-background-radius: 10px;
     -fx-text-fill: white;
-
 }
-
+#translatedChoiceBox {
+    -fx-background-color: linear-gradient(to right top,  #1f1228, #1b1939, #000000, #14060d, #1c0c1a);
+    -fx-background-radius: 10px;
+    -fx-text-fill: white;
+}
 #translatedTextArea  .scroll-pane {
     -fx-background-color: transparent;
 }
@@ -48,4 +51,34 @@
 #container {
     -fx-border-color: linear-gradient(to right top, #ffffff, #c8c5d7, #948eaf, #625a88, #302b63);
     -fx-background-color: transparent;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+.combo-box .list-cell
+{
+    -fx-background: white;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-padding: 3 0 2 7;
+    -fx-cell-size: 2em;
+}
+
+.combo-box-popup .list-view
+{
+    -fx-background-color: linear-gradient(to right top, #ffffff, #c8c5d7, #948eaf, #625a88, #302b63);
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+}
+
+.combo-box-popup .list-view .list-cell
+{
+    -fx-padding: 4 0 4 5;
+    /* No alternate highlighting */
+    -fx-background-color: linear-gradient(to right top, #000000, #14060d, #1c0c1a, #1f1228, #1b1939);
+    -fx-text-fill: white;
+}
+.combo-box-popup .list-view .list-cell:hover
+{
+    -fx-background-color: linear-gradient(to right top, #ffffff, #c8c5d7, #948eaf, #625a88, #302b63);
+    -fx-text-fill: black;
 }

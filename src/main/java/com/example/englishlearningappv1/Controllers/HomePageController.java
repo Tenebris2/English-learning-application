@@ -84,7 +84,7 @@ public class HomePageController extends TitlebarController {
         backgroundEffects.shootingStarsEffect(mainPane);
     }
 
-    public void gotoHome(ActionEvent event) throws IOException {
+    public void gotoHome(ActionEvent event) throws Exception {
         sceneController.switchToHomePage(event);
     }
 
@@ -92,7 +92,7 @@ public class HomePageController extends TitlebarController {
         sceneController.switchtoDictionary(event);
     }
 
-    public void gotoChapterStart(ActionEvent event) throws IOException {
+    public void gotoChapterStart(ActionEvent event) throws Exception {
         sceneController.switchToChapterStart(event);
     }
 
@@ -104,11 +104,11 @@ public class HomePageController extends TitlebarController {
         sceneController.switchtoWordle(event);
     }
 
-    public void gotoGameHub(ActionEvent event) throws IOException {
+    public void gotoGameHub(ActionEvent event) throws Exception {
         sceneController.switchToGameHub(event);
     }
 
-    public void openGoogleTranslate(ActionEvent event) throws IOException {
+    public void openGoogleTranslate(ActionEvent event) throws Exception {
         sceneController.openGoogleTranslate(event);
     }
 
@@ -188,7 +188,7 @@ public class HomePageController extends TitlebarController {
     }
 
     @FXML
-    public void goToHello(ActionEvent event) throws IOException {
+    public void goToHello(ActionEvent event) throws Exception {
         SceneController sceneController = new SceneController();
         sceneController.switchToHello(event);
     }

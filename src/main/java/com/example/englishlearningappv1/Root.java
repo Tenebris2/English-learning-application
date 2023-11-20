@@ -33,7 +33,7 @@ public class Root {
     }
 
     //Tìm nghĩa
-    public String findDef(String word) {
+    public String findDef(String word) throws SQLException {
         return dictionary.getDef(word);
     }
 
@@ -59,5 +59,9 @@ public class Root {
 
     public boolean getChanged(){
         return changed;
+    }
+
+    public void stop() {
+        dictionary.setWordListToNull();
     }
 }

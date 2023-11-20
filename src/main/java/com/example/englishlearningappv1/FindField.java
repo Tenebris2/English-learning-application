@@ -1,10 +1,13 @@
 package com.example.englishlearningappv1;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
+import javafx.util.Duration;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,6 +17,7 @@ import java.util.List;
 
 
 import static com.example.englishlearningappv1.Functions.CRUDFunctions.*;
+import static com.example.englishlearningappv1.GoogleTranslate.translate;
 
 public class FindField extends Root {
     private final TextField findTextField;
@@ -48,7 +52,12 @@ public class FindField extends Root {
             setCurrent(word);
             addToHistorySearch(word);
             wordViewList.jumpTo(word);
-            String def = findDef(getCurrent());
+            String def = null;
+            try {
+                def = findDef(getCurrent());
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
             defView.representDef(def);
         });
     }
@@ -62,7 +71,12 @@ public class FindField extends Root {
                 setCurrent(word);
                 addToHistorySearch(word);
                 wordViewList.jumpTo(word);
-                String def = findDef(getCurrent());
+                String def = null;
+                try {
+                    def = findDef(getCurrent());
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
                 defView.representDef(def);
             }
         });
@@ -72,11 +86,16 @@ public class FindField extends Root {
     public void addListenerToTextField(DefView defView, WordViewList wordViewList) {
         findTextField.textProperty().addListener(
                 (observable, oldValue, newValue) -> {
+                    Timeline translationTimeline = new Timeline();
+                    // Reset the timeline on every key typed
+                    translationTimeline.stop();
+                    translationTimeline.playFromStart();
                     if (!newValue.equals("")) {
+                        // Start the timeline to wait for a pause
                         try {
                             searchWord(newValue);
-                        } catch (SQLException e) {
-                            throw new RuntimeException(e);
+                        } catch (SQLException ex) {
+                            throw new RuntimeException(ex);
                         }
                         loadSearchWords();
                         loadSearchViewList(defView, wordViewList);
@@ -128,7 +147,12 @@ public class FindField extends Root {
             addToHistorySearch(temp);
             wordViewList.jumpTo(temp);
             setCurrent(temp);
-            String def = findDef(getCurrent());
+            String def = null;
+            try {
+                def = findDef(getCurrent());
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
             findTextField.setText(getCurrent());
             defView.representDef(def);
             searchView.setVisible(false);

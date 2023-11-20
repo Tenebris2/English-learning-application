@@ -1,5 +1,6 @@
 package com.example.englishlearningappv1;
 
+import com.example.englishlearningappv1.Controllers.TitlebarController;
 import com.example.englishlearningappv1.Utils.BackgroundEffects;
 import com.example.englishlearningappv1.Utils.GameBackgroundEffects;
 import javafx.animation.*;
@@ -21,7 +22,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-public class QuizController {
+public class QuizController extends TitlebarController {
 
     String[] questions = {
             "The little boy pleaded _____ not to leave him alone in the dark.",

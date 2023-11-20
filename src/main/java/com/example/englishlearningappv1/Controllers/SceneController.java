@@ -41,7 +41,7 @@ public class SceneController {
     private static final String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
     private static final String HELLO_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/Hello.fxml";
 
-    public void switchScene(ActionEvent event, String filepath) throws IOException {
+    public void switchScene(ActionEvent event, String filepath) throws Exception {
         // Load the FXML file
         URL url = new File(filepath).toURI().toURL();
         Parent root = FXMLLoader.load(url);
@@ -55,6 +55,8 @@ public class SceneController {
         stage.setScene(scene);
 
         stage.show();
+
+        dictionaryApp.stop();
     }
 
     public void switchtoDictionary(ActionEvent event) throws Exception {
@@ -78,11 +80,12 @@ public class SceneController {
 
     }
 
-    public void switchToHomePage(ActionEvent event) throws IOException {
+    public void switchToHomePage(ActionEvent event) throws Exception {
         switchScene(event, HOME_PAGE_FXML_FILE_PATH);
+
     }
 
-    public void switchToChapterStart(ActionEvent event) throws IOException {
+    public void switchToChapterStart(ActionEvent event) throws Exception {
         switchScene(event, CHAPTER_START_FXML_FILE_PATH);
     }
 
@@ -110,11 +113,11 @@ public class SceneController {
         stage.show();
     }
 
-    public void switchToGameHub(ActionEvent event) throws IOException {
+    public void switchToGameHub(ActionEvent event) throws Exception {
         switchScene(event, GAME_HUB_FXML_FILE_PATH);
     }
 
-    public void gotoHome(ActionEvent event) throws IOException {
+    public void gotoHome(ActionEvent event) throws Exception {
         switchToHomePage(event);
     }
 
@@ -122,16 +125,16 @@ public class SceneController {
         switchtoDictionary(event);
     }
 
-    public void gotoGameHub(ActionEvent event) throws IOException {
+    public void gotoGameHub(ActionEvent event) throws Exception {
         switchToGameHub(event);
     }
 
-    public void openGoogleTranslate(ActionEvent event) throws IOException {
+    public void openGoogleTranslate(ActionEvent event) throws Exception {
         switchScene(event, GOOGLE_TRANSLATE_WINDOW_FXML_FILE_PATH);
         scene.setFill(Color.TRANSPARENT);
     }
 
-    public void switchToHello(ActionEvent event) throws IOException {
+    public void switchToHello(ActionEvent event) throws Exception {
         switchScene(event, HELLO_FXML_FILE_PATH);
     }
 }

@@ -12,6 +12,8 @@ public class DictionaryController extends HomePageController{
     private Button speak;
     private Button change;
     private Button add;
+    @FXML
+    private Button pane1;
 
     private static final String sourcePath = "C:\\files and projects\\English-learning-application\\src\\main\\resources\\com\\example\\englishlearningappv1\\fxml\\image\\";
     private static final String fixButtonImageURL = sourcePath + "icons8-fix-unscreen(1).gif";
@@ -21,32 +23,38 @@ public class DictionaryController extends HomePageController{
     private static final String addButtonImageURL = sourcePath + "icons8-add-to-favorites-unscreen.gif";
     private static final String addButtonImageURLDefault = sourcePath + "icons8-add-to-favorites-unscreen.png";
     private FunctionEffects functionEffects = new FunctionEffects();
-
+    private String baseStyle = "-fx-background-color: #ffcbf2;";
     @FXML
     public void fixButtonInEffects(MouseEvent event) {
         functionEffects.inEffects4(event, fixButtonImageURL, width, height);
+        functionEffects.inEffects2(event, baseStyle);
     }
     @FXML
     public void fixButtonOutEffects(MouseEvent event) {
         functionEffects.outEffects4(event, fixButtonImageURLDefault, width, height);
+        functionEffects.outEffects2(event, baseStyle);
     }
 
     @FXML
     public void speakButtonInEffects(MouseEvent event) {
         functionEffects.inEffects4(event, speakButtonImageURL, width, height);
+        functionEffects.inEffects2(event, baseStyle);
     }
     @FXML
     public void speakButtonOutEffects(MouseEvent event) {
         functionEffects.outEffects4(event, speakButtonImageURLDefault, width, height);
+        functionEffects.outEffects2(event, baseStyle);
     }
 
     @FXML
     public void addButtonInEffects(MouseEvent event) {
         functionEffects.inEffects4(event, addButtonImageURL, width, height);
+        functionEffects.inEffects2(event, baseStyle);
     }
     @FXML
     public void addButtonOutEffects(MouseEvent event) {
         functionEffects.inEffects4(event, addButtonImageURLDefault, width, height);
+        functionEffects.outEffects2(event, baseStyle);
     }
 
 }

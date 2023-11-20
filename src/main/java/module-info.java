@@ -10,7 +10,9 @@ module com.example.englishlearningappv1 {
     exports com.example.englishlearningappv1.Functions;
     opens com.example.englishlearningappv1.Functions to javafx.fxml;
     exports com.example.englishlearningappv1.Controllers;
-    opens com.example.englishlearningappv1.Controllers to javafx    .fxml;
+    opens com.example.englishlearningappv1.Controllers to javafx.fxml;
+    exports com.example.englishlearningappv1.Preloader;
+    opens com.example.englishlearningappv1.Preloader to javafx.graphics;
 
     requires javafx.web;
     requires freetts;

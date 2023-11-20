@@ -31,7 +31,7 @@ public class CRUDFunctions{
 
         statement.close();
     }
-    public static void CRUDsearchWord(String searchedWord) throws SQLException {
+    public static String CRUDsearchWord(String searchedWord) throws SQLException {
 
         String tmp ='"' + searchedWord + "%"  +'"';
         String sql = "SELECT * FROM wordlist WHERE english LIKE " + tmp + "";
@@ -41,16 +41,20 @@ public class CRUDFunctions{
 
         int count = 0;
 
+        String word = null;
+        String def = null;
         while (result.next()){
-            String word = result.getString("english");
-            String definition = result.getString("definition");
+            word = result.getString("english");
+            def = result.getString("definition");
             int id = result.getInt("id");
 
-            System.out.println(word + "\t"  + definition + "\t" + id);
+            System.out.println(word + "\t"  + def + "\t" + id);
         }
 
         statement.close();
         result.close();
+
+        return def;
     }
     public static void CRUDshowAllWords() throws SQLException {
         String sql = "SELECT * FROM wordlist";

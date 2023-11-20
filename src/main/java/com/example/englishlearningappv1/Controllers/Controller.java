@@ -64,4 +64,8 @@ public class Controller {
     public boolean getChanged(){
         return root.getChanged();
     }
+
+    public void stop() {
+        root.stop();
+    }
 }

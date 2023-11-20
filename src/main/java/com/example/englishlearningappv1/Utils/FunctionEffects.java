@@ -106,4 +106,5 @@ public class FunctionEffects implements Effects {
         image.setFitHeight(sizeY);
         button.setGraphic(image);
     }
+
 }
