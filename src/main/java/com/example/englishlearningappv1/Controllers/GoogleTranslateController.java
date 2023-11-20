@@ -35,6 +35,8 @@ public class GoogleTranslateController extends HomePageController{
     @FXML
     private Label translatedLabel;
     @FXML
+    private AnchorPane container;
+    @FXML
     private Button button;
     @FXML
     private ImageView imageView;

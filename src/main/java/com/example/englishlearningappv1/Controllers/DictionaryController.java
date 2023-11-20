@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 
 public class DictionaryController extends HomePageController{
+    private static final int width = 24;
+    private static final int height = 24;
     private Button fix;
     private Button speak;
     private Button change;
@@ -22,29 +24,29 @@ public class DictionaryController extends HomePageController{
 
     @FXML
     public void fixButtonInEffects(MouseEvent event) {
-        functionEffects.inEffects4(event, fixButtonImageURL, 24, 24);
+        functionEffects.inEffects4(event, fixButtonImageURL, width, height);
     }
     @FXML
     public void fixButtonOutEffects(MouseEvent event) {
-        functionEffects.outEffects4(event, fixButtonImageURLDefault, 24, 24);
+        functionEffects.outEffects4(event, fixButtonImageURLDefault, width, height);
     }
 
     @FXML
     public void speakButtonInEffects(MouseEvent event) {
-        functionEffects.inEffects4(event, speakButtonImageURL, 24, 24);
+        functionEffects.inEffects4(event, speakButtonImageURL, width, height);
     }
     @FXML
     public void speakButtonOutEffects(MouseEvent event) {
-        functionEffects.outEffects4(event, speakButtonImageURLDefault, 24, 24);
+        functionEffects.outEffects4(event, speakButtonImageURLDefault, width, height);
     }
 
     @FXML
     public void addButtonInEffects(MouseEvent event) {
-        functionEffects.inEffects4(event, addButtonImageURL, 24, 24);
+        functionEffects.inEffects4(event, addButtonImageURL, width, height);
     }
     @FXML
     public void addButtonOutEffects(MouseEvent event) {
-        functionEffects.inEffects4(event, addButtonImageURLDefault, 24, 24);
+        functionEffects.inEffects4(event, addButtonImageURLDefault, width, height);
     }
 
 }

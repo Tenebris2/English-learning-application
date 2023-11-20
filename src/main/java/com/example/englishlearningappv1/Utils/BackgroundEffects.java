@@ -65,7 +65,7 @@ public class BackgroundEffects implements Effects {
 
                 FadeTransition fadeTransition = new FadeTransition(Duration.seconds(2), star);
                 fadeTransition.setFromValue(randomOpacity);
-                fadeTransition.setToValue(0.1);
+                fadeTransition.setToValue(0.3);
                 fadeTransition.setCycleCount(FadeTransition.INDEFINITE);
                 fadeTransition.setAutoReverse(true);
                 fadeTransition.play();
@@ -99,11 +99,11 @@ public class BackgroundEffects implements Effects {
                 pathTransition.setPath(path);
                 pathTransition.setInterpolator(javafx.animation.Interpolator.EASE_OUT);
                 pathTransition.setCycleCount(PathTransition.INDEFINITE);
-                pathTransition.setDuration(Duration.seconds(7));
+                pathTransition.setDuration(Duration.seconds(10));
 
                 FadeTransition fadeTransition = new FadeTransition(Duration.seconds(3), star);
                 fadeTransition.setFromValue(randomOpacity);
-                fadeTransition.setToValue(0.3);
+                fadeTransition.setToValue(0.4);
                 fadeTransition.setCycleCount(FadeTransition.INDEFINITE);
                 fadeTransition.setAutoReverse(true);
 
