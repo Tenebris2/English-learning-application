@@ -32,6 +32,8 @@ public class HomeQuizController {
 
     final private static String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/quiz.fxml";
     final private static String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
+    private static final String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
+
 
     @FXML
     private void initialize() {
@@ -65,7 +67,7 @@ public class HomeQuizController {
 
                 try {
 
-                    URL url = new File(HOME_PAGE_FXML_FILE_PATH).toURI().toURL();
+                    URL url = new File(GAME_HUB_FXML_FILE_PATH).toURI().toURL();
                     Parent root = FXMLLoader.load(url);
                     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                     scene = new Scene(root);

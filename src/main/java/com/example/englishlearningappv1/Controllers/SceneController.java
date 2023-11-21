@@ -76,8 +76,6 @@ public class SceneController {
         dictionaryApp = new DictionaryApp();
 
         dictionaryApp.start(stage);
-
-
     }
 
     public void switchToHomePage(ActionEvent event) throws Exception {

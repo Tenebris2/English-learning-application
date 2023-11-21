@@ -36,6 +36,8 @@ public class ResultController {
 
     final private static String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/quiz.fxml";
     final private static String MENU_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1//fxml/homepage.fxml";
+    private static final String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
+
 
     int correct;
     int wrong;
@@ -74,7 +76,7 @@ public class ResultController {
             QuizController quizController = new QuizController();
             quizController.playAgain();
 
-            URL url = new File(MENU_FXML_FILE_PATH).toURI().toURL();
+            URL url = new File(GAME_HUB_FXML_FILE_PATH).toURI().toURL();
             Parent root = FXMLLoader.load(url);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);

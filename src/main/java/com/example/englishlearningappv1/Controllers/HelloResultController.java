@@ -24,10 +24,7 @@ public class HelloResultController {
     public Label marks;
 
     @FXML
-    public ProgressIndicator correct_progress, wrong_progress;
-
-    @FXML
-    public Button playAgain, mainMenu;
+    public ProgressIndicator correct_progress;
 
     @FXML
     private AnchorPane mainPane;
@@ -35,11 +32,9 @@ public class HelloResultController {
     private Stage stage;
     private Scene scene;
 
-    final private static String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/quiz.fxml";
     final private static String MENU_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1//fxml/homepage.fxml";
 
     int correct;
-    int wrong;
 
     @FXML
     private void initialize() {
@@ -56,14 +51,12 @@ public class HelloResultController {
         try {
             QuizController quizController = new QuizController();
             quizController.playAgain();
-
             URL url = new File(MENU_FXML_FILE_PATH).toURI().toURL();
             Parent root = FXMLLoader.load(url);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-
         } catch(IOException e) {
             e.printStackTrace();
         }

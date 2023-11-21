@@ -77,8 +77,20 @@
     -fx-background-color: linear-gradient(to right top, #000000, #14060d, #1c0c1a, #1f1228, #1b1939);
     -fx-text-fill: white;
 }
-.combo-box-popup .list-view .list-cell:hover
-{
+.combo-box-popup .list-view .list-cell:hover {
     -fx-background-color: linear-gradient(to right top, #ffffff, #c8c5d7, #948eaf, #625a88, #302b63);
     -fx-text-fill: black;
+    -fx-cursor: hand;
+}
+
+#imageView {
+    -fx-cursor: hand;
+}
+
+#translatingChoiceBox {
+    -fx-cursor: hand;
+}
+
+#translatedChoiceBox {
+    -fx-cursor: hand;
 }

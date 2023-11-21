@@ -20,60 +20,89 @@ import javafx.animation.Timeline;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 
 public class HelloController {
 
     String[] questions = {
-            "The little boy pleaded _____ not to leave him alone in the dark.",
-            "_____, the people who come to this club are in their twenties and thirties.",
-            "The TV station, in _______ to massive popular demand, decided not to discontinue the soap opera.",
-            "His emotional problems _______ from the attitudes he encountered as a child, I think.",
-            "Pete was born and brought up in Cornwall and he knows the place like the _________.",
-            "British and Australian people share the same language, but in other respects they are as different as _____.",
-            "Rows and silences are ______ and parcel of any marriage.",
-            "Ancient Egyptians mummified their dead through the use of chemicals, ______ ancient Peruvians did through natural processes.",
-            "Don’t _____ to any conclusion before you know the full facts.",
-            "A few animals sometimes fool their enemies _______ to be dead."
+            "What subject is he _____ now?",
+            "She is going to _____ television tonight.",
+            "She _____ a banana.",
+            "He is _____ Vietnam",
+            "It is not hot _____ the winter.",
+            "I don't like Maths _____ it is difficult.",
+            "What's the matter _____ you?",
+            "He often _____ to school in the morning.",
+            "They are from _____.",
+            "His birthday is _____ June 1st.",
+            "A _____ works in a hospital.",
+            "I _____ reading a book about Santa Claus.",
+            "_____ you like to play hide and seek with me?",
+            "Did you _____ teacher's Day last month?",
+            "Does he _____ a sore-throat?",
+            "We went to the cinema _____.",
+            "A housewife often does _____.",
+            "It's hot in Summer, _____?",
+            "What's the matter _____ you?",
+            "I have _____ cough."
     };
 
     String[][] options = {
-            {"on his mother", "his mother", "with his mother", "at his mother"},
-            {"By and large", "Altogether", "To a degree", "Virtually"},
-            {"reaction", "response", "answer", "rely"},
-            {"stem", "flourish", "root", "sprout"},
-            {"nose on his face", "back of his hand", "hairs on his head", "teeth of his mouth"},
-            {"cats and dogs", "salt and pepper", "chalk and cheese", "here and there"},
-            {"package", "stamps", "packet", "part"},
-            {"because", "whereas", "even though", "whether or not"},
-            {"rush", "dive", "leap", "fly"},
-            {"have been appearing", "to be appearing", "to appear", "by appearing"}
+            {"to learn", "learn", "learning", "learned"},
+            {"sing", "play", "stay", "watch"},
+            {"wants", "want", "to want", "wantes"},
+            {"from", "on", "in", "at"},
+            {"on", "in", "at", "under"},
+            {"and", "but", "so", "because"},
+            {"in", "with", "on", "of"},
+            {"gos", "going", "goes", "to go"},
+            {"Singapore", "Vietnamese", "English", "American"},
+            {"at", "on", "in", "about"},
+            {"teacher", "worker", "nurse", "farmer"},
+            {"can", "do", "am", "are"},
+            {"Would", "Could", "Do", "If"},
+            {"celebrated", "celebrating", "celebrate", "celebrater"},
+            {"has", "had", "have", "having"},
+            {"today", "yesterday", "tomorrow", "next Sunday"},
+            {"homework", "housework", "hardwork", "exercises"},
+            {"is it", "isn't it", "do it", "does it"},
+            {"for", "to", "with", "on"},
+            {"the", "a", "an", "any"}
     };
 
     char[] answers = {
             'C',
+            'D',
+            'A',
             'A',
             'B',
-            'A',
-            'B',
-            'C',
             'D',
             'B',
             'C',
-            'D'
+            'C',
+            'B',
+            'C',
+            'C',
+            'A',
+            'C',
+            'C',
+            'B',
+            'B',
+            'B',
+            'C',
+            'B'
     };
 
     public static int correct = 0;
     private int index = 0;
     private int totalSec = 1000000;
-
+    private int cnt = 0;
     private static final String HELLO_RESULT_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HelloResult.fxml";
 
     @FXML
     public Label timer, question;
-
     @FXML
     public Button opt1, opt2, opt3, opt4;
-
     @FXML
     private AnchorPane mainPane;
 
@@ -86,18 +115,12 @@ public class HelloController {
         gameBackgroundEffects.shootingStarsEffect(mainPane);
     }
 
-    public void playAgain() {
-        index = 0;
-        correct = 0;
-    }
-
     Timeline timeline = new Timeline(
             new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
                     totalSec--;
                     timer.setText("Time Left: " + totalSec);
-
                     if (totalSec <= 0) {
                         displayAnswer(answers[index]);
                     }
@@ -106,11 +129,11 @@ public class HelloController {
     );
 
     private void loadQuestions() {
-        if (index == 10) {
+        if (cnt == 10) {
             try {
                 URL url = new File(HELLO_RESULT_FXML_FILE_PATH).toURI().toURL();
                 Parent root = FXMLLoader.load(url);
-                Stage stage = (Stage) timer.getScene().getWindow(); // Assuming 'timer' is a JavaFX element in the same scene
+                Stage stage = (Stage) timer.getScene().getWindow();
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
@@ -123,7 +146,6 @@ public class HelloController {
             opt2.setUserData('B');
             opt3.setUserData('C');
             opt4.setUserData('D');
-
             opt1.getStyleClass().clear();
             opt1.getStyleClass().setAll("opt1");
             opt2.getStyleClass().clear();
@@ -132,10 +154,8 @@ public class HelloController {
             opt3.getStyleClass().setAll("opt3");
             opt4.getStyleClass().clear();
             opt4.getStyleClass().setAll("opt4");
-
             timeline.setCycleCount(Timeline.INDEFINITE);
             timeline.play();
-
             question.setText(questions[index]);
             opt1.setVisible(true);
             opt2.setVisible(true);
@@ -150,25 +170,21 @@ public class HelloController {
 
     private void displayAnswer(Character c) {
         timeline.stop();
-
         opt1.setDisable(true);
         opt2.setDisable(true);
         opt3.setDisable(true);
         opt4.setDisable(true);
         updateAnswerStyle(c);
-
         PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
-
         pauseTransition.setOnFinished(event -> {
             totalSec = 1000000;
             timer.setText("Time Left: " + totalSec);
-
             opt1.setDisable(false);
             opt2.setDisable(false);
             opt3.setDisable(false);
             opt4.setDisable(false);
-
-            index++;
+            cnt++;
+            index = gen();
             loadQuestions();
         });
         pauseTransition.play();
@@ -201,10 +217,8 @@ public class HelloController {
 
     private void updateAnswerStyle(Character c) {
         if (answers[index] == 'A') {
-
             opt1.getStyleClass().clear();
             opt1.getStyleClass().setAll("correct-answer");
-
             if (c.equals('B')) {
                 opt2.getStyleClass().clear();
                 opt2.getStyleClass().setAll("wrong-answer");
@@ -307,6 +321,13 @@ public class HelloController {
                 opt4.getStyleClass().setAll("correct-answer-pick");
             }
         }
+    }
+
+    public int gen() {
+        Random random = new Random();
+        int minRange = 0;
+        int maxRange = 19;
+        return random.nextInt(maxRange - minRange + 1) + minRange;
     }
 }
 

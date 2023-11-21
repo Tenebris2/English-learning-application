@@ -1,5 +1,6 @@
 package com.example.englishlearningappv1;
 
+import com.example.englishlearningappv1.Controllers.SceneController;
 import com.example.englishlearningappv1.Controllers.TitlebarController;
 import com.example.englishlearningappv1.Utils.GameBackgroundEffects;
 import javafx.event.ActionEvent;
@@ -28,8 +29,7 @@ public class WordleController extends TitlebarController {
     private Stage stage;
     private Scene scene;
 
-    private static final String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
-
+    private static final String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
 
     public static final ArrayList<String> winningWords = new ArrayList<>();
     public static final ArrayList<String> dictionaryWords = new ArrayList<>();
@@ -96,19 +96,9 @@ public class WordleController extends TitlebarController {
     }
 
     @FXML
-    public void backClicked(ActionEvent event) {
-        try {
-            restart();
-
-            URL url = new File(HOME_PAGE_FXML_FILE_PATH).toURI().toURL();
-            Parent root = FXMLLoader.load(url);
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch(IOException e) {
-            e.printStackTrace();
-        }
+    public void backClicked(ActionEvent event) throws Exception {
+        SceneController sceneController = new SceneController();
+        sceneController.switchScene(event, GAME_HUB_FXML_FILE_PATH);
     }
 
     @FXML

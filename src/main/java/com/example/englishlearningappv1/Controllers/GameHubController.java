@@ -45,7 +45,7 @@ public class GameHubController extends HomePageController {
     @FXML
     private AnchorPane anchorPane1;
     @FXML
-    private static int currentGame = 0;
+    private static int currentGame;
 
     @FXML
     public void gotoGames(ActionEvent event) throws IOException {
@@ -56,7 +56,9 @@ public class GameHubController extends HomePageController {
         if (currentGame == 1) {
             sceneController.switchtoWordle(event);
         }
+        currentGame = 0;
     }
+
     @FXML
     public void clickOnGame1(ActionEvent event) throws IOException {
         currentGame = 0;
@@ -79,6 +81,7 @@ public class GameHubController extends HomePageController {
         timeline.setCycleCount(1);
         timeline.play();
     }
+
     @FXML
     public void clickOnGame2(ActionEvent event) throws IOException {
         currentGame = 1;
