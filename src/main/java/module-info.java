@@ -20,4 +20,7 @@ module com.example.englishlearningappv1 {
     requires com.google.gson;
     requires org.apache.httpcomponents.httpcore;
     requires org.apache.httpcomponents.httpclient;
+    requires java.flac.encoder;
+    requires java.desktop;
+    requires json;
 }

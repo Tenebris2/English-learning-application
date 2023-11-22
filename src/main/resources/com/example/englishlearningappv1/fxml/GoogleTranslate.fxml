@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane fx:id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/HomePageStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.GoogleTranslateController">
+<BorderPane fx:id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/HomePageStyles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.GoogleTranslateController">
     <left>
         <AnchorPane fx:id="anchorPane1" prefHeight="730.0" prefWidth="200.0" style="-fx-border-color: none; -fx-background-radius: 10px;" BorderPane.alignment="CENTER">
             <children>
@@ -118,6 +113,15 @@
                 </ImageView>
             <ComboBox fx:id="translatedChoiceBox" layoutX="443.0" layoutY="20.0" onAction="#setLangTo" prefHeight="47.0" prefWidth="375.0" />
             <ComboBox fx:id="translatingChoiceBox" layoutX="14.0" layoutY="20.0" onAction="#setLangFrom" prefHeight="47.0" prefWidth="375.0" />
+
+            <Button fx:id="recordBtn" layoutX="390.0" layoutY="82.0" mnemonicParsing="false" onAction="#record" style="-fx-background-color: red;" text="Record">
+
+            </Button>
+            <Button fx:id="stopBtn" layoutX="390.0" layoutY="131.0" mnemonicParsing="false" onAction="#stop" style="-fx-background-color: red;" text="Stop">
+
+            </Button>
+
+
             </AnchorPane>
          <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="845.0" layoutY="14.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" pickOnBounds="true" preserveRatio="true">
             <image>

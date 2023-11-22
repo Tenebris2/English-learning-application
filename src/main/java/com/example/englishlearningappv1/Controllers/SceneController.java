@@ -1,6 +1,7 @@
 package com.example.englishlearningappv1.Controllers;
 
 import com.example.englishlearningappv1.DictionaryApp;
+import com.example.englishlearningappv1.GoogleTranslate;
 import com.example.englishlearningappv1.WordleApplication;
 import com.example.englishlearningappv1.WordleController;
 import javafx.animation.FadeTransition;

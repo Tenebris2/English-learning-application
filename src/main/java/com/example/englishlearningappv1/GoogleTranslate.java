@@ -26,6 +26,7 @@ public class GoogleTranslate {
             String url = String.format(
                     "https://translate.googleapis.com/translate_a/single?client=gtx&sl=%s&tl=%s&dt=t&q=%s",
                     langFrom, langTo, URLEncoder.encode(input, "UTF-8"));
+            System.out.println(URLEncoder.encode(input, "UTF-8"));
             URI uri = new URI(url);
 
             HttpClient httpClient = HttpClients.createDefault();
@@ -40,6 +41,7 @@ public class GoogleTranslate {
                 Gson gson = new Gson();
                 List<List<List<Object>>> jsonData = gson.fromJson(result, List.class);
 
+                System.out.println((String) jsonData.get(0).get(0).get(0));
                 return (String) jsonData.get(0).get(0).get(0);
             } else {
                 System.out.println("Error in connection. Status Code: " + statusCode);

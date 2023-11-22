@@ -1,12 +1,21 @@
 package com.example.englishlearningappv1.Controllers;
 
+import com.example.englishlearningappv1.STT.microphone.Microphone;
+import com.example.englishlearningappv1.STT.recognizer.GSpeechDuplex;
+import com.example.englishlearningappv1.STT.recognizer.GSpeechResponseListener;
+import com.example.englishlearningappv1.STT.recognizer.GoogleResponse;
+import net.sourceforge.javaflacencoder.FLACFileWriter;
 import com.example.englishlearningappv1.GoogleTranslate;
+import com.example.englishlearningappv1.STT.microphone.Microphone;
+import com.example.englishlearningappv1.STT.recognizer.GSpeechDuplex;
 import com.example.englishlearningappv1.Utils.BackgroundEffects;
 import com.example.englishlearningappv1.Utils.FunctionEffects;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.ParallelTransition;
 import javafx.animation.Timeline;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,7 +27,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
+import net.sourceforge.javaflacencoder.FLACFileWriter;
 
+import javax.swing.*;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,38 +65,87 @@ public class GoogleTranslateController extends HomePageController{
     private Map<String, String> languageCodes = new HashMap<>();
     private Map<String, Integer> languageCodesIndex = new HashMap<>();
 
+    final Microphone mic = new Microphone(FLACFileWriter.FLAC);
+    private final GSpeechDuplex duplex = new GSpeechDuplex("AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
+
     @FXML
     public void initialize() {
-            langFrom = "en";
-            langTo = "vi";
+        duplex.setLanguage("en");
+        duplex.addResponseListener(new GSpeechResponseListener() {
+            String last;
+            String old_text = "";
 
-            // Populate the HashMap with language codes
-            languageCodes.put("English", "en");
-            languageCodes.put("Chinese", "zh");
-            languageCodes.put("French", "fr");
-            languageCodes.put("German", "de");
-            languageCodes.put("Indonesian", "id");
-            languageCodes.put("Vietnamese", "vi");
-
-            int i = 0;
-            for (String key : languageCodes.keySet()) {
-                languageCodesIndex.put(languageCodes.get(key), i);
-                i++;
+            public void onResponse(GoogleResponse gr) {
+                String output = "";
+                output = gr.getResponse();
+                if (gr.getResponse() == null) {
+                    this.old_text = translatingTextArea.getText();
+                    if (this.old_text.contains("("))
+                        this.old_text = this.old_text.substring(0, this.old_text.indexOf('('));
+                    System.out.println("Paragraph Line Added");
+                    this.old_text = String.valueOf(translatingTextArea.getText()) + "\n";
+                    this.old_text = this.old_text.replace(")", "").replace("( ", "");
+                    translatingTextArea.setText(this.old_text);
+                    return;
+                }
+                if (output.contains("("))
+                    output = output.substring(0, output.indexOf('('));
+                if (!gr.getOtherPossibleResponses().isEmpty())
+                    output = String.valueOf(output) + " (" + (String) gr.getOtherPossibleResponses().get(0) + ")";
+                System.out.println(output);
+                translatingTextArea.setText("");
+                translatingTextArea.appendText(this.old_text);
+                translatingTextArea.appendText(output);
             }
+        });
 
-            ArrayList<String> arrayList = new ArrayList<>(languageCodes.keySet());
-            BackgroundEffects backgroundEffects = new BackgroundEffects();
-            backgroundEffects.backgroundEffects(mainPane, 500);
-            backgroundEffects.shootingStarsEffect(mainPane);
+        langFrom = "en";
+        langTo = "vi";
 
-            translatingChoiceBox.setItems(FXCollections.observableArrayList(arrayList));
-            translatedChoiceBox.setItems(FXCollections.observableArrayList(arrayList));
+        // Populate the HashMap with language codes
+        languageCodes.put("English", "en");
+        languageCodes.put("Chinese", "zh");
+        languageCodes.put("French", "fr");
+        languageCodes.put("German", "de");
+        languageCodes.put("Indonesian", "id");
+        languageCodes.put("Vietnamese", "vi");
 
-            translatingChoiceBox.getSelectionModel().select(languageCodesIndex.get(langFrom));
-            translatedChoiceBox.getSelectionModel().select(languageCodesIndex.get(langTo));
+        int i = 0;
+        for (String key : languageCodes.keySet()) {
+            languageCodesIndex.put(languageCodes.get(key), i);
+            i++;
+        }
 
+        ArrayList<String> arrayList = new ArrayList<>(languageCodes.keySet());
+        BackgroundEffects backgroundEffects = new BackgroundEffects();
+        backgroundEffects.backgroundEffects(mainPane, 500);
+        backgroundEffects.shootingStarsEffect(mainPane);
 
+        translatingChoiceBox.setItems(FXCollections.observableArrayList(arrayList));
+        translatedChoiceBox.setItems(FXCollections.observableArrayList(arrayList));
+
+        translatingChoiceBox.getSelectionModel().select(languageCodesIndex.get(langFrom));
+        translatedChoiceBox.getSelectionModel().select(languageCodesIndex.get(langTo));
+
+        translatingTextArea.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable,
+                                String oldValue, String newValue) {
+
+                System.out.println(" Text Changed to  " + newValue + ")\n");
+                translationTimeline.stop();
+                // Start the timeline to wait for a pause
+                translationTimeline.getKeyFrames().setAll(
+                        new KeyFrame(Duration.seconds(0.25), e -> {
+                            // Perform translation logic here
+                            translatedTextArea.setText(translate(translatingTextArea.getText(), langFrom, langTo));
+                        })
+                );
+                translationTimeline.playFromStart();
+            }
+        });
     }
+
     public void translateFunction(KeyEvent event) {// Initialize the translation timeline
         // Reset the timeline on every key typed
         translationTimeline.stop();
@@ -130,5 +190,45 @@ public class GoogleTranslateController extends HomePageController{
     public void setLangTo(ActionEvent event) {
         langTo = languageCodes.get(translatedChoiceBox.getValue());
     }
+
+
+
+    @FXML
+    private Button recordBtn;
+    @FXML
+    private Button stopBtn;
+
+    @FXML
+    public void record() {
+        recordBtn.setDisable(true);
+        stopBtn.setDisable(false);
+
+
+        // Start the recognition process in a separate thread
+        new Thread(() -> {
+            try {
+                duplex.recognize(mic.getTargetDataLine(), mic.getAudioFormat());
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            } finally {
+                recordBtn.setDisable(false);
+                stopBtn.setDisable(true);
+            }
+        }).start();
+    }
+
+    @FXML
+    public void stop() {
+        try {
+            mic.close();
+            duplex.stopSpeechRecognition();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            recordBtn.setDisable(false);
+            stopBtn.setDisable(true);
+        }
+    }
+
 
 }
