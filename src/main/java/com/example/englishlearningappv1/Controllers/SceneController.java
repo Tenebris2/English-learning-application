@@ -56,8 +56,6 @@ public class SceneController {
         stage.setScene(scene);
 
         stage.show();
-
-        dictionaryApp.stop();
     }
 
     public void switchtoDictionary(ActionEvent event) throws Exception {
@@ -81,6 +79,9 @@ public class SceneController {
 
     public void switchToHomePage(ActionEvent event) throws Exception {
         switchScene(event, HOME_PAGE_FXML_FILE_PATH);
+        if (!GoogleTranslateController.mic.getState().toString().equals("CLOSED")) {
+            GoogleTranslateController.mic.close();
+        }
 
     }
 

@@ -65,12 +65,16 @@ public class GoogleTranslateController extends HomePageController{
     private Map<String, String> languageCodes = new HashMap<>();
     private Map<String, Integer> languageCodesIndex = new HashMap<>();
 
-    final Microphone mic = new Microphone(FLACFileWriter.FLAC);
-    private final GSpeechDuplex duplex = new GSpeechDuplex("AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
+    public static Microphone mic = new Microphone(FLACFileWriter.FLAC);
+    private GSpeechDuplex duplex = new GSpeechDuplex("AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
 
     @FXML
     public void initialize() {
-        duplex.setLanguage("en");
+
+        langFrom = "en";
+        langTo = "vi";
+
+        duplex.setLanguage(langFrom);
         duplex.addResponseListener(new GSpeechResponseListener() {
             String last;
             String old_text = "";
@@ -98,9 +102,6 @@ public class GoogleTranslateController extends HomePageController{
                 translatingTextArea.appendText(output);
             }
         });
-
-        langFrom = "en";
-        langTo = "vi";
 
         // Populate the HashMap with language codes
         languageCodes.put("English", "en");
@@ -185,6 +186,7 @@ public class GoogleTranslateController extends HomePageController{
     public void setLangFrom(ActionEvent event) {
         langFrom = languageCodes.get(translatingChoiceBox.getValue());
         System.out.println(translatingChoiceBox.getValue());
+        duplex.setLanguage(langFrom);
     }
     @FXML
     public void setLangTo(ActionEvent event) {
@@ -200,11 +202,17 @@ public class GoogleTranslateController extends HomePageController{
 
     @FXML
     public void record() {
+        duplex.setLanguage(langFrom);
+
+        if (mic.getState() == Microphone.CaptureState.CLOSED) {
+            mic.open();
+            duplex.openSpeechRecognition();
+        }
+
         recordBtn.setDisable(true);
         stopBtn.setDisable(false);
 
 
-        // Start the recognition process in a separate thread
         new Thread(() -> {
             try {
                 duplex.recognize(mic.getTargetDataLine(), mic.getAudioFormat());

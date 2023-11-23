@@ -113,7 +113,9 @@ public class GSpeechDuplex{
 	public void stopSpeechRecognition() {
 		stopRecognition = true;
 	}
-
+	public void openSpeechRecognition() {
+		stopRecognition = false;
+	}
 	private Thread downChannel(String urlStr) {
 		final String url = urlStr;
 		Thread downChannelThread = new Thread("Downstream Thread") {
