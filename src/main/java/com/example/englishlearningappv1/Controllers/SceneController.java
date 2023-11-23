@@ -1,25 +1,16 @@
 package com.example.englishlearningappv1.Controllers;
 
 import com.example.englishlearningappv1.DictionaryApp;
-import com.example.englishlearningappv1.GoogleTranslate;
 import com.example.englishlearningappv1.WordleApplication;
 import com.example.englishlearningappv1.WordleController;
-import javafx.animation.FadeTransition;
-import javafx.animation.ParallelTransition;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.util.Duration;
-import org.controlsfx.control.action.Action;
 
 import java.io.File;
 import java.io.IOException;
@@ -131,7 +122,6 @@ public class SceneController {
 
     public void openGoogleTranslate(ActionEvent event) throws Exception {
         switchScene(event, GOOGLE_TRANSLATE_WINDOW_FXML_FILE_PATH);
-        scene.setFill(Color.TRANSPARENT);
     }
 
     public void switchToHello(ActionEvent event) throws Exception {

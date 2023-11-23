@@ -13,6 +13,8 @@ module com.example.englishlearningappv1 {
     opens com.example.englishlearningappv1.Controllers to javafx.fxml;
     exports com.example.englishlearningappv1.Preloader;
     opens com.example.englishlearningappv1.Preloader to javafx.graphics;
+    exports com.example.englishlearningappv1.API;
+    opens com.example.englishlearningappv1.API to javafx.fxml;
 
     requires javafx.web;
     requires freetts;
@@ -23,4 +25,7 @@ module com.example.englishlearningappv1 {
     requires java.flac.encoder;
     requires java.desktop;
     requires json;
+    requires com.fasterxml.jackson.databind;
+    requires java.google.speech.api;
+    requires jlayer;
 }

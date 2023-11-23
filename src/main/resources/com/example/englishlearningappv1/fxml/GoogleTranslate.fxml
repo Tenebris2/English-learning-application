@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/HomePageStyles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.GoogleTranslateController">
+<BorderPane fx:id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/HomePageStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.GoogleTranslateController">
     <left>
         <AnchorPane fx:id="anchorPane1" prefHeight="730.0" prefWidth="200.0" style="-fx-border-color: none; -fx-background-radius: 10px;" BorderPane.alignment="CENTER">
             <children>
@@ -92,11 +97,11 @@
     </left>
     <center>
         <AnchorPane fx:id="mainPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../styles/HomePageStyles.css" BorderPane.alignment="CENTER">
-            <AnchorPane fx:id="container" layoutX="24.0" layoutY="54.0" prefHeight="637.0" prefWidth="831.0" style="-fx-background-color: transparent;" stylesheets="@../styles/GoogleTranslateStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+            <AnchorPane fx:id="container" layoutX="24.0" layoutY="69.0" prefHeight="582.0" prefWidth="831.0" style="-fx-background-color: transparent;" stylesheets="@../styles/GoogleTranslateStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
                 <effect>
                     <DropShadow />
                 </effect>
-                <TextArea fx:id="translatingTextArea" layoutX="29.0" layoutY="101.0" onKeyTyped="#translateFunction" prefHeight="454.0" prefWidth="372.0" promptText="Enter text" wrapText="true">
+                <TextArea fx:id="translatingTextArea" layoutX="16.0" layoutY="101.0" onKeyTyped="#translateFunction" prefHeight="454.0" prefWidth="372.0" promptText="Enter text" wrapText="true">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -114,12 +119,14 @@
             <ComboBox fx:id="translatedChoiceBox" layoutX="443.0" layoutY="20.0" onAction="#setLangTo" prefHeight="47.0" prefWidth="375.0" />
             <ComboBox fx:id="translatingChoiceBox" layoutX="14.0" layoutY="20.0" onAction="#setLangFrom" prefHeight="47.0" prefWidth="375.0" />
 
-            <Button fx:id="recordBtn" layoutX="390.0" layoutY="82.0" mnemonicParsing="false" onAction="#record" style="-fx-background-color: red;" text="Record">
+            <Button fx:id="recordBtn" layoutX="30.0" layoutY="516.0" mnemonicParsing="false" onAction="#record" style="-fx-background-color: red;" text="Record">
 
             </Button>
-            <Button fx:id="stopBtn" layoutX="390.0" layoutY="131.0" mnemonicParsing="false" onAction="#stop" style="-fx-background-color: red;" text="Stop">
+            <Button fx:id="stopBtn" layoutX="30.0" layoutY="516.0" mnemonicParsing="false" onAction="#stop" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: red;" text="Stop">
 
             </Button>
+            <Button fx:id="ttsButtonTranslating" layoutX="93.0" layoutY="516.0" mnemonicParsing="false" onAction="#ttsTranslating" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: red;" text="TTS" />
+            <Button fx:id="ttsButtonTranslated" layoutX="466.0" layoutY="515.0" mnemonicParsing="false" onAction="#ttsTranslated" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: red;" text="TTS" />
 
 
             </AnchorPane>

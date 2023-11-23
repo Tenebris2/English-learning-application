@@ -1,5 +1,8 @@
 #translatingTextArea {
-    -fx-background-color: transparent;
+    -fx-background-color: rgba(27, 25, 57, 0.2);
+    -fx-border-color: 1px rgba(27, 25, 57, 1);
+    -fx-border-radius: 16px;
+    -fx-border-style: solid;
     -fx-background-radius: 10px;
     -fx-text-fill: white;
 
@@ -24,16 +27,15 @@
     -fx-border-radius: 10px;
 }
 
-#translatedTextArea, #translatingLabel, #translatedLabel, #translatingChoiceBox {
-    -fx-background-color: linear-gradient(to right top, #000000, #14060d, #1c0c1a, #1f1228, #1b1939);
+#translatedTextArea, #translatingLabel, #translatedLabel, #translatingChoiceBox, #translatedChoiceBox {
+    -fx-background-color: rgba(27, 25, 57, 0.2);
+    -fx-border-color: 1px rgba(27, 25, 57, 1);
+    -fx-border-radius: 16px;
+    -fx-border-style: solid;
     -fx-background-radius: 10px;
     -fx-text-fill: white;
 }
-#translatedChoiceBox {
-    -fx-background-color: linear-gradient(to right top,  #1f1228, #1b1939, #000000, #14060d, #1c0c1a);
-    -fx-background-radius: 10px;
-    -fx-text-fill: white;
-}
+
 #translatedTextArea  .scroll-pane {
     -fx-background-color: transparent;
 }
@@ -41,6 +43,8 @@
 #translatedTextArea .scroll-pane .viewport{
     -fx-background-color: transparent;
 }
+
+
 
 
 #translatedTextArea .scroll-pane .content{
@@ -93,4 +97,8 @@
 
 #translatedChoiceBox {
     -fx-cursor: hand;
+}
+
+#recordBtn {
+    -fx-background-color: transparent;
 }

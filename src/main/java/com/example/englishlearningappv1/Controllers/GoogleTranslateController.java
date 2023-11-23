@@ -1,44 +1,37 @@
 package com.example.englishlearningappv1.Controllers;
 
+import com.example.englishlearningappv1.API.TTS;
 import com.example.englishlearningappv1.STT.microphone.Microphone;
 import com.example.englishlearningappv1.STT.recognizer.GSpeechDuplex;
 import com.example.englishlearningappv1.STT.recognizer.GSpeechResponseListener;
 import com.example.englishlearningappv1.STT.recognizer.GoogleResponse;
-import net.sourceforge.javaflacencoder.FLACFileWriter;
-import com.example.englishlearningappv1.GoogleTranslate;
-import com.example.englishlearningappv1.STT.microphone.Microphone;
-import com.example.englishlearningappv1.STT.recognizer.GSpeechDuplex;
 import com.example.englishlearningappv1.Utils.BackgroundEffects;
 import com.example.englishlearningappv1.Utils.FunctionEffects;
-import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
-import javafx.animation.ParallelTransition;
 import javafx.animation.Timeline;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 import net.sourceforge.javaflacencoder.FLACFileWriter;
 
-import javax.swing.*;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
-import static com.example.englishlearningappv1.GoogleTranslate.translate;
+import static com.example.englishlearningappv1.API.GoogleTranslate.translate;
 
-public class GoogleTranslateController extends HomePageController{
+public class GoogleTranslateController extends HomePageController {
     @FXML
     private TextArea translatingTextArea;
     @FXML
@@ -49,6 +42,8 @@ public class GoogleTranslateController extends HomePageController{
     private Label translatedLabel;
     @FXML
     private AnchorPane container;
+    @FXML
+    private Button ttsButton;
     @FXML
     private Button button;
     @FXML
@@ -70,6 +65,9 @@ public class GoogleTranslateController extends HomePageController{
 
     @FXML
     public void initialize() {
+
+        stopBtn.setVisible(false);
+        stopBtn.setDisable(true);
 
         langFrom = "en";
         langTo = "vi";
@@ -110,6 +108,8 @@ public class GoogleTranslateController extends HomePageController{
         languageCodes.put("German", "de");
         languageCodes.put("Indonesian", "id");
         languageCodes.put("Vietnamese", "vi");
+        languageCodes.put("Korean", "ko");
+        languageCodes.put("Japanese", "ja");
 
         int i = 0;
         for (String key : languageCodes.keySet()) {
@@ -158,6 +158,17 @@ public class GoogleTranslateController extends HomePageController{
                 })
         );
         translationTimeline.playFromStart();
+    }
+
+    @FXML
+    public void ttsTranslating(ActionEvent event) {
+        TTS tts = new TTS();
+        tts.speak(translatingTextArea.getText());
+    }
+    @FXML
+    public void ttsTranslated(ActionEvent event) {
+        TTS tts = new TTS();
+        tts.speak(translatedTextArea.getText());
     }
 
     public void inEffects2(MouseEvent event) {
@@ -210,8 +221,9 @@ public class GoogleTranslateController extends HomePageController{
         }
 
         recordBtn.setDisable(true);
+        recordBtn.setVisible(true);
         stopBtn.setDisable(false);
-
+        stopBtn.setVisible(true);
 
         new Thread(() -> {
             try {
@@ -234,7 +246,9 @@ public class GoogleTranslateController extends HomePageController{
             ex.printStackTrace();
         } finally {
             recordBtn.setDisable(false);
+            recordBtn.setVisible(true);
             stopBtn.setDisable(true);
+            stopBtn.setVisible(false);
         }
     }
 

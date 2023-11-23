@@ -1,13 +1,11 @@
 package com.example.englishlearningappv1;
 
-import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
-import javafx.util.Duration;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,7 +15,6 @@ import java.util.List;
 
 
 import static com.example.englishlearningappv1.Functions.CRUDFunctions.*;
-import static com.example.englishlearningappv1.GoogleTranslate.translate;
 
 public class FindField extends Root {
     private final TextField findTextField;
