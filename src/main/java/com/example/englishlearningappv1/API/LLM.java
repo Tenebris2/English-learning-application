@@ -5,18 +5,20 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.SQLException;
+
 public class LLM {
 
     public static class Main {
 
-        public static void main(String[] args) {
+        public static void main(String[] args) throws SQLException {
             System.out.println(chatGPT("Give me the synonym of love, keep it short"));
             // Prints out a response to the question.
         }
 
-        public static String chatGPT(String message) {
+        public static String chatGPT(String message) throws SQLException {
             String url = "https://api.openai.com/v1/chat/completions";
-            String apiKey = "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"; // API key goes here
+            String apiKey = API_KEY.getAPIKey("chat-gpt-api-key").getKey(); // API key goes here
             String model = "gpt-3.5-turbo"; // current model of chatgpt api
 
             try {
