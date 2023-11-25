@@ -130,6 +130,11 @@
                   <DropShadow />
                </effect>
                <children>
+                  <TextArea fx:id="answerContainerLabel" editable="false" layoutX="43.0" layoutY="430.0" prefHeight="202.0" prefWidth="746.0" stylesheets="@../styles/FavoritesPageStyles.css" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextArea>
                   <Pane fx:id="favoriteWordContainer" layoutX="40.0" layoutY="277.0" prefHeight="143.0" prefWidth="751.0">
                      <children>
                         <Label fx:id="favoriteWordDisplay" alignment="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="115.0" prefWidth="723.0" text="hello" textAlignment="CENTER" textFill="WHITE" wrapText="true">
@@ -183,11 +188,6 @@
                         </VBox>
                      </children>
                   </AnchorPane>
-                  <TextArea fx:id="answerContainerLabel" editable="false" layoutX="43.0" layoutY="430.0" prefHeight="202.0" prefWidth="746.0" stylesheets="@../styles/FavoritesPageStyles.css" wrapText="true">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </TextArea>
                </children>
             </AnchorPane>
             </children>

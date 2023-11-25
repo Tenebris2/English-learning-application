@@ -47,6 +47,8 @@ public class FavoritesPageController extends HomePageController {
             "    -fx-border-style: solid;\n" +
             "    -fx-text-fill: white;";
     @FXML
+    private Button askButton;
+    @FXML
     private Button favoritesPage;
     @FXML
     private Label favoriteWordDisplay;
@@ -93,6 +95,11 @@ public class FavoritesPageController extends HomePageController {
         listOfButtons.add(askDefButton);
         listOfButtons.add(askForCollocations);
         listOfButtons.add(askSynonymAndAnotonymButton);
+
+        for (Button b : listOfButtons) {
+            b.setVisible(false);
+            b.setDisable(true);
+        }
     }
 
 
@@ -139,6 +146,7 @@ public class FavoritesPageController extends HomePageController {
         }
         nextButton.setDisable(true);
         backButton.setDisable(true);
+        askDefButton.setDisable(true);
     }
     
     public void enableButtons() {
@@ -148,17 +156,22 @@ public class FavoritesPageController extends HomePageController {
         }
         nextButton.setDisable(false);
         backButton.setDisable(false);
+        askButton.setDisable(false);
     }
     
     public void enableAndSetVisible(ActionEvent event) {
         functionEffects.createFadeEffectsIn(event, listOfButtons);
-        enableButtons();
+        for (Button b : listOfButtons) {
+            b.setDisable(false);
+            b.setVisible(true);
+        }
     }
 
     public void disableAndSetVisible(ActionEvent event) {
         functionEffects.createFadeEffectsOut(event, listOfButtons);
-
-        disableButtons();
+        for (Button b : listOfButtons) {
+            b.setDisable(true);
+        }
     }
 
     public void askChatGPTQuestions(ActionEvent event) {
