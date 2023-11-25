@@ -16,23 +16,13 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-public class SceneController {
+public class SceneController implements ControllerInterface {
 
     private Stage stage;
     private Scene scene;
     @FXML
     private Parent root;
     private DictionaryApp dictionaryApp;
-
-    private static final String MULTIPLE_CHOICE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
-    private static final String DICTIONARY_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/JavaFx.fxml";
-    private static final String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
-    private static final String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/home.fxml";
-    private static final String CHAPTER_START_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/MultipleChoiceGame.fxml";
-    private static final String GOOGLE_TRANSLATE_WINDOW_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/GoogleTranslate.fxml";
-    private static final String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
-    private static final String HELLO_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/Hello.fxml";
-    private static final String FAVORITES_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/FavoritesPage.fxml";
 
     public void switchScene(ActionEvent event, String filepath) throws Exception {
         // Load the FXML file

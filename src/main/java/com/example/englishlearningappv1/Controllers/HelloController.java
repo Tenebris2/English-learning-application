@@ -1,6 +1,5 @@
 package com.example.englishlearningappv1.Controllers;
 
-import com.example.englishlearningappv1.Utils.BackgroundEffects;
 import com.example.englishlearningappv1.Utils.GameBackgroundEffects;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
@@ -22,7 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 
-public class HelloController {
+public class HelloController implements ControllerInterface {
 
     String[] questions = {
             "What subject is he _____ now?",
@@ -116,7 +115,7 @@ public class HelloController {
     }
 
     Timeline timeline = new Timeline(
-            new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+            new KeyFrame(Duration.seconds(1), new EventHandler<>() {
                 @Override
                 public void handle(ActionEvent event) {
                     totalSec--;

@@ -31,7 +31,7 @@ import java.util.Map;
 
 import static com.example.englishlearningappv1.API.GoogleTranslate.translate;
 
-public class GoogleTranslateController extends HomePageController {
+public class GoogleTranslateController extends HomePageController implements ControllerInterface {
     @FXML
     private TextArea translatingTextArea;
     @FXML
@@ -49,8 +49,6 @@ public class GoogleTranslateController extends HomePageController {
     @FXML
     private ImageView imageView;
     private Timeline translationTimeline = new Timeline();
-    @FXML
-    private AnchorPane mainPane;
     @FXML
     private ComboBox<String> translatingChoiceBox;
     @FXML

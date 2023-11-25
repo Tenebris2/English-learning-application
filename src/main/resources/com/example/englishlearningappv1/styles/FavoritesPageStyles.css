@@ -1,6 +1,5 @@
 #container {
     -fx-background-color: rgba(27, 25, 57, 0.2);
-    -fx-border-color: 1px rgba(27, 25, 57, 1);
     -fx-border-radius: 16px;
     -fx-border-style: solid;
     -fx-background-radius: 10px;
@@ -8,7 +7,6 @@
 }
 #duolingo_container {
     -fx-background-color: rgba(27, 25, 57, 0.2);
-    -fx-border-color: 1px rgba(27, 25, 57, 1);
     -fx-border-radius: 16px;
     -fx-border-style: solid;
     -fx-background-radius: 10px;
@@ -18,7 +16,6 @@
 
 #favoriteWordContainer {
     -fx-background-color: rgba(255,203,242  , 0.2);
-    -fx-border-color: 1px rgba(27, 25, 57, 1);
     -fx-border-style: solid;
     -fx-background-radius: 10px;
     -fx-text-fill: white;

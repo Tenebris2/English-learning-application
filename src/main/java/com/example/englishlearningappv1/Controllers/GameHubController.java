@@ -7,43 +7,29 @@ import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Time;
 
-public class GameHubController extends HomePageController {
+public class GameHubController extends HomePageController implements ControllerInterface {
 
     static final String quizImageURL = "src\\main\\resources\\com\\example\\englishlearningappv1\\image\\quiz-image.png";
     static final String wordleImageURL = "src\\main\\resources\\com\\example\\englishlearningappv1\\image\\wordle-image.png";
 
-    @FXML
-    private AnchorPane pane1;
-    @FXML
-    private Button gameButton1;
-    @FXML
-    private Button gameButton2;
     @FXML
     private Button gotoGames;
     @FXML
     private ImageView imageView;
     @FXML
     private Label gameLabel;
-    @FXML
-    private AnchorPane anchorPane1;
     @FXML
     private static int currentGame;
 

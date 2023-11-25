@@ -8,7 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.AnchorPane;
@@ -18,7 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-public class HelloResultController {
+public class HelloResultController implements ControllerInterface {
 
     @FXML
     public Label marks;

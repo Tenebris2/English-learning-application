@@ -1,6 +1,5 @@
 #translatingTextArea {
     -fx-background-color: rgba(27, 25, 57, 0.2);
-    -fx-border-color: 1px rgba(27, 25, 57, 1);
     -fx-border-radius: 16px;
     -fx-border-style: solid;
     -fx-background-radius: 10px;
@@ -29,7 +28,6 @@
 
 #translatedTextArea, #translatingLabel, #translatedLabel, #translatingChoiceBox, #translatedChoiceBox {
     -fx-background-color: rgba(27, 25, 57, 0.2);
-    -fx-border-color: 1px rgba(27, 25, 57, 1);
     -fx-border-radius: 16px;
     -fx-border-style: solid;
     -fx-background-radius: 10px;

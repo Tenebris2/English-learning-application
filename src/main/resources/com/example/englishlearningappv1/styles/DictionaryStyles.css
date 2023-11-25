@@ -1,3 +1,7 @@
+#wordView {
+    -fx-background-color: transparent;
+}
+
 #wordView .list-cell:even {
     -fx-text-fill: white;
     -fx-background-color: transparent;
@@ -9,7 +13,7 @@
     -fx-background-color: transparent;
 }
 
-#wordView .list-cell:odd:focus{
+#wordView .list-cell:odd:focused{
     -fx-background-color: white;
 }
 #wordView .scroll-bar:vertical .increment-arrow,
@@ -72,7 +76,6 @@
 
 
 #listOfButtons {
-    -fx-border-color:  #253239;
     -fx-border-width: 0 1px 0 0;
 }
 
@@ -85,7 +88,6 @@
     -fx-font-family: 'serif';
     -fx-text-fill: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
     -fx-font-size: 22;
-    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
 }
 
 .list-view {
@@ -94,7 +96,6 @@
 
 #change, #speak, #delete, #add, #containerbox, #favorite {
     -fx-background-color: rgba(27, 25, 57, 0.2);
-    -fx-border-color: 1px rgba(27, 25, 57, 1);
     -fx-border-radius: 16px;
     -fx-border-style: solid;
     -fx-background-radius: 10px;
@@ -109,6 +110,5 @@
     -fx-background-color: rgba(255, 255, 255, 0.26);
     -fx-border-radius: 16px;
     -fx-background-radius: 16px;
-    -fx-border-color: 1px solid rgba(255, 255, 255, 1);
 }
 

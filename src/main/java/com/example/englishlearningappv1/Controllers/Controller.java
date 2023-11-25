@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class Controller {
+public class Controller implements ControllerInterface {
     private Root root;
     private WordViewList wordViewList;
     private DefView defView;

@@ -1,16 +1,13 @@
 package com.example.englishlearningappv1.Controllers;
 
 import com.example.englishlearningappv1.Utils.FunctionEffects;
-import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
-public class TitlebarController {
+public class TitlebarController implements ControllerInterface {
     @FXML
     private ImageView close;
     @FXML

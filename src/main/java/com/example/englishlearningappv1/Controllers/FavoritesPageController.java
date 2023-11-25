@@ -1,47 +1,33 @@
 package com.example.englishlearningappv1.Controllers;
 
-import com.example.englishlearningappv1.API.ChatBot;
 import com.example.englishlearningappv1.API.SaA;
 import com.example.englishlearningappv1.Functions.CRUDFunctions;
-import com.example.englishlearningappv1.Root;
 import com.example.englishlearningappv1.Utils.BackgroundEffects;
-import com.example.englishlearningappv1.Utils.FunctionEffects;
-import com.example.englishlearningappv1.Utils.Utils;
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.web.WebView;
 import javafx.util.Duration;
-import org.json.JSONException;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
-import static com.example.englishlearningappv1.API.ChatBot.asyncSendQuery;
 import static com.example.englishlearningappv1.API.ChatBot.sendQuery;
 
-public class FavoritesPageController extends HomePageController {
+public class FavoritesPageController extends HomePageController implements ControllerInterface {
     private static int currentIndex = 0;
     private List<String> listOfFavoriteWords;
     private List<Button> listOfButtons;
     private final PauseTransition cooldownTransition = new PauseTransition(Duration.millis(5000)); // 3 seconds cooldown
-    private final FunctionEffects functionEffects = new FunctionEffects();
     private String baseStyle = "    -fx-background-color: rgba(255, 188, 231, 0.6);\n" +
             "    -fx-background-radius: 30px;\n" +
             "    -fx-border-style: solid;\n" +
@@ -63,8 +49,6 @@ public class FavoritesPageController extends HomePageController {
     @FXML
     private Button askForUseButton;
     @FXML
-    private AnchorPane mainPane;
-    @FXML
     private Button askSynonymAndAnotonymButton;
     @FXML
     private Button askForCollocations;
@@ -77,7 +61,6 @@ public class FavoritesPageController extends HomePageController {
                     -fx-background-color: linear-gradient(to right top, #ffcbf2, #ec38bc, #7303c0, #03001e);
                                                                               -fx-background-radius: 10px; /* Adjust the radius as needed */
             -fx-border-radius: 100px; /* Adjust the radius as needed */
-            -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
                         """;
     @Override
     public void initialize() throws SQLException {
@@ -146,7 +129,7 @@ public class FavoritesPageController extends HomePageController {
         }
         nextButton.setDisable(true);
         backButton.setDisable(true);
-        askDefButton.setDisable(true);
+        askButton.setDisable(true);
     }
     
     public void enableButtons() {

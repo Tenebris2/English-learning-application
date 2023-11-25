@@ -1,37 +1,24 @@
 package com.example.englishlearningappv1.Controllers;
 
 import com.example.englishlearningappv1.Utils.BackgroundEffects;
-import com.example.englishlearningappv1.Utils.FunctionEffects;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.effect.Effect;
-import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.sql.Time;
 
-public class HomePageController extends TitlebarController {
-
-    private final FunctionEffects functionEffects = new FunctionEffects();
+public class HomePageController extends TitlebarController implements ControllerInterface {
     private boolean clicked;
     @FXML
-    private AnchorPane mainPane;
+    protected AnchorPane mainPane;
     @FXML
     private Circle introductionChapterCircle;
     private final SceneController sceneController = new SceneController();
@@ -76,7 +63,6 @@ public class HomePageController extends TitlebarController {
                     -fx-background-color: linear-gradient(to right top, #ffcbf2, #ec38bc, #7303c0, #03001e);
                                                                               -fx-background-radius: 100px; /* Adjust the radius as needed */
             -fx-border-radius: 100px; /* Adjust the radius as needed */
-            -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
                         """;
 
     public void initialize() throws SQLException {
