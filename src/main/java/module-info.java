@@ -28,4 +28,7 @@ module com.example.englishlearningappv1 {
     requires com.fasterxml.jackson.databind;
     requires java.google.speech.api;
     requires jlayer;
+    requires org.slf4j;
+    requires openai;
+    requires org.jsoup;
 }

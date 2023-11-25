@@ -92,8 +92,13 @@
     -fx-cursor: hand;
 }
 
-#change, #speak, #delete, #add {
-    -fx-background-color: #ffcbf2;
+#change, #speak, #delete, #add, #containerbox, #favorite {
+    -fx-background-color: rgba(27, 25, 57, 0.2);
+    -fx-border-color: 1px rgba(27, 25, 57, 1);
+    -fx-border-radius: 16px;
+    -fx-border-style: solid;
+    -fx-background-radius: 10px;
+    -fx-text-fill: white;
 }
 
 .button:hover {
@@ -106,3 +111,4 @@
     -fx-background-radius: 16px;
     -fx-border-color: 1px solid rgba(255, 255, 255, 1);
 }
+

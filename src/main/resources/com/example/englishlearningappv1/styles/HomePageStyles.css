@@ -3,7 +3,6 @@
     -fx-font-family: 'serif';
     fx-text-fill: linear-gradient(to right top, #302b63, #351d44, #2c1429, #1d0c15, #000000);
     -fx-font-size: 22;
-    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
 }
 #homePage {
     -fx-background-color: radial-gradient(focus-angle 0deg, focus-distance 0%, center 50% 0%, radius 220%, #131f24 10%, #302b63 40%, #24243e 65%);
@@ -24,7 +23,6 @@
     -fx-background-color: linear-gradient(to right top, #ffcbf2, #ec38bc, #7303c0, #03001e);
     -fx-background-radius: 5; /* Adjust the radius as needed */
     -fx-border-radius: 5; /* Adjust the radius as needed */
-    -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
 }
 
 #closeButton {

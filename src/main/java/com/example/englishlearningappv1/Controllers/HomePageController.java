@@ -23,6 +23,7 @@ import javafx.util.Duration;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.sql.Time;
 
 public class HomePageController extends TitlebarController {
@@ -78,7 +79,7 @@ public class HomePageController extends TitlebarController {
             -fx-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
                         """;
 
-    public void initialize() {
+    public void initialize() throws SQLException {
         BackgroundEffects backgroundEffects = new BackgroundEffects();
         backgroundEffects.backgroundEffects(mainPane, 500);
         backgroundEffects.shootingStarsEffect(mainPane);
@@ -183,13 +184,16 @@ public class HomePageController extends TitlebarController {
 
     @FXML
     public void goToQuiz(ActionEvent event) throws IOException {
-        SceneController sceneController = new SceneController();
         sceneController.switchtoQuiz(event);
     }
 
     @FXML
     public void goToHello(ActionEvent event) throws Exception {
-        SceneController sceneController = new SceneController();
         sceneController.switchToHello(event);
+    }
+
+    @FXML
+    public void gotoFavorites(ActionEvent event) throws Exception {
+        sceneController.switchToFavoritesPage(event);
     }
 }

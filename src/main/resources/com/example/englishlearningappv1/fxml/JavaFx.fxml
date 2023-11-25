@@ -98,6 +98,21 @@
                   <DropShadow />
                </effect>
             </Button>
+            <Button fx:id="favoritesPage" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="388.0" mnemonicParsing="false" onAction="#gotoFavorites" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="FAVORITES" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icons8-favorite-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
             </children>
             <effect>
                 <DropShadow />
@@ -113,7 +128,7 @@
             <Image url="@image/icons8-minimize-50.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="232.0" layoutY="101.0" prefHeight="483.0" prefWidth="829.0" stylesheets="@../styles/DictionaryStyles.css">
+      <AnchorPane layoutX="231.0" layoutY="78.0" prefHeight="483.0" prefWidth="829.0" stylesheets="@../styles/DictionaryStyles.css">
          <children>
                 <ListView fx:id="wordView" prefHeight="564.0" prefWidth="326.0" style="-fx-border-width: 5px; -fx-background-color: transaparent;" stylesheets="@../styles/DictionaryStyles.css" />
                   <WebView fx:id="defView" layoutX="334.0" layoutY="-1.0" prefHeight="564.0" prefWidth="502.0" style="-fx-opacity: 0.8;" stylesheets="@../styles/WebViewStyles.css">
@@ -141,43 +156,52 @@
                   <Image url="@image/searchWord.png" />
               </image>
           </ImageView>
-      <HBox alignment="CENTER" layoutX="567.0" layoutY="665.0" prefHeight="47.0" prefWidth="502.0" spacing="10.0">
+      <HBox fx:id="containerbox" alignment="CENTER" layoutX="565.0" layoutY="649.0" prefHeight="63.0" prefWidth="502.0" spacing="10.0" stylesheets="@../styles/DictionaryStyles.css">
          <children>
-              <Button fx:id="change" alignment="CENTER_RIGHT" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#fixButtonInEffects" onMouseExited="#fixButtonOutEffects" prefHeight="33.0" prefWidth="33.0" stylesheets="@../styles/DictionaryStyles.css">
-                  <graphic>
-                      <ImageView fx:id="fix" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="change" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#fixButtonInEffects" onMouseExited="#fixButtonOutEffects" prefHeight="55.0" prefWidth="55.0" stylesheets="@../styles/DictionaryStyles.css">
+               <graphic>
+                  <ImageView fx:id="delete1" fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@image/icons8-fix-unscreen(1).png" />
+                        <Image url="@image/icons8-fix-1--unscreen.png" />
                      </image>
-                      </ImageView>
-                  </graphic>
-              </Button>
-              <Button fx:id="delete" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="33.0" stylesheets="@../styles/DictionaryStyles.css">
+                  </ImageView>
+               </graphic>
+            </Button>
+              <Button fx:id="delete" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" stylesheets="@../styles/DictionaryStyles.css">
                   <graphic>
-                      <ImageView fx:id="delete" fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                      <ImageView fx:id="delete" fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                           <image>
                               <Image url="@../image/delete.png" />
                           </image>
                       </ImageView>
                   </graphic>
               </Button>
-              <Button fx:id="speak" cacheShape="false" ellipsisString="" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#speakButtonInEffects" onMouseExited="#speakButtonOutEffects" prefHeight="33.0" prefWidth="33.0" stylesheets="@../styles/DictionaryStyles.css">
+              <Button fx:id="speak" cacheShape="false" ellipsisString="" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#speakButtonInEffects" onMouseExited="#speakButtonOutEffects" prefHeight="55.0" prefWidth="55.0" stylesheets="@../styles/DictionaryStyles.css">
                   <font>
                       <Font size="18.0" />
                   </font>
                   <graphic>
-                      <ImageView fitHeight="22.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                      <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                           <image>
                               <Image url="@image/icons8-voice-unscreen.png" />
                           </image>
                       </ImageView>
                   </graphic>
               </Button>
-            <Button fx:id="add" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="33.0" stylesheets="@../styles/DictionaryStyles.css">
+            <Button fx:id="add" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#addButtonInEffects" onMouseExited="#addButtonOutEffects" prefHeight="55.0" prefWidth="55.0" stylesheets="@../styles/DictionaryStyles.css">
                <graphic>
-                  <ImageView fx:id="add" fitHeight="25.0" fitWidth="24.0" onMouseEntered="#addButtonInEffects" onMouseExited="#addButtonOutEffects" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="add" fitHeight="33.0" fitWidth="33.0" onMouseEntered="#addButtonInEffects" onMouseExited="#addButtonOutEffects" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@image/icons8-add-to-favorites-unscreen.png" />
+                        <Image url="@image/icons8-add-unscreen.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="favorite" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addToFavorites" onMouseEntered="#addFavButtonInEffects" onMouseExited="#addFavButtonOutEffects" prefHeight="55.0" prefWidth="55.0" stylesheets="@../styles/DictionaryStyles.css">
+               <graphic>
+                  <ImageView fx:id="add1" fitHeight="33.0" fitWidth="33.0" onMouseEntered="#addButtonInEffects" onMouseExited="#addButtonOutEffects" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icons8-add-favorite-unscreen.png" />
                      </image>
                   </ImageView>
                </graphic>

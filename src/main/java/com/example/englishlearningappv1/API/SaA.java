@@ -17,10 +17,6 @@ public class SaA {
     final static String endpoint = "http://thesaurus.altervista.org/thesaurus/v1";
     final static String api_key = "AkiAKXBNxru8mh9iolGO";// replace "test_only" with your own key (http://thesaurus.altervista.org/mykey)
 
-    public static void main(String[] args) throws IOException {
-//            SendRequest("dark", "en_US", api_key);
-            sendRequest();
-    }
 
     public static void SendRequest(String word, String language, String key) {
         try {
@@ -57,8 +53,8 @@ public class SaA {
         }
     }
 
-    public static void sendRequest() throws IOException {
-        URL url = new URL("https://api.api-ninjas.com/v1/thesaurus?word=humanity");
+    public static String sendRequest(String word_) throws IOException {
+        URL url = new URL("https://api.api-ninjas.com/v1/thesaurus?word=" + word_);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestProperty("accept", "application/json");
         connection.setRequestMethod("GET");
@@ -85,6 +81,7 @@ public class SaA {
         for (Object jsonObject1 : antonyms) {
             System.out.print(jsonObject1.toString() + " ");
         }
+        return word + "\n Synonyms: " + synonyms + "\n Antonyms: " + antonyms;
     }
 
 }

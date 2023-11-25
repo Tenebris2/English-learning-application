@@ -1,6 +1,8 @@
 package com.example.englishlearningappv1.Functions;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CRUDFunctions{
     static final String dbURL = "jdbc:mysql://localhost:3306/dictionary";
@@ -133,4 +135,82 @@ public class CRUDFunctions{
         result.close();
     }
 
+    public static void addFavoriteWord(String word) throws SQLException {
+        String sql = "INSERT INTO favorite_word (favorite_word) VALUES (?)";
+
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, word);
+
+        int rowsInserted = statement.executeUpdate();
+
+        if (rowsInserted > 0) {
+            System.out.println("A new favorite word has been inserted successfully!");
+        }
+
+        statement.close();
+    }
+
+    public static void deleteFavoriteWord(String word) throws SQLException {
+        String sql = "DELETE FROM favorite_word WHERE favorite_word=?";
+
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, word);
+
+        int rowsDeleted = statement.executeUpdate();
+        if (rowsDeleted > 0) {
+            System.out.println("A word was deleted successfully!");
+        }
+
+        statement.close();
+    }
+
+
+    public static List<String> createFavoriteWordList() throws SQLException {
+        List<String> list = new ArrayList<>();
+        String sql = "SELECT * FROM favorite_word";
+
+        Statement statement = connection.createStatement();
+        ResultSet result = statement.executeQuery(sql);
+
+        while (result.next()){
+            String word = result.getString("favorite_word");
+            list.add(word);
+        }
+
+        statement.close();
+        result.close();
+
+        return list;
+    }
+
+    public static String searchForSpecificWord(String searchedWord) throws SQLException {
+
+        String tmp ='"' + searchedWord + "%"  +'"';
+        String sql = "SELECT * FROM wordlist WHERE english = " + tmp + "";
+
+        Statement statement = connection.createStatement();
+        ResultSet result = statement.executeQuery(sql);
+
+        int count = 0;
+
+        String word = null;
+        String def = null;
+        while (result.next()){
+            word = result.getString("english");
+            def = result.getString("definition");
+            int id = result.getInt("id");
+
+            System.out.println(word + "\t"  + def + "\t" + id);
+        }
+
+        statement.close();
+        result.close();
+
+        return def;
+    }
+
+    public static void main(String[] args) throws SQLException {
+        connectDB();
+        CRUDFunctions.CRUDsearchWord("hello");
+    }
 }

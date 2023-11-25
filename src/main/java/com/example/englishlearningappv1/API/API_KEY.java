@@ -57,6 +57,7 @@ public class API_KEY {
     }
 
     public static API_KEY getAPIKey(String name) throws SQLException {
+        connectDB();
 
         String tmp ='"' + name  +'"';
         String sql = "SELECT * FROM api_keys WHERE api_name = " + tmp + "";

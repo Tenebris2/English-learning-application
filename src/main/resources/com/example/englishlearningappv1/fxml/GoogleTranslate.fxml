@@ -89,6 +89,21 @@
                   <DropShadow />
                </effect>
             </Button>
+            <Button fx:id="favoritesPage" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="390.0" mnemonicParsing="false" onAction="#gotoFavorites" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="FAVORITES" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icons8-favorite-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
             </children>
             <effect>
                 <DropShadow />
