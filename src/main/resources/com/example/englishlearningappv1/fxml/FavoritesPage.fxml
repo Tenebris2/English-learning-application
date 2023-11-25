@@ -157,26 +157,26 @@
                               </Button>
                            </children>
                         </AnchorPane>
-                        <VBox layoutX="367.0" prefHeight="242.0" prefWidth="378.0" spacing="10.0">
+                        <VBox layoutX="341.0" prefHeight="242.0" prefWidth="404.0" spacing="10.0">
                            <children>
-                              <Button fx:id="askForCollocations" mnemonicParsing="false" onAction="#askChatGPTQuestions" prefHeight="50.0" prefWidth="372.0" text=" Common Collocations with the Word" textFill="WHITE" wrapText="true">
+                              <Button fx:id="askForCollocations" mnemonicParsing="false" onAction="#askChatGPTQuestions" prefHeight="50.0" prefWidth="600.0" text=" Common Collocations with the Word" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="askForUseButton" mnemonicParsing="false" onAction="#askChatGPTQuestions" prefHeight="50.0" prefWidth="372.0" text="How Can I Use This Word" textFill="WHITE">
+                              <Button fx:id="askForUseButton" mnemonicParsing="false" onAction="#askChatGPTQuestions" prefHeight="50.0" prefWidth="600.0" text="How Can I Use This Word" textFill="WHITE">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="askDefButton" mnemonicParsing="false" onAction="#askChatGPTQuestions" prefHeight="50.0" prefWidth="373.0" text="What Is The Definition Of " textFill="WHITE">
+                              <Button fx:id="askDefButton" mnemonicParsing="false" onAction="#askChatGPTQuestions" prefHeight="50.0" prefWidth="600.0" text="What Is The Definition Of " textFill="WHITE">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="askSynonymAndAnotonymButton" mnemonicParsing="false" onAction="#askSynonymAndAnotonym" prefHeight="50.0" prefWidth="374.0" text=" What Are The Synonyms And Antonyms?" textFill="WHITE">
+                              <Button fx:id="askSynonymAndAnotonymButton" mnemonicParsing="false" onAction="#askSynonymAndAnotonym" prefHeight="50.0" prefWidth="600.0" text=" What Are The Synonyms And Antonyms?" textFill="WHITE">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font name="System Bold" size="18.0" />
                                  </font>
                               </Button>
                            </children>
