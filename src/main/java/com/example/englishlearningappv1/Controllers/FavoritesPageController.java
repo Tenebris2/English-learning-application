@@ -146,7 +146,7 @@ public class FavoritesPageController extends HomePageController {
         }
         nextButton.setDisable(true);
         backButton.setDisable(true);
-        askDefButton.setDisable(true);
+        askButton.setDisable(true);
     }
     
     public void enableButtons() {
