@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -36,7 +37,11 @@ public class ChatBot {
     public ChatBot() throws SQLException {
     }
 
-    public static String sendQuery(String input) {
+    public static CompletableFuture<String> asyncSendQuery(String input) {
+        return CompletableFuture.supplyAsync(() -> sendQuery(input));
+    }
+
+    public static String sendQuery(String input) throws JSONException {
         // Build input and API key params
         JSONObject payload = new JSONObject();
         JSONObject message = new JSONObject();
@@ -58,6 +63,7 @@ public class ChatBot {
         post.setHeader("Authorization", "Bearer " + apiKey);
         post.setHeader("Content-Type", "application/json");
 
+
         // Send POST request and parse response
         try (CloseableHttpClient httpClient = HttpClients.createDefault();
              CloseableHttpResponse response = httpClient.execute(post)) {
@@ -67,8 +73,7 @@ public class ChatBot {
 
             if (resJson.has("error")) {
                 String errorMsg = resJson.getString("error");
-
-                return "Error: " + errorMsg;
+                throw new JSONException("API Limit reached");
             }
 
             // Parse JSON response
@@ -81,17 +86,10 @@ public class ChatBot {
                 responseList.add(responseString);
             }
 
-            // Convert response list to JSON and return it
-            Gson gson = new Gson();
-            String jsonResponse = gson.toJson(responseList);
-            Pattern pattern = Pattern.compile("\"([^\"]*)\"");
-            Matcher matcher = pattern.matcher(jsonResponse);
-            String extractedString = "";
-            if (matcher.find()) {
-                extractedString = matcher.group(1);
-            }
+            System.out.println(responseList);
 
-            return extractedString;
+
+            return responseList.get(0);
         } catch (IOException | JSONException e) {
             return "Error: " + e.getMessage();
         }
