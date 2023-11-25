@@ -28,17 +28,27 @@
     -fx-background-color: transparent ;
     -fx-text-fill: white;
 }
+.text-area .scroll-bar:vertical {
+    -fx-pref-width: 1;
+    -fx-opacity: 1;
+    -fx-background-color: black;
+}
+.text-area .scroll-bar:horizontal {
+    -fx-pref-height: 1;
+    -fx-opacity: 0;
+}
 
 #askButton {
-    -fx-background-color: rgba(255, 0, 166, 0.9);
+    -fx-background-color: rgba(255, 188, 231, 0.6);
     -fx-background-radius: 30px;
     -fx-border-style: solid;
     -fx-text-fill: white;
 }
 
 #askDefButton, #askSynonymAndAnotonymButton, #askForUseButton, #askForCollocations {
-    -fx-background-color: rgba(255, 0, 166, 0.6);
+    -fx-background-color: rgba(255, 188, 231, 0.6);
     -fx-background-radius: 30px;
     -fx-border-style: solid;
     -fx-text-fill: white;
 }
+

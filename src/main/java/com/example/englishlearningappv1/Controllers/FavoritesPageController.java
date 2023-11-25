@@ -5,7 +5,9 @@ import com.example.englishlearningappv1.API.SaA;
 import com.example.englishlearningappv1.Functions.CRUDFunctions;
 import com.example.englishlearningappv1.Root;
 import com.example.englishlearningappv1.Utils.BackgroundEffects;
+import com.example.englishlearningappv1.Utils.FunctionEffects;
 import com.example.englishlearningappv1.Utils.Utils;
+import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.web.WebView;
@@ -23,6 +26,7 @@ import org.json.JSONException;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -35,8 +39,13 @@ import static com.example.englishlearningappv1.API.ChatBot.sendQuery;
 public class FavoritesPageController extends HomePageController {
     private static int currentIndex = 0;
     private List<String> listOfFavoriteWords;
+    private List<Button> listOfButtons;
     private final PauseTransition cooldownTransition = new PauseTransition(Duration.millis(5000)); // 3 seconds cooldown
-
+    private final FunctionEffects functionEffects = new FunctionEffects();
+    private String baseStyle = "    -fx-background-color: rgba(255, 188, 231, 0.6);\n" +
+            "    -fx-background-radius: 30px;\n" +
+            "    -fx-border-style: solid;\n" +
+            "    -fx-text-fill: white;";
     @FXML
     private Button favoritesPage;
     @FXML
@@ -77,6 +86,13 @@ public class FavoritesPageController extends HomePageController {
         favoritesPage.setStyle(secondBaseStyle);
         listOfFavoriteWords = CRUDFunctions.createFavoriteWordList();
         favoriteWordDisplay.setText(listOfFavoriteWords.get(currentIndex));
+
+        listOfButtons = new ArrayList<>();
+
+        listOfButtons.add(askForUseButton);
+        listOfButtons.add(askDefButton);
+        listOfButtons.add(askForCollocations);
+        listOfButtons.add(askSynonymAndAnotonymButton);
     }
 
 
@@ -109,21 +125,40 @@ public class FavoritesPageController extends HomePageController {
         });
     }
     public void revealOptions(ActionEvent event) {
-
+        if (askDefButton.isDisabled()) {
+            enableAndSetVisible(event);
+        } else {
+            disableAndSetVisible(event);
+        }
     }
     
     public void disableButtons() {
-        askForUseButton.setDisable(true);
-        askDefButton.setDisable(true);
-        askSynonymAndAnotonymButton.setDisable(true);
-        askForCollocations.setDisable(true);
+        for (Button b : listOfButtons) {
+            b.setDisable(true);
+            b.setStyle(baseStyle + "-fx-opacity: 0.6");
+        }
+        nextButton.setDisable(true);
+        backButton.setDisable(true);
     }
     
     public void enableButtons() {
-        askForUseButton.setDisable(false);
-        askDefButton.setDisable(false);
-        askSynonymAndAnotonymButton.setDisable(false);
-        askForCollocations.setDisable(false);
+        for (Button b : listOfButtons) {
+            b.setDisable(false);
+            b.setStyle(baseStyle + "-fx-opacity: 1");
+        }
+        nextButton.setDisable(false);
+        backButton.setDisable(false);
+    }
+    
+    public void enableAndSetVisible(ActionEvent event) {
+        functionEffects.createFadeEffectsIn(event, listOfButtons);
+        enableButtons();
+    }
+
+    public void disableAndSetVisible(ActionEvent event) {
+        functionEffects.createFadeEffectsOut(event, listOfButtons);
+
+        disableButtons();
     }
 
     public void askChatGPTQuestions(ActionEvent event) {
@@ -140,8 +175,6 @@ public class FavoritesPageController extends HomePageController {
             String question = "";
             System.out.println(button.getId());
             String ans = String.valueOf(sendQuery(button.getText() + favoriteWordDisplay.getText() + ", make it quick"));
-            System.out.println(button.getText() + favoriteWordDisplay.getText() + ", answer quickly");
-            System.out.println(ans);
             if (Objects.equals(ans, "Error: JSONObject[\"error\"] not a string.")) {
                 return "Sorry, i don't know right now!";
             }
@@ -152,7 +185,6 @@ public class FavoritesPageController extends HomePageController {
         queryResult.thenAcceptAsync(ans -> {
             System.out.println(ans);
             answerContainerLabel.setText(String.valueOf(ans));
-
             // Re-enable the button when the query is complete
             enableButtons();
         });
@@ -180,4 +212,32 @@ public class FavoritesPageController extends HomePageController {
         }
     }
 
+
+    public void inEffects(MouseEvent event) {
+        functionEffects.inEffects3(event, baseStyle + "-fx-border-style: none");
+    }
+
+    public void outEffects(MouseEvent event) {
+        functionEffects.outEffects3(event, baseStyle);
+    }
+
+    public void inEffects2(MouseEvent event) {
+        Button button = (Button) event.getSource();
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(150), button);
+        fadeTransition.setFromValue(1);
+        fadeTransition.setToValue(0.7);
+        fadeTransition.setCycleCount(0);
+        fadeTransition.setAutoReverse(true);
+        fadeTransition.play();
+    }
+
+    public void outEffects2(MouseEvent event) {
+        Button button = (Button) event.getSource();
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(150), button);
+        fadeTransition.setFromValue(0.7);
+        fadeTransition.setToValue(1);
+        fadeTransition.setCycleCount(0);
+        fadeTransition.setAutoReverse(true);
+        fadeTransition.play();
+    }
 }

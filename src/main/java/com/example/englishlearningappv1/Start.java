@@ -2,6 +2,8 @@ package com.example.englishlearningappv1;
 
 import com.example.englishlearningappv1.Preloader.LoadingScreen;
 import javafx.application.Application;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
 import java.sql.SQLException;
