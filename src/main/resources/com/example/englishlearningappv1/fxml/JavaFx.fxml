@@ -14,7 +14,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1082.0" style="-fx-background-color: radial-gradient(focus-angle 0deg, focus-distance 0%, center 50% 0%, radius 220%, #131f24 10%, #302b63 40%, #24243e 65%); -fx-border-color: transparent; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.DictionaryController">
     <children>
-        <TextField fx:id="textField" cache="true" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="364.0" layoutY="17.0" prefHeight="47.0" prefWidth="571.0" promptText="SEARCH..." scaleShape="false" style="-fx-background-color: transparent; -fx-font-size: 15;">
+        <TextField fx:id="textField" cache="true" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="364.0" layoutY="17.0" prefHeight="47.0" prefWidth="571.0" promptText="SEARCH..." scaleShape="false" style="-fx-background-color: transparent; -fx-font-size: 15; -fx-text-fill: white;">
             <font>
                 <Font size="13.0" />
             </font>
