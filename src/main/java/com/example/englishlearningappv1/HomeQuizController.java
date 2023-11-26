@@ -31,7 +31,7 @@ public class HomeQuizController extends TitlebarController {
 
     private Scene scene;
 
-    final private static String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/quiz.fxml";
+    final private static String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/quiz.fxml";
     final private static String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
     private static final String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
 

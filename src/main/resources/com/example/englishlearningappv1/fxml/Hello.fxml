@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: radial-gradient(focus-angle 0deg, focus-distance 0%, center 50% 0%, radius 220%, #131f24 10%, #302b63 40%, #24243e 65%);" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.HelloController">
     <stylesheets>
-        <URL value="@../quiz.css" />
+        <URL value="@../styles/quiz.css" />
     </stylesheets>
     <children>
         <Label fx:id="question" alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="50.0" prefHeight="406.7" prefWidth="620.0" text="Test" textAlignment="CENTER" textFill="WHITE" wrapText="true">

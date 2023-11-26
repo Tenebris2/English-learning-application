@@ -22,7 +22,7 @@ public class WordleApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         stageReference = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(WordleApplication.class.getResource("wordle.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(WordleApplication.class.getResource("fxml/wordle.fxml"));
         Parent root = fxmlLoader.load();
 
         double screenWidth = Screen.getPrimary().getBounds().getWidth();

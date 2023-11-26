@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="mainPane" maxHeight="Infinity" maxWidth="Infinity" prefHeight="720" prefWidth="1080.0" style="-fx-background-color: radial-gradient(focus-angle 0deg, focus-distance 0%, center 50% 0%, radius 220%, #131f24 10%, #302b63 40%, #24243e 65%);" styleClass="main-screen" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.WordleController">
     <stylesheets>
-        <URL value="@wordle.css" />
+        <URL value="@../styles/wordle.css" />
     </stylesheets>
     <GridPane fx:id="gridPane" alignment="CENTER" hgap="5" layoutX="376.0" layoutY="87.0" onKeyPressed="#onKeyPressed" prefHeight="282.0" prefWidth="327.0" vgap="5">
         <BorderPane.margin>
@@ -37,7 +37,7 @@
         <graphic>
             <ImageView fitHeight="56.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                 <image>
-                    <Image url="@fxml/image/icons8-back-100.png" />
+                    <Image url="@image/icons8-back-100.png" />
                 </image>
             </ImageView>
         </graphic>
@@ -49,19 +49,19 @@
         <graphic>
             <ImageView fitHeight="39.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                 <image>
-                    <Image url="@fxml/image/icons8-restart-50%20(1).png" />
+                    <Image url="@image/icons8-restart-50 (1).png" />
                 </image>
             </ImageView>
         </graphic>
     </Button>
     <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="1044.0" layoutY="14.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
         <image>
-            <Image url="@fxml/image/icons8-close-50.png" />
+            <Image url="@image/icons8-close-50.png" />
         </image>
     </ImageView>
     <ImageView fx:id="minimize" fitHeight="99.0" fitWidth="21.0" layoutX="1012.0" layoutY="14.0" onMouseClicked="#minimizeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
         <image>
-            <Image url="@fxml/image/icons8-minimize-50.png" />
+            <Image url="@image/icons8-minimize-50.png" />
         </image>
     </ImageView>
 </AnchorPane>

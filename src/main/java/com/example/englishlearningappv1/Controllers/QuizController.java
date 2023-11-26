@@ -1,4 +1,4 @@
-package com.example.englishlearningappv1;
+package com.example.englishlearningappv1.Controllers;
 
 import com.example.englishlearningappv1.Controllers.SceneController;
 import com.example.englishlearningappv1.Controllers.TitlebarController;
@@ -23,7 +23,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-public class QuizController extends TitlebarController {
+public class QuizController extends TitlebarController implements ControllerInterface {
 
     String[] questions = {
             "The little boy pleaded _____ not to leave him alone in the dark.",
@@ -67,9 +67,6 @@ public class QuizController extends TitlebarController {
     public static int correct = 0;
     private int index = 0;
     private int totalSec = 15;
-
-    final private static String RESULT_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/result.fxml";
-    private static final String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
 
     @FXML
     public Label timer, question;
