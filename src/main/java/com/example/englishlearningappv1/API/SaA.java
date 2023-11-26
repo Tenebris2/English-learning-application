@@ -13,7 +13,15 @@ import org.json.JSONObject;
 
 public class SaA implements APInterface {
     final static String endpoint = "http://thesaurus.altervista.org/thesaurus/v1";
-    final static String api_key = "AkiAKXBNxru8mh9iolGO";// replace "test_only" with your own key (http://thesaurus.altervista.org/mykey)
+    final static String api_key;// replace "test_only" with your own key (http://thesaurus.altervista.org/mykey)
+
+    static {
+        try {
+            api_key = API_KEY.getAPIKey("SaA-api-key").getKey();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
     public static void SendRequest(String word, String language, String key) {
@@ -42,10 +50,6 @@ public class SaA implements APInterface {
                 System.out.println("Synonyms: " + synonyms);
             }
 
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        } catch (UnsupportedEncodingException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -72,15 +76,17 @@ public class SaA implements APInterface {
         // Print the results
         System.out.println("Word: " + word);
         System.out.println("Synonyms: ");
+        String syn = "\n";
         for (Object jsonObject1 : synonyms) {
-            System.out.print(jsonObject1.toString() + " ");
+            syn += "- " + jsonObject1.toString() + " \n";
         }
+        String an = "\n";
         System.out.println();
         System.out.println("Antonyms: ");
         for (Object jsonObject1 : antonyms) {
-            System.out.print(jsonObject1.toString() + " ");
+            an += "- " + jsonObject1.toString() + " \n";
         }
-        return word + "\n Synonyms: " + synonyms + "\n Antonyms: " + antonyms;
+        return word + "\n Synonyms: " + syn + "\n Antonyms: " + an;
     }
 
 }
