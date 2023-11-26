@@ -194,7 +194,7 @@ public class FavoritesPageController extends HomePageController implements Contr
             String question = "";
             System.out.println(button.getId());
             String ans = String.valueOf(APIController.chatBotSendQuery(button.getText() + favoriteWordDisplay.getText() + ", make it quick"));
-            if (Objects.equals(ans, "Error: JSONObject[\"error\"] not a string.")) {
+            if (ans.contains("Error:")) {
                 return "Sorry, i don't know right now!";
             }
             return ans;
@@ -206,7 +206,7 @@ public class FavoritesPageController extends HomePageController implements Contr
             System.out.println("Elapsed Time: " + elapsedTime / 1000 + " seconds");
             if (elapsedTime / 1000 % 2 == 0) {
                 answerContainerLabel.setText("....");
-            } else {
+            } else if (elapsedTime / 1000 % 2 != 0){
                 answerContainerLabel.setText("...");
             }
         }, 1, 1, TimeUnit.SECONDS);
