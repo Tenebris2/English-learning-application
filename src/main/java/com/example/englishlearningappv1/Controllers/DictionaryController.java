@@ -26,7 +26,7 @@ public class DictionaryController extends HomePageController implements Controll
     private static final String addFavButtonImageURL = sourcePath + "icons8-add-favorite-unscreen.gif";
     private static final String addFavButtonImageURLDefault = sourcePath + "icons8-add-favorite-unscreen.png";
     private final String baseStyle = """
-                -fx-background-color: rgba(27, 25, 57, 0.2);
+                -fx-background-color: rgba(27   , 25, 57, 0.2);
 
                 -fx-border-radius: 16px;
                 -fx-border-style: solid;
