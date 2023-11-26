@@ -58,9 +58,8 @@ public class FavoritesPageController extends HomePageController implements Contr
 
     private static final String secondBaseStyle = """
                     -fx-background-color: linear-gradient(to right top, #ffcbf2, #ec38bc, #7303c0, #03001e);
-                                                                              -fx-background-radius: 10px; /* Adjust the radius as needed */
-            -fx-border-radius: 100px; /* Adjust the radius as needed */
-                        """;
+                                                                                -fx-border-radius: 10px; /* Adjust the radius as needed */
+                                                                                            """;
     @Override
     public void initialize() throws SQLException {
         BackgroundEffects backgroundEffects = new BackgroundEffects();

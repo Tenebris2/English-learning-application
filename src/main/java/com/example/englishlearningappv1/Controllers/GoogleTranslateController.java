@@ -172,14 +172,13 @@ public class GoogleTranslateController extends HomePageController implements Con
     }
 
     public void inEffects2(MouseEvent event) {
-        FunctionEffects functionEffects = new FunctionEffects();
         functionEffects.inEffects3(event);
     }
 
     public void outEffects2(MouseEvent event) {
-        FunctionEffects functionEffects = new FunctionEffects();
         functionEffects.outEffects3(event);
     }
+
 
     public void changeTranslationDirection(MouseEvent event) {
         String tmp = langTo;
@@ -222,7 +221,7 @@ public class GoogleTranslateController extends HomePageController implements Con
         }
 
         recordBtn.setDisable(true);
-        recordBtn.setVisible(true);
+        recordBtn.setVisible(false);
         stopBtn.setDisable(false);
         stopBtn.setVisible(true);
 
