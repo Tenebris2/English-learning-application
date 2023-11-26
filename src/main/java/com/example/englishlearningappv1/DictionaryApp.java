@@ -1,16 +1,13 @@
 package com.example.englishlearningappv1;
 
 import com.example.englishlearningappv1.Controllers.Controller;
-import com.example.englishlearningappv1.Preloader.LoadingScreen;
 import javafx.application.Application;
 import javafx.application.Preloader;
 import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.net.URL;

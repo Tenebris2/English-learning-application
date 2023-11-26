@@ -13,7 +13,7 @@ import java.util.Optional;
 
 import static com.example.englishlearningappv1.Functions.CRUDFunctions.CRUDdeleteWord;
 
-public class DeletingFunction extends Root {
+public class DeletingFunction extends Root implements Function {
     private final Button dltBtn;
     private final String DELETE_TAG = "#delete";
 

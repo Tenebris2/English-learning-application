@@ -67,10 +67,6 @@ public class SceneController implements ControllerInterface {
 
     }
 
-    public void switchToChapterStart(ActionEvent event) throws Exception {
-        switchScene(event, CHAPTER_START_FXML_FILE_PATH);
-    }
-
     public void switchtoWordle(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(WordleApplication.class.getResource("wordle.fxml"));
         Parent root = fxmlLoader.load();

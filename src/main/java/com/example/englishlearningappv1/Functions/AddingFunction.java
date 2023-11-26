@@ -14,7 +14,7 @@ import java.util.Optional;
 import static com.example.englishlearningappv1.Functions.CRUDFunctions.*;
 
 
-public class AddingFunction extends Root {
+public class AddingFunction extends Root implements Function {
     private Button addingBtn;
     private final String ADD_TAG = "#add";
 

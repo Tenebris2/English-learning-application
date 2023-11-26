@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import static com.example.englishlearningappv1.Functions.CRUDFunctions.CRUDupdateWord;
 
 
-public class ChangingFunction extends Root {
+public class ChangingFunction extends Root implements Function {
     private Button changingBtn;
     private String CHANGE_TAG = "#change";
 

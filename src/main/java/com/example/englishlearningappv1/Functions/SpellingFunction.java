@@ -5,7 +5,7 @@ import com.example.englishlearningappv1.Speaker;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
-public class SpellingFunction {
+public class SpellingFunction implements Function {
     private Button spellingBtn;
     private final String tag ="#speak";
 

@@ -4,7 +4,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 
-public class VipFunction {
+public class VipFunction implements Function {
     private Button vipBtn;
     private final String VIP_TAG = "#vip";
 

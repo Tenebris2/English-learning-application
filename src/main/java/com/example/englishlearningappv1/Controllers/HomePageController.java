@@ -79,10 +79,6 @@ public class HomePageController extends TitlebarController implements Controller
         sceneController.switchtoDictionary(event);
     }
 
-    public void gotoChapterStart(ActionEvent event) throws Exception {
-        sceneController.switchToChapterStart(event);
-    }
-
     public void gotoQuiz(ActionEvent event) throws IOException {
         sceneController.switchtoQuiz(event);
     }

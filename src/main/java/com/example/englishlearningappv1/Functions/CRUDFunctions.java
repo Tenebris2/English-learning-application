@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CRUDFunctions{
+public class CRUDFunctions implements Function {
     static final String dbURL = "jdbc:mysql://localhost:3306/dictionary";
     static final String username = "root";
     static final String password = "";

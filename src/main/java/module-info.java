@@ -11,8 +11,6 @@ module com.example.englishlearningappv1 {
     opens com.example.englishlearningappv1.Functions to javafx.fxml;
     exports com.example.englishlearningappv1.Controllers;
     opens com.example.englishlearningappv1.Controllers to javafx.fxml;
-    exports com.example.englishlearningappv1.Preloader;
-    opens com.example.englishlearningappv1.Preloader to javafx.graphics;
     exports com.example.englishlearningappv1.API;
     opens com.example.englishlearningappv1.API to javafx.fxml;
 
