@@ -80,12 +80,20 @@ public class SaA implements APInterface {
         for (Object jsonObject1 : synonyms) {
             syn += "- " + jsonObject1.toString() + " \n";
         }
+
+        if (syn.equals("\n")) {
+            syn = "There are no synonyms";
+        }
         String an = "\n";
         System.out.println();
         System.out.println("Antonyms: ");
         for (Object jsonObject1 : antonyms) {
             an += "- " + jsonObject1.toString() + " \n";
         }
+        if (an.equals("\n")) {
+            an = "There are no antonyms";
+        }
+
         return word + "\n Synonyms: " + syn + "\n Antonyms: " + an;
     }
 
