@@ -118,16 +118,6 @@
                 <DropShadow />
             </effect>
         </AnchorPane>
-      <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="1047.0" layoutY="17.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@image/icons8-close-50.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="minimize" fitHeight="99.0" fitWidth="21.0" layoutX="1011.0" layoutY="17.0" onMouseClicked="#minimizeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@image/icons8-minimize-50.png" />
-         </image>
-      </ImageView>
       <AnchorPane layoutX="231.0" layoutY="78.0" prefHeight="483.0" prefWidth="829.0" stylesheets="@../styles/DictionaryStyles.css">
          <children>
                 <ListView fx:id="wordView" prefHeight="564.0" prefWidth="326.0" stylesheets="@../styles/DictionaryStyles.css" />
@@ -212,4 +202,14 @@
     <effect>
         <DropShadow />
     </effect>
+    <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="1044.0" layoutY="14.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@image/icons8-close-50.png" />
+        </image>
+    </ImageView>
+    <ImageView fx:id="minimize" fitHeight="99.0" fitWidth="21.0" layoutX="1012.0" layoutY="14.0" onMouseClicked="#minimizeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@image/icons8-minimize-50.png" />
+        </image>
+    </ImageView>
 </AnchorPane>

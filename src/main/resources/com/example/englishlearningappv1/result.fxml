@@ -5,6 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <AnchorPane fx:id="mainPane" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: radial-gradient(focus-angle 0deg, focus-distance 0%, center 50% 0%, radius 220%, #131f24 10%, #302b63 40%, #24243e 65%);" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.ResultController">
    <children>
       <Label fx:id="marks" alignment="CENTER" layoutX="250" layoutY="176.0" prefHeight="130.0" prefWidth="580.0" style="-fx-background-color: white; -fx-background-radius: 16px; -fx-border-radius: 16px;" textAlignment="CENTER" textFill="#203bd7" wrapText="true">
@@ -40,4 +42,14 @@
          </font>
       </Label>
    </children>
+   <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="1044.0" layoutY="14.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@fxml/image/icons8-close-50.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="minimize" fitHeight="99.0" fitWidth="21.0" layoutX="1012.0" layoutY="14.0" onMouseClicked="#minimizeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@fxml/image/icons8-minimize-50.png" />
+      </image>
+   </ImageView>
 </AnchorPane>

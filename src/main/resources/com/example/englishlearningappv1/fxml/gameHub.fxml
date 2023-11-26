@@ -148,20 +148,20 @@
                         <Font name="System Bold" size="18.0" />
                     </font>
                 </Button>
-                <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="845.0" layoutY="14.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@image/icons8-close-50.png" />
-                    </image>
-                </ImageView>
-                <ImageView fx:id="minimize" fitHeight="99.0" fitWidth="21.0" layoutX="808.0" layoutY="14.0" onMouseClicked="#minimizeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@image/icons8-minimize-50.png" />
-                    </image>
-                </ImageView>
             </children>
             <effect>
                 <DropShadow />
             </effect>
         </AnchorPane>
     </center>
+    <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="1044.0" layoutY="14.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@image/icons8-close-50.png" />
+        </image>
+    </ImageView>
+    <ImageView fx:id="minimize" fitHeight="99.0" fitWidth="21.0" layoutX="1012.0" layoutY="14.0" onMouseClicked="#minimizeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@image/icons8-minimize-50.png" />
+        </image>
+    </ImageView>
 </BorderPane>
