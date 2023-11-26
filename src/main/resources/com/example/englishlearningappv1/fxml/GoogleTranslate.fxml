@@ -15,7 +15,7 @@
     <left>
         <AnchorPane fx:id="anchorPane1" prefHeight="730.0" prefWidth="200.0" style="-fx-border-color: none; -fx-background-radius: 10px;" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="learnButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="119.0" mnemonicParsing="false" onAction="#gotoHome" prefHeight="58.0" prefWidth="181.0" text="LEARN" textFill="WHITE">
+                <Button fx:id="learnButton" alignment="BOTTOM_LEFT" layoutX="9.0" layoutY="119.0" mnemonicParsing="false" onAction="#gotoHome" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="LEARN" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="17.0" />
                     </font>
@@ -74,7 +74,7 @@
                         <DropShadow />
                     </effect>
                 </Label>
-            <Button fx:id="googleSearch" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="322.0" mnemonicParsing="false" onAction="#openGoogleTranslate" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" style="-fx-background-color: linear-gradient(to right top, #ffcbf2, #ec38bc, #7303c0, #03001e);" text="GOOGLE" textFill="WHITE">
+            <Button fx:id="googleSearch" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="317.0" mnemonicParsing="false" onAction="#openGoogleTranslate" prefHeight="58.0" prefWidth="181.0" style="-fx-background-color: linear-gradient(to right top, #ffcbf2, #ec38bc, #7303c0, #03001e);" text="GOOGLE" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
@@ -89,7 +89,7 @@
                   <DropShadow />
                </effect>
             </Button>
-            <Button fx:id="favoritesPage" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="390.0" mnemonicParsing="false" onAction="#gotoFavorites" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="FAVORITES" textFill="WHITE">
+            <Button fx:id="favoritesPage" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="383.0" mnemonicParsing="false" onAction="#gotoFavorites" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="FAVORITES" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>

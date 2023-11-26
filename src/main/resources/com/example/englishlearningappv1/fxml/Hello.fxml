@@ -5,6 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: radial-gradient(focus-angle 0deg, focus-distance 0%, center 50% 0%, radius 220%, #131f24 10%, #302b63 40%, #24243e 65%);" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.HelloController">
     <stylesheets>
         <URL value="@../quiz.css" />
@@ -40,5 +42,27 @@
                 <Font name="System Bold" size="0.0" />
             </font>
         </Label>
+        <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="1045.0" layoutY="17.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@image/icons8-close-50.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="minimize" fitHeight="99.0" fitWidth="21.0" layoutX="1009.0" layoutY="17.0" onMouseClicked="#minimizeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@image/icons8-minimize-50.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="backBtn" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutY="-10.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="58.0" prefWidth="56.0" style="-fx-background-color: transparent; -fx-cursor: hand;" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="69.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@image/icons8-left-arrow-32%20(1).png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
     </children>
 </AnchorPane>

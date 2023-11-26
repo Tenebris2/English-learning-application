@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 
-public class HelloController implements ControllerInterface {
+public class HelloController extends TitlebarController implements ControllerInterface {
 
     String[] questions = {
             "What subject is he _____ now?",
@@ -320,6 +320,12 @@ public class HelloController implements ControllerInterface {
                 opt4.getStyleClass().setAll("correct-answer-pick");
             }
         }
+    }
+
+    @FXML
+    public void backToMenu(ActionEvent event) throws Exception {
+        SceneController sceneController = new SceneController();
+        sceneController.switchScene(event, HOME_PAGE_FXML_FILE_PATH);
     }
 
     public int gen() {

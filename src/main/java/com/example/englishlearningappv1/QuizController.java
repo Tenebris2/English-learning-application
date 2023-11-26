@@ -1,5 +1,6 @@
 package com.example.englishlearningappv1;
 
+import com.example.englishlearningappv1.Controllers.SceneController;
 import com.example.englishlearningappv1.Controllers.TitlebarController;
 import com.example.englishlearningappv1.Utils.BackgroundEffects;
 import com.example.englishlearningappv1.Utils.GameBackgroundEffects;
@@ -68,6 +69,7 @@ public class QuizController extends TitlebarController {
     private int totalSec = 15;
 
     final private static String RESULT_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/result.fxml";
+    private static final String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
 
     @FXML
     public Label timer, question;
@@ -85,6 +87,12 @@ public class QuizController extends TitlebarController {
         GameBackgroundEffects gameBackgroundEffects = new GameBackgroundEffects();
         gameBackgroundEffects.backgroundEffects(mainPane, 500);
         gameBackgroundEffects.shootingStarsEffect(mainPane);
+    }
+
+    @FXML
+    public void backToMenu(ActionEvent event) throws Exception {
+        SceneController sceneController = new SceneController();
+        sceneController.switchScene(event, GAME_HUB_FXML_FILE_PATH);
     }
 
     public void playAgain() {
