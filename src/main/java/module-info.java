@@ -22,13 +22,13 @@ module com.example.englishlearningappv1 {
     requires com.google.gson;
     requires org.apache.httpcomponents.httpcore;
     requires org.apache.httpcomponents.httpclient;
-    requires java.flac.encoder;
     requires java.desktop;
-    requires json;
     requires com.fasterxml.jackson.databind;
     requires java.google.speech.api;
     requires jlayer;
     requires org.slf4j;
     requires openai;
     requires org.jsoup;
+    requires org.json;
+    requires java.flac.encoder;
 }

@@ -1,5 +1,6 @@
 package com.example.englishlearningappv1.Controllers;
 
+import com.example.englishlearningappv1.API.APIController;
 import com.example.englishlearningappv1.API.SaA;
 import com.example.englishlearningappv1.Functions.CRUDFunctions;
 import com.example.englishlearningappv1.Utils.BackgroundEffects;
@@ -20,8 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
-
-import static com.example.englishlearningappv1.API.ChatBot.sendQuery;
 
 public class FavoritesPageController extends HomePageController implements ControllerInterface {
     private static int currentIndex = 0;
@@ -97,8 +96,8 @@ public class FavoritesPageController extends HomePageController implements Contr
         CompletableFuture<String> queryResult = CompletableFuture.supplyAsync(() -> {
             String ans = null;
             try {
-                ans = SaA.sendRequest(favoriteWordDisplay.getText());
-            } catch (IOException e) {
+                ans = APIController.sendRequestToSaA(favoriteWordDisplay.getText());
+            } catch (IOException | SQLException e) {
                 throw new RuntimeException(e);
             }
             System.out.println(ans);
@@ -170,7 +169,7 @@ public class FavoritesPageController extends HomePageController implements Contr
         CompletableFuture<String> queryResult = CompletableFuture.supplyAsync(() -> {
             String question = "";
             System.out.println(button.getId());
-            String ans = String.valueOf(sendQuery(button.getText() + favoriteWordDisplay.getText() + ", make it quick"));
+            String ans = String.valueOf(APIController.chatBotSendQuery(button.getText() + favoriteWordDisplay.getText() + ", make it quick"));
             if (Objects.equals(ans, "Error: JSONObject[\"error\"] not a string.")) {
                 return "Sorry, i don't know right now!";
             }

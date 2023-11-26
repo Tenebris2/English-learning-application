@@ -1,14 +1,11 @@
 package com.example.englishlearningappv1.API;
-import java.io.BufferedReader;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -20,9 +17,8 @@ import org.apache.http.impl.client.HttpClients;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import com.google.gson.Gson;
 
-public class ChatBot {
+public class ChatBot implements APInterface {
     private static final String endpoint = "https://api.openai.com/v1/chat/completions";
     private static final String apiKey;
 
@@ -37,11 +33,8 @@ public class ChatBot {
     public ChatBot() throws SQLException {
     }
 
-    public static CompletableFuture<String> asyncSendQuery(String input) {
-        return CompletableFuture.supplyAsync(() -> sendQuery(input));
-    }
 
-    public static String sendQuery(String input) throws JSONException {
+    public String sendQuery(String input) throws JSONException {
         // Build input and API key params
         JSONObject payload = new JSONObject();
         JSONObject message = new JSONObject();
@@ -93,8 +86,5 @@ public class ChatBot {
         } catch (IOException | JSONException e) {
             return "Error: " + e.getMessage();
         }
-    }
-    public static void main(String[] args) {
-        System.out.println(ChatBot.sendQuery("tell me the definition of the word good, make it short"));
     }
 }

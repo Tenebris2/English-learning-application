@@ -1,9 +1,7 @@
 package com.example.englishlearningappv1.API;
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
+import java.net.*;
+import java.sql.SQLException;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,7 +11,7 @@ import com.google.gson.JsonParser;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class SaA {
+public class SaA implements APInterface {
     final static String endpoint = "http://thesaurus.altervista.org/thesaurus/v1";
     final static String api_key = "AkiAKXBNxru8mh9iolGO";// replace "test_only" with your own key (http://thesaurus.altervista.org/mykey)
 
@@ -53,13 +51,14 @@ public class SaA {
         }
     }
 
-    public static String sendRequest(String word_) throws IOException {
-        URL url = new URL("https://api.api-ninjas.com/v1/thesaurus?word=" + word_);
+    @Override
+    public String sendQuery(String input) throws IOException, SQLException {
+        URL url = new URL("https://api.api-ninjas.com/v1/thesaurus?word=" + input);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestProperty("accept", "application/json");
         connection.setRequestMethod("GET");
 
-        connection.setRequestProperty("X-Api-Key", "ae6NdCpxymnszfe0RYcZVg==UOtZeNfGNXxXDDQD");
+        connection.setRequestProperty("X-Api-Key", API_KEY.getAPIKey("SaA-api-key").getKey());
         InputStream responseStream = connection.getInputStream();
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root = mapper.readTree(responseStream);

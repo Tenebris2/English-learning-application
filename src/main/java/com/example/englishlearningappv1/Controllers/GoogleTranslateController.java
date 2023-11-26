@@ -1,5 +1,7 @@
 package com.example.englishlearningappv1.Controllers;
 
+import com.example.englishlearningappv1.API.APIController;
+import com.example.englishlearningappv1.API.API_KEY;
 import com.example.englishlearningappv1.API.TTS;
 import com.example.englishlearningappv1.STT.microphone.Microphone;
 import com.example.englishlearningappv1.STT.recognizer.GSpeechDuplex;
@@ -25,11 +27,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 import net.sourceforge.javaflacencoder.FLACFileWriter;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
-import static com.example.englishlearningappv1.API.GoogleTranslate.translate;
 
 public class GoogleTranslateController extends HomePageController implements ControllerInterface {
     @FXML
@@ -59,7 +60,10 @@ public class GoogleTranslateController extends HomePageController implements Con
     private Map<String, Integer> languageCodesIndex = new HashMap<>();
 
     public static Microphone mic = new Microphone(FLACFileWriter.FLAC);
-    private GSpeechDuplex duplex = new GSpeechDuplex("AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
+    private GSpeechDuplex duplex = new GSpeechDuplex(API_KEY.getAPIKey("stt-api-key").getKey());
+
+    public GoogleTranslateController() throws SQLException {
+    }
 
     @FXML
     public void initialize() {
@@ -137,7 +141,7 @@ public class GoogleTranslateController extends HomePageController implements Con
                 translationTimeline.getKeyFrames().setAll(
                         new KeyFrame(Duration.seconds(0.25), e -> {
                             // Perform translation logic here
-                            translatedTextArea.setText(translate(translatingTextArea.getText(), langFrom, langTo));
+                            translatedTextArea.setText(APIController.translate(translatingTextArea.getText(), langFrom, langTo));
                         })
                 );
                 translationTimeline.playFromStart();
@@ -152,7 +156,7 @@ public class GoogleTranslateController extends HomePageController implements Con
         translationTimeline.getKeyFrames().setAll(
                 new KeyFrame(Duration.seconds(0.25), e -> {
                     // Perform translation logic here
-                    translatedTextArea.setText(translate(translatingTextArea.getText(), langFrom, langTo));
+                    translatedTextArea.setText(APIController.translate(translatingTextArea.getText(), langFrom, langTo));
                 })
         );
         translationTimeline.playFromStart();
@@ -160,13 +164,11 @@ public class GoogleTranslateController extends HomePageController implements Con
 
     @FXML
     public void ttsTranslating(ActionEvent event) {
-        TTS tts = new TTS();
-        tts.speak(translatingTextArea.getText());
+        APIController.speak(translatingTextArea.getText());
     }
     @FXML
     public void ttsTranslated(ActionEvent event) {
-        TTS tts = new TTS();
-        tts.speak(translatedTextArea.getText());
+        APIController.speak(translatedTextArea.getText());
     }
 
     public void inEffects2(MouseEvent event) {
@@ -200,6 +202,7 @@ public class GoogleTranslateController extends HomePageController implements Con
     @FXML
     public void setLangTo(ActionEvent event) {
         langTo = languageCodes.get(translatedChoiceBox.getValue());
+        translatedTextArea.setText(APIController.translate(translatingTextArea.getText(), langFrom, langTo));
     }
 
 

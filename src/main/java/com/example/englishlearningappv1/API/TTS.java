@@ -6,9 +6,13 @@ import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
-public class TTS {
-    SynthesiserV2 synthesizer = new SynthesiserV2("AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
+public class TTS implements APInterface {
+    SynthesiserV2 synthesizer = new SynthesiserV2(API_KEY.getAPIKey("stt-api-key").getKey());
+
+    public TTS() throws SQLException {
+    }
 
     public void speak(String text) {
         System.out.println(text);
@@ -38,8 +42,13 @@ public class TTS {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         TTS tts = new TTS();
         tts.speak("bonjour");
+    }
+
+    @Override
+    public String sendQuery(String input) throws IOException, SQLException {
+        return null;
     }
 }

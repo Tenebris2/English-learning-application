@@ -17,9 +17,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
-public class GoogleTranslate {
-    private static final String ENG_LANG = "en";
-    private static final String VIE_LANG = "vi";
+public class GoogleTranslate implements APInterface {
 
     public static String translate(String input, String langFrom, String langTo) {
         try {
@@ -40,9 +38,17 @@ public class GoogleTranslate {
                 String result = EntityUtils.toString(response.getEntity(), "UTF-8");
                 Gson gson = new Gson();
                 List<List<List<Object>>> jsonData = gson.fromJson(result, List.class);
+                try {
+                    String rep = (String) jsonData.get(0).get(0).get(0);
+                    if (rep != null) {
+                        System.out.println((String) jsonData.get(0).get(0).get(0));
+                        return (String) jsonData.get(0).get(0).get(0);
+                    }
+                } catch (NullPointerException e) {
+                    return "";
+                }
 
-                System.out.println((String) jsonData.get(0).get(0).get(0));
-                return (String) jsonData.get(0).get(0).get(0);
+                return "";
             } else {
                 System.out.println("Error in connection. Status Code: " + statusCode);
                 return null;
@@ -53,4 +59,8 @@ public class GoogleTranslate {
         }
     }
 
+    @Override
+    public String sendQuery(String input) {
+        return null;
+    }
 }
