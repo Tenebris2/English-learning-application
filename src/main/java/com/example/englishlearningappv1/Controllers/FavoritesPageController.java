@@ -20,7 +20,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.*;
 
 public class FavoritesPageController extends HomePageController implements ControllerInterface {
     private static int currentIndex = 0;
@@ -84,11 +84,14 @@ public class FavoritesPageController extends HomePageController implements Contr
         }
     }
 
-
+    private static final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
     public void askSynonymAndAnotonym(ActionEvent event) throws IOException {
         answerContainerLabel.setText("...");
 
         disableButtons();
+
+        // Record the start time
+        long startTime = System.currentTimeMillis();
 
         // Start the cooldown transition
         cooldownTransition.playFromStart();
@@ -104,13 +107,32 @@ public class FavoritesPageController extends HomePageController implements Contr
             return ans;
         });
 
+        // Schedule a task to complete exceptionally after 10 seconds
+        ScheduledFuture<?> timeoutFuture = executorService.schedule(() -> {
+            queryResult.completeExceptionally(new TimeoutException("API request timed out"));
+        }, 10, TimeUnit.SECONDS);
+
         // Wait for the result before updating the UI
         queryResult.thenAcceptAsync(ans -> {
+            // Stop the logging when the query is complete
+            timeoutFuture.cancel(true);
+
             System.out.println(ans);
+            System.out.println("Total Elapsed Time: " + (System.currentTimeMillis() - startTime) / 1000 + " seconds");
+
             answerContainerLabel.setText(String.valueOf(ans));
 
             // Re-enable the button when the query is complete
             enableButtons();
+        }).exceptionally(ex -> {
+            // Handle exception (e.g., timeout)
+            System.err.println("Error: " + ex.getMessage());
+            answerContainerLabel.setText("Looks like this word cannot be searched for!");
+
+            // Re-enable the button when the query is complete
+            enableButtons();
+
+            return null;
         });
     }
     public void revealOptions(ActionEvent event) {
@@ -166,6 +188,8 @@ public class FavoritesPageController extends HomePageController implements Contr
         // Start the cooldown transition
         cooldownTransition.playFromStart();
 
+        long startTime = System.currentTimeMillis();
+
         CompletableFuture<String> queryResult = CompletableFuture.supplyAsync(() -> {
             String question = "";
             System.out.println(button.getId());
@@ -176,12 +200,33 @@ public class FavoritesPageController extends HomePageController implements Contr
             return ans;
         });
 
+        // Periodically log the elapsed time
+        ScheduledFuture<?> loggingFuture = executorService.scheduleAtFixedRate(() -> {
+            long elapsedTime = System.currentTimeMillis() - startTime;
+            System.out.println("Elapsed Time: " + elapsedTime / 1000 + " seconds");
+            if (elapsedTime / 1000 % 2 == 0) {
+                answerContainerLabel.setText("....");
+            } else {
+                answerContainerLabel.setText("...");
+            }
+        }, 1, 1, TimeUnit.SECONDS);
         // Wait for the result before updating the UI
+
         queryResult.thenAcceptAsync(ans -> {
+            loggingFuture.cancel(true);
             System.out.println(ans);
             answerContainerLabel.setText(String.valueOf(ans));
             // Re-enable the button when the query is complete
             enableButtons();
+        }).exceptionally(ex -> {
+            // Handle exception (e.g., timeout)
+            System.err.println("Error: " + ex.getMessage());
+            answerContainerLabel.setText("Looks like this word cannot be searched for!");
+
+            // Re-enable the button when the query is complete
+            enableButtons();
+
+            return null;
         });
     }
 
