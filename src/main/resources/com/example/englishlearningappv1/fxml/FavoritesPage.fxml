@@ -132,8 +132,22 @@
                               <Font name="Baskerville Old Face" size="64.0" />
                            </font>
                         </Label>
-                        <Button fx:id="nextButton" layoutX="684.0" layoutY="59.0" mnemonicParsing="false" onAction="#next" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" text="NEXT" textFill="WHITE" />
-                        <Button fx:id="backButton" layoutX="21.0" layoutY="59.0" mnemonicParsing="false" onAction="#back" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" text="BACK" textFill="WHITE" />
+                        <Button fx:id="nextButton" layoutX="689.0" layoutY="52.0" mnemonicParsing="false" onAction="#next" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/icons8-right-button-50.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button fx:id="backButton" layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onAction="#back" onMouseEntered="#inEffects2" onMouseExited="#outEffects2" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/icons8-left-button-50.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
                      </children>
                   </Pane>
                   <AnchorPane fx:id="duolingo_container" layoutX="43.0" layoutY="14.0" prefHeight="243.0" prefWidth="753.0">
@@ -149,6 +163,15 @@
                                  <font>
                                     <Font size="18.0" />
                                  </font>
+                              </Button>
+                              <Button fx:id="deleteButton" layoutX="23.0" layoutY="12.0" mnemonicParsing="false" onAction="#delete">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@image/icons8-delete-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                               </Button>
                            </children>
                         </AnchorPane>
@@ -178,15 +201,6 @@
                         </VBox>
                      </children>
                   </AnchorPane>
-                  <Button fx:id="deleteButton" layoutX="57.0" layoutY="427.0" mnemonicParsing="false" onAction="#delete">
-                     <graphic>
-                        <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@image/icons8-delete-48.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                </children>
             </AnchorPane>
             </children>

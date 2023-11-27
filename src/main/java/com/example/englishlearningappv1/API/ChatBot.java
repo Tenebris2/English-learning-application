@@ -80,8 +80,7 @@ public class ChatBot implements APInterface {
             }
 
             System.out.println(responseList);
-
-
+            
             return responseList.get(0);
         } catch (IOException | JSONException e) {
             return "Error: " + e.getMessage();
