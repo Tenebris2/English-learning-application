@@ -239,7 +239,7 @@ public class FavoritesPageController extends HomePageController implements Contr
     }
 
     public void back(ActionEvent event) {
-        if (currentIndex > 1) {
+        if (currentIndex >= 1) {
             currentIndex = currentIndex - 1;
             favoriteWordDisplay.setText(listOfFavoriteWords.get(currentIndex));
             answerContainerLabel.setText("");
@@ -247,6 +247,18 @@ public class FavoritesPageController extends HomePageController implements Contr
         }
     }
 
+    public void delete(ActionEvent event) throws SQLException {
+        CRUDFunctions.deleteFavoriteWord(listOfFavoriteWords.get(currentIndex));
+        listOfFavoriteWords = CRUDFunctions.createFavoriteWordList();
+        if (currentIndex == 0) {
+            currentIndex += 1;
+        }
+        if (currentIndex == listOfFavoriteWords.size() - 1){
+            currentIndex -= 1;
+        }
+        System.out.println(currentIndex);
+        favoriteWordDisplay.setText(listOfFavoriteWords.get(currentIndex));
+    }
 
     public void inEffects(MouseEvent event) {
         functionEffects.inEffects3(event, baseStyle + "-fx-border-style: none");

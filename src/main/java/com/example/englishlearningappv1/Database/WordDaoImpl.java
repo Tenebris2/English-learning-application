@@ -129,7 +129,7 @@ public class WordDaoImpl implements WordDao {
 
     @Override
     public void deleteFavoriteWord(String word) throws SQLException {
-        String sql = "DELETE FROM word WHERE favorite_word=?";
+        String sql = "DELETE FROM favorite_word WHERE favorite_word=?";
 
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, word);

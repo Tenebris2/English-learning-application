@@ -12,6 +12,11 @@
     -fx-background-radius: 10px;
     -fx-text-fill: white;
 }
+#deleteButton {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-background-radius: 10px;
+    -fx-text-fill: white;
+}
 
 
 #favoriteWordContainer {
