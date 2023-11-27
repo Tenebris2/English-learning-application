@@ -1,5 +1,6 @@
 package com.example.englishlearningappv1.Controllers;
 
+import com.example.englishlearningappv1.Dictionary;
 import com.example.englishlearningappv1.Functions.CRUDFunctions;
 import com.example.englishlearningappv1.Root;
 import com.example.englishlearningappv1.Utils.FunctionEffects;
@@ -13,7 +14,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class DictionaryController extends HomePageController implements ControllerInterface {
-
+    private static Controller controller = new Controller();
+    private Dictionary dic = new Dictionary();
     @FXML
     private WebView defView;
     private static final String sourcePath = "C:\\files and projects\\English-learning-application\\src\\main\\resources\\com\\example\\englishlearningappv1\\fxml\\image\\";
@@ -33,6 +35,8 @@ public class DictionaryController extends HomePageController implements Controll
                 -fx-background-radius: 10px;
                 -fx-text-fill: white;\
             """;
+
+
     @FXML
     public void fixButtonInEffects(MouseEvent event) {
         functionEffects.inEffects4(event, fixButtonImageURL, width, height);

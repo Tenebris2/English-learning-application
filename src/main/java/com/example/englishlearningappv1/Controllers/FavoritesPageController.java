@@ -235,8 +235,6 @@ public class FavoritesPageController extends HomePageController implements Contr
             currentIndex = currentIndex + 1;
             favoriteWordDisplay.setText(listOfFavoriteWords.get(currentIndex));
             answerContainerLabel.setText("");
-        } else {
-            nextButton.setDisable(true);
         }
     }
 
@@ -246,8 +244,6 @@ public class FavoritesPageController extends HomePageController implements Contr
             favoriteWordDisplay.setText(listOfFavoriteWords.get(currentIndex));
             answerContainerLabel.setText("");
             backButton.setDisable(false);
-        } else {
-            backButton.setDisable(true);
         }
     }
 

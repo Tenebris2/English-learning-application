@@ -1,5 +1,7 @@
 package com.example.englishlearningappv1;
 
+import com.example.englishlearningappv1.Database.WordDaoImpl;
+import com.example.englishlearningappv1.Database.WordServiceImpl;
 import com.example.englishlearningappv1.Functions.CRUDFunctions;
 
 import java.io.*;
@@ -23,24 +25,7 @@ public class Dictionary extends CRUDFunctions {
     //Load từ và nghĩa từ file vào TreeMap
 
     public void createWordList() throws IOException, SQLException {
-            String sql = "SELECT * FROM wordlist";
-
-            Statement statement = connection.createStatement();
-            ResultSet result = statement.executeQuery(sql);
-            String line;
-
-            while (result.next()){
-                String word = result.getString("english");
-                String definition = result.getString("definition");
-                line = word + definition;
-
-                String[] parts = line.split(SPLITTING_CHAR);
-                parts[1] = "<html>" + parts[1];
-                wordList.put(parts[0], new Word(parts[0], parts[1]));
-            }
-
-            statement.close();
-            result.close();
+        wordList = WordServiceImpl.getInstance().createWordList();
     }
 
 

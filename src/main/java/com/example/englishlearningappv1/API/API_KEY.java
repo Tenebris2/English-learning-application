@@ -1,5 +1,6 @@
 package com.example.englishlearningappv1.API;
 
+import com.example.englishlearningappv1.Database.DBConnection;
 import com.example.englishlearningappv1.Functions.CRUDFunctions;
 
 import java.nio.charset.StandardCharsets;
@@ -14,7 +15,6 @@ public class API_KEY {
     private String key;
     private String name;
 
-    public static Connection connection;
     static final String dbURL = "jdbc:mysql://localhost:3306/dictionary";
     static final String username = "root";
     static final String password = "";
@@ -29,12 +29,7 @@ public class API_KEY {
 
     public static void connectDB()
     {
-        try {
-            connection = DriverManager.getConnection(dbURL,username,password);
-            System.out.println("Database connection sucessful!");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        connection = DBConnection.getInstance().getConnection();
     }
     public API_KEY(String key, String name) throws SQLException {
         this.key = key;
