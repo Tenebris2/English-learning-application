@@ -74,7 +74,7 @@ public class ScoreWindow {
         Scene scene = new Scene(root, 300, 260);
         scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         scene.getStylesheets()
-                .add(Objects.requireNonNull(ScoreWindow.class.getResource("wordle.css"))
+                .add(Objects.requireNonNull(ScoreWindow.class.getResource("styles/wordle.css"))
                         .toExternalForm());
         stage.setScene(scene);
         stage.showAndWait();

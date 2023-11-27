@@ -81,8 +81,8 @@ public class WordleController extends TitlebarController {
         GameBackgroundEffects gameBackgroundEffects = new GameBackgroundEffects();
         gameBackgroundEffects.backgroundEffects(mainPane, 500);
         gameBackgroundEffects.shootingStarsEffect(mainPane);
-        InputStream winning_words = getClass().getResourceAsStream("winning-words.txt");
-        InputStream dictionary = getClass().getResourceAsStream("dictionary.txt");
+        InputStream winning_words = getClass().getResourceAsStream("files/winning-words.txt");
+        InputStream dictionary = getClass().getResourceAsStream("files/dictionary.txt");
 
         if (winning_words != null && dictionary != null) {
             Stream<String> winning_words_lines = new BufferedReader(new InputStreamReader(winning_words)).lines();
@@ -105,7 +105,7 @@ public class WordleController extends TitlebarController {
     public void restartClicked(ActionEvent event) {
         try {
             restart();
-            FXMLLoader fxmlLoader = new FXMLLoader(WordleApplication.class.getResource("wordle.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(WordleApplication.class.getResource("fxml/wordle.fxml"));
             Parent root = fxmlLoader.load();
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);

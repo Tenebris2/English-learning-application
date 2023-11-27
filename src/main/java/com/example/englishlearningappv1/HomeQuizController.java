@@ -1,5 +1,6 @@
 package com.example.englishlearningappv1;
 
+import com.example.englishlearningappv1.Controllers.TitlebarController;
 import com.example.englishlearningappv1.Utils.BackgroundEffects;
 import com.example.englishlearningappv1.Utils.GameBackgroundEffects;
 import javafx.event.ActionEvent;
@@ -16,7 +17,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.net.URL;
 
-public class HomeQuizController {
+public class HomeQuizController extends TitlebarController {
 
     @FXML
     private Button playquizbtn;
@@ -30,7 +31,7 @@ public class HomeQuizController {
 
     private Scene scene;
 
-    final private static String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/quiz.fxml";
+    final private static String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/quiz.fxml";
     final private static String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
     private static final String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
 

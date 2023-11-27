@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: radial-gradient(focus-angle 0deg, focus-distance 0%, center 50% 0%, radius 220%, #131f24 10%, #302b63 40%, #24243e 65%);" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.QuizController">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: radial-gradient(focus-angle 0deg, focus-distance 0%, center 50% 0%, radius 220%, #131f24 10%, #302b63 40%, #24243e 65%);" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.englishlearningappv1.Controllers.QuizController">
    <stylesheets>
-      <URL value="@quiz.css" />
+      <URL value="@../styles/quiz.css" />
    </stylesheets>
    <children>
       <Label fx:id="question" alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="50.0" prefHeight="406.7" prefWidth="620.0" text="Test" textAlignment="CENTER" textFill="WHITE" wrapText="true">
@@ -44,16 +44,6 @@
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="1045.0" layoutY="17.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@fxml/image/icons8-close-50.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="minimize" fitHeight="99.0" fitWidth="21.0" layoutX="1009.0" layoutY="17.0" onMouseClicked="#minimizeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@fxml/image/icons8-minimize-50.png" />
-         </image>
-      </ImageView>
       <Button fx:id="backBtn" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="58.0" prefWidth="56.0" style="-fx-background-color: transparent; -fx-cursor: hand;" textFill="WHITE">
          <font>
             <Font size="18.0" />
@@ -61,10 +51,20 @@
          <graphic>
             <ImageView fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@fxml/image/icons8-back-100.png" />
+                  <Image url="@image/icons8-back-100.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
    </children>
+   <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="1044.0" layoutY="14.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@image/icons8-close-50.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="minimize" fitHeight="99.0" fitWidth="21.0" layoutX="1012.0" layoutY="14.0" onMouseClicked="#minimizeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@image/icons8-minimize-50.png" />
+      </image>
+   </ImageView>
 </AnchorPane>

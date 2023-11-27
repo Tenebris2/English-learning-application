@@ -1,6 +1,5 @@
 package com.example.englishlearningappv1.Controllers;
 
-import com.example.englishlearningappv1.QuizController;
 import com.example.englishlearningappv1.Utils.GameBackgroundEffects;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,7 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-public class HelloResultController implements ControllerInterface {
+public class HelloResultController extends TitlebarController implements ControllerInterface {
 
     @FXML
     public Label marks;

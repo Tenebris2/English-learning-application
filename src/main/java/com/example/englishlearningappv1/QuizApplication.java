@@ -17,7 +17,7 @@ public class QuizApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         stageReference = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(QuizApplication.class.getResource("home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(QuizApplication.class.getResource("fxml/home.fxml"));
         Parent root = fxmlLoader.load();
 
         double screenWidth = Screen.getPrimary().getBounds().getWidth();

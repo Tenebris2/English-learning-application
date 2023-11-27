@@ -68,7 +68,7 @@ public class SceneController implements ControllerInterface {
     }
 
     public void switchtoWordle(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(WordleApplication.class.getResource("wordle.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(WordleApplication.class.getResource("fxml/wordle.fxml"));
         Parent root = fxmlLoader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -81,6 +81,7 @@ public class SceneController implements ControllerInterface {
         wordleController.getRandomWord();
         wordleController.gridRequestFocus();
     }
+
     public void switchtoQuiz(ActionEvent event) throws IOException {
         URL url = new File(QUIZ_FXML_FILE_PATH).toURI().toURL();
         Parent root = FXMLLoader.load(url);

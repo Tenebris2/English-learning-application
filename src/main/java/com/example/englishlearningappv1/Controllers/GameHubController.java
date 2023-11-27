@@ -105,7 +105,6 @@ public class GameHubController extends HomePageController implements ControllerI
         TranslateTransition transition = new TranslateTransition(animationDuration, gotoGames);
         transition.setToY(0);
         applyAnimation(transition);
-        gotoGames.setStyle("-fx-background-color: #1A1A1A; -fx-text-fill: #fff; -fx-box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;");
     }
 
     @FXML
@@ -113,7 +112,18 @@ public class GameHubController extends HomePageController implements ControllerI
         TranslateTransition transition = new TranslateTransition(animationDuration, gotoGames);
         transition.setToY(0);
         applyAnimation(transition);
-        gotoGames.setStyle("-fx-background-color: white; -fx-text-fill: #3B3B3B; -fx-box-shadow: none;");
     }
 
+    private String baseStyle = "    -fx-background-color: rgba(255, 188, 231, 0.6);\n" +
+            "    -fx-background-radius: 30px;\n" +
+            "    -fx-border-style: solid;\n" +
+            "    -fx-text-fill: white;";
+
+    public void inEffects(MouseEvent event) {
+        functionEffects.inEffects3(event, baseStyle + "-fx-border-style: none");
+    }
+
+    public void outEffects(MouseEvent event) {
+        functionEffects.outEffects3(event, baseStyle);
+    }
 }

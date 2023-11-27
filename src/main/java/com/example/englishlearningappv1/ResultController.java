@@ -1,5 +1,7 @@
 package com.example.englishlearningappv1;
 
+import com.example.englishlearningappv1.Controllers.QuizController;
+import com.example.englishlearningappv1.Controllers.TitlebarController;
 import com.example.englishlearningappv1.Utils.GameBackgroundEffects;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,7 +19,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-public class ResultController {
+public class ResultController extends TitlebarController {
 
     @FXML
     public Label marks;
@@ -34,8 +36,8 @@ public class ResultController {
     private Stage stage;
     private Scene scene;
 
-    final private static String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/quiz.fxml";
-    final private static String MENU_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1//fxml/homepage.fxml";
+    final private static String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/quiz.fxml";
+    final private static String MENU_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/homepage.fxml";
     private static final String GAME_HUB_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/gameHub.fxml";
 
 
