@@ -4,7 +4,6 @@ package com.example.englishlearningappv1.STT.recognizer;
 import com.example.englishlearningappv1.STT.util.StringUtil;
 
 import javax.net.ssl.HttpsURLConnection;
-//import javax.xml.ws.http.HTTPException;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;

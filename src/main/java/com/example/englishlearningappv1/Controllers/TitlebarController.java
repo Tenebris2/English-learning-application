@@ -22,6 +22,8 @@ public class TitlebarController implements ControllerInterface {
         Stage stage = (Stage) close.getScene().getWindow();
 
         stage.close();
+
+        System.exit(0);
     }
 
     @FXML

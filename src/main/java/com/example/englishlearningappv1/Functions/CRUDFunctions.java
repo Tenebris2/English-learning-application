@@ -2,14 +2,12 @@ package com.example.englishlearningappv1.Functions;
 
 import com.example.englishlearningappv1.Database.DBConnection;
 import com.example.englishlearningappv1.Database.WordServiceImpl;
-import com.example.englishlearningappv1.Word;
 
-import java.sql.*;
-import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 public class CRUDFunctions implements Function {
-
     public static Connection connection;
     public static void connectDB()
     {

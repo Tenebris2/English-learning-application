@@ -1,10 +1,9 @@
 package com.example.englishlearningappv1.Controllers;
 
-import com.example.englishlearningappv1.Controllers.SceneController;
-import com.example.englishlearningappv1.Controllers.TitlebarController;
-import com.example.englishlearningappv1.Utils.BackgroundEffects;
 import com.example.englishlearningappv1.Utils.GameBackgroundEffects;
-import javafx.animation.*;
+import javafx.animation.KeyFrame;
+import javafx.animation.PauseTransition;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -16,8 +15,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,13 +1,11 @@
 package com.example.englishlearningappv1;
 
-import com.example.englishlearningappv1.Database.WordDaoImpl;
 import com.example.englishlearningappv1.Database.WordServiceImpl;
 import com.example.englishlearningappv1.Functions.CRUDFunctions;
 
-import java.io.*;
-import java.sql.ResultSet;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Formatter;
 import java.util.Map;
 import java.util.TreeMap;

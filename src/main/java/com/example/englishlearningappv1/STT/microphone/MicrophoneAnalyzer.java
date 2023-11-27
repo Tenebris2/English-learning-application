@@ -1,6 +1,7 @@
 package com.example.englishlearningappv1.STT.microphone;
 
-import com.example.englishlearningappv1.STT.util.*;
+import com.example.englishlearningappv1.STT.util.Complex;
+import com.example.englishlearningappv1.STT.util.FFT;
 
 import javax.sound.sampled.AudioFileFormat;
 

@@ -1,13 +1,11 @@
 package com.example.englishlearningappv1.API;
 
 import com.example.englishlearningappv1.Database.DBConnection;
-import com.example.englishlearningappv1.Functions.CRUDFunctions;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.sql.*;
-import java.util.HashMap;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import static com.example.englishlearningappv1.Functions.CRUDFunctions.connection;
 

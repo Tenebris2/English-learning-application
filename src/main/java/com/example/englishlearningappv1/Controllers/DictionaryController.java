@@ -3,10 +3,8 @@ package com.example.englishlearningappv1.Controllers;
 import com.example.englishlearningappv1.Dictionary;
 import com.example.englishlearningappv1.Functions.CRUDFunctions;
 import com.example.englishlearningappv1.Root;
-import com.example.englishlearningappv1.Utils.FunctionEffects;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebView;
 

@@ -1,7 +1,6 @@
 package com.example.englishlearningappv1.Database;
 
 import java.sql.SQLException;
-import java.util.List;
 
 public interface DAO {
     String search(String input) throws SQLException;

@@ -2,13 +2,11 @@ package com.example.englishlearningappv1.Controllers;
 
 import com.example.englishlearningappv1.API.APIController;
 import com.example.englishlearningappv1.API.API_KEY;
-import com.example.englishlearningappv1.API.TTS;
 import com.example.englishlearningappv1.STT.microphone.Microphone;
 import com.example.englishlearningappv1.STT.recognizer.GSpeechDuplex;
 import com.example.englishlearningappv1.STT.recognizer.GSpeechResponseListener;
 import com.example.englishlearningappv1.STT.recognizer.GoogleResponse;
 import com.example.englishlearningappv1.Utils.BackgroundEffects;
-import com.example.englishlearningappv1.Utils.FunctionEffects;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.value.ChangeListener;

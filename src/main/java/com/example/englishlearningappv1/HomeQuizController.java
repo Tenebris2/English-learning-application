@@ -1,7 +1,6 @@
 package com.example.englishlearningappv1;
 
 import com.example.englishlearningappv1.Controllers.TitlebarController;
-import com.example.englishlearningappv1.Utils.BackgroundEffects;
 import com.example.englishlearningappv1.Utils.GameBackgroundEffects;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

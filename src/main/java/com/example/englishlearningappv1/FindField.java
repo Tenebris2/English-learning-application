@@ -13,8 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import static com.example.englishlearningappv1.Functions.CRUDFunctions.*;
+import static com.example.englishlearningappv1.Functions.CRUDFunctions.connection;
 
 public class FindField extends Root {
     private final TextField findTextField;

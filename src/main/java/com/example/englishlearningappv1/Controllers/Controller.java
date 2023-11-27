@@ -1,8 +1,7 @@
 package com.example.englishlearningappv1.Controllers;
 
-import com.example.englishlearningappv1.Functions.SpellingFunction;
-import com.example.englishlearningappv1.Functions.*;
 import com.example.englishlearningappv1.*;
+import com.example.englishlearningappv1.Functions.*;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 

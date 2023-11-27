@@ -1,6 +1,5 @@
 package com.example.englishlearningappv1.Utils;
 
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 public interface Effects {

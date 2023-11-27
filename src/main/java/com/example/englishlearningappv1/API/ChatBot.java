@@ -1,12 +1,5 @@
 package com.example.englishlearningappv1.API;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
-
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -17,6 +10,12 @@ import org.apache.http.impl.client.HttpClients;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChatBot implements APInterface {
     private static final String endpoint = "https://api.openai.com/v1/chat/completions";
@@ -80,8 +79,7 @@ public class ChatBot implements APInterface {
             }
 
             System.out.println(responseList);
-
-
+            
             return responseList.get(0);
         } catch (IOException | JSONException e) {
             return "Error: " + e.getMessage();

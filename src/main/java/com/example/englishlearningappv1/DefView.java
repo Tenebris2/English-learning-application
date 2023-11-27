@@ -1,11 +1,7 @@
 package com.example.englishlearningappv1;
 
-import javafx.beans.value.ObservableValue;
 import javafx.scene.Scene;
-import javafx.scene.effect.BlendMode;
-import javafx.scene.paint.Color;
 import javafx.scene.web.WebView;
-import org.w3c.dom.Document;
 
 public class DefView extends Root{
     private WebView defView;

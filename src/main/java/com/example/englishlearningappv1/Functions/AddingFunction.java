@@ -11,7 +11,7 @@ import javafx.scene.layout.GridPane;
 import java.sql.SQLException;
 import java.util.Optional;
 
-import static com.example.englishlearningappv1.Functions.CRUDFunctions.*;
+import static com.example.englishlearningappv1.Functions.CRUDFunctions.CRUDaddWord;
 
 
 public class AddingFunction extends Root implements Function {

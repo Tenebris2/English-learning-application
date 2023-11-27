@@ -1,9 +1,6 @@
 package com.example.englishlearningappv1.Controllers;
 
-import com.example.englishlearningappv1.API.ChatBot;
 import com.example.englishlearningappv1.Utils.FunctionEffects;
-
-import java.sql.SQLException;
 
 public interface ControllerInterface {
     int width = 33;

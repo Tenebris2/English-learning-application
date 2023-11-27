@@ -1,7 +1,6 @@
 package com.example.englishlearningappv1.Controllers;
 
 import com.example.englishlearningappv1.API.APIController;
-import com.example.englishlearningappv1.API.SaA;
 import com.example.englishlearningappv1.Functions.CRUDFunctions;
 import com.example.englishlearningappv1.Utils.BackgroundEffects;
 import javafx.animation.FadeTransition;
@@ -19,11 +18,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.*;
 
 public class FavoritesPageController extends HomePageController implements ControllerInterface {
     private static int currentIndex = 0;
+    private static int time_out_length = 30;
     private List<String> listOfFavoriteWords;
     private List<Button> listOfButtons;
     private final PauseTransition cooldownTransition = new PauseTransition(Duration.millis(5000)); // 3 seconds cooldown
@@ -198,11 +197,13 @@ public class FavoritesPageController extends HomePageController implements Contr
             }
             return ans;
         });
-
         // Periodically log the elapsed time
         ScheduledFuture<?> loggingFuture = executorService.scheduleAtFixedRate(() -> {
             long elapsedTime = System.currentTimeMillis() - startTime;
             System.out.println("Elapsed Time: " + elapsedTime / 1000 + " seconds");
+            if (elapsedTime >= time_out_length * 1000) {
+                queryResult.completeExceptionally(new TimeoutException("API Request Timed Out"));
+            }
             if (elapsedTime / 1000 % 2 == 0) {
                 answerContainerLabel.setText("....");
             } else if (elapsedTime / 1000 % 2 != 0){
@@ -219,6 +220,7 @@ public class FavoritesPageController extends HomePageController implements Contr
             enableButtons();
         }).exceptionally(ex -> {
             // Handle exception (e.g., timeout)
+            loggingFuture.cancel(true);
             System.err.println("Error: " + ex.getMessage());
             answerContainerLabel.setText("Looks like this word cannot be searched for!");
 

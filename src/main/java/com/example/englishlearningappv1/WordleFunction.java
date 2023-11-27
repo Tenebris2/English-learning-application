@@ -1,6 +1,8 @@
 package com.example.englishlearningappv1;
 
-import javafx.animation.*;
+import javafx.animation.FadeTransition;
+import javafx.animation.ScaleTransition;
+import javafx.animation.SequentialTransition;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;

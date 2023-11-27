@@ -1,7 +1,9 @@
 package com.example.englishlearningappv1.Controllers;
 
 import com.example.englishlearningappv1.Utils.BackgroundEffects;
-import javafx.animation.*;
+import javafx.animation.ParallelTransition;
+import javafx.animation.ScaleTransition;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
