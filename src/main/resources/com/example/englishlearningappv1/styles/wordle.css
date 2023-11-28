@@ -84,7 +84,6 @@
 
 .main-screen {
     -fx-background-color: -background-color;
-    -fx-padding: 10px;
 }
 
 .keyboardTile {

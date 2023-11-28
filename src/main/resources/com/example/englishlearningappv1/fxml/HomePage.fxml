@@ -87,7 +87,7 @@
                   <DropShadow />
                </effect>
             </Button>
-            <Button fx:id="favoritesPage" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="383.0" mnemonicParsing="false" onAction="#gotoFavorites" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="FAVORITES" textFill="WHITE">
+            <Button fx:id="favoritesPage" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="382.0" mnemonicParsing="false" onAction="#gotoFavorites" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="FAVORITES" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
@@ -95,6 +95,21 @@
                   <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/icons8-favorite-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="scanner" alignment="BOTTOM_LEFT" graphicTextGap="6.0" layoutX="9.0" layoutY="449.0" mnemonicParsing="false" onAction="#gotoScannerController" onMouseEntered="#inEffects1" onMouseExited="#outEffects1" prefHeight="58.0" prefWidth="181.0" text="SCANNER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icons8-scanner-96.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -186,12 +201,12 @@
          </effect>
       </AnchorPane>
    </center>
-   <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="1044.0" layoutY="14.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
+   <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="1044.0" layoutY="14.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
       <image>
          <Image url="@image/icons8-close-50.png" />
       </image>
    </ImageView>
-   <ImageView fx:id="minimize" fitHeight="99.0" fitWidth="21.0" layoutX="1012.0" layoutY="14.0" onMouseClicked="#minimizeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
+   <ImageView fx:id="minimize" fitHeight="99.0" fitWidth="21.0" layoutX="1012.0" layoutY="14.0" onMouseClicked="#minimizeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
       <image>
          <Image url="@image/icons8-minimize-50.png" />
       </image>

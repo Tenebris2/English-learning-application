@@ -97,6 +97,10 @@ public class HomePageController extends TitlebarController implements Controller
         sceneController.openGoogleTranslate(event);
     }
 
+    public void gotoScannerController(ActionEvent event) throws Exception {
+        sceneController.switchToScannerPage(event);
+    }
+
     public void initLabel(ActionEvent event) {
         Button source = (Button) event.getSource();
         initLabel.setText(source.getText());

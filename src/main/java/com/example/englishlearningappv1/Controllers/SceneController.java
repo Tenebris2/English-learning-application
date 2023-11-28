@@ -118,4 +118,7 @@ public class SceneController implements ControllerInterface {
         switchScene(event, FAVORITES_PAGE_FXML_FILE_PATH);
     }
 
+    public void switchToScannerPage(ActionEvent event) throws Exception {
+        switchScene(event, SCANNER_FXML_FILE_PATH);
+    }
 }

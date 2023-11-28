@@ -126,7 +126,7 @@
                           <DropShadow />
                       </effect>
             </WebView>
-                  <ListView fx:id="searchView" layoutX="153.0" layoutY="-30.0" prefHeight="286.0" prefWidth="529.0">
+                  <ListView fx:id="searchView" layoutX="153.0" layoutY="-20.0" prefHeight="286.0" prefWidth="529.0">
                       <effect>
                           <DropShadow />
                       </effect>

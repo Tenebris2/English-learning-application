@@ -5,6 +5,7 @@ import com.example.englishlearningappv1.Utils.FunctionEffects;
 public interface ControllerInterface {
     int width = 33;
     int height = 33;
+    String SCANNER_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/ScannerPage.fxml";
     String DICTIONARY_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/JavaFx.fxml";
     String HOME_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/HomePage.fxml";
     String QUIZ_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/home.fxml";
