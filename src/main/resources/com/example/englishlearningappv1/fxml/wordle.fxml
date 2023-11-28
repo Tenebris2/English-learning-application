@@ -11,16 +11,16 @@
     <stylesheets>
         <URL value="@../styles/wordle.css" />
     </stylesheets>
-    <GridPane fx:id="gridPane" alignment="CENTER" hgap="5" layoutX="376.0" layoutY="87.0" onKeyPressed="#onKeyPressed" prefHeight="282.0" prefWidth="327.0" vgap="5">
+    <GridPane fx:id="gridPane" alignment="CENTER" hgap="5" layoutX="376.0" layoutY="87.0" onKeyPressed="#onKeyPressed" prefHeight="282.0" prefWidth="330.0" vgap="5">
         <BorderPane.margin>
             <Insets bottom="15.0" top="15.0" />
         </BorderPane.margin>
     </GridPane>
-    <VBox layoutX="290.0" layoutY="522.0" prefHeight="190.0" prefWidth="500.0">
+    <VBox layoutX="291.0" layoutY="508.0" prefHeight="180.0" prefWidth="500.0">
         <GridPane fx:id="keyboardRow1" alignment="BOTTOM_CENTER" hgap="4" vgap="2">
         </GridPane>
 
-        <GridPane fx:id="keyboardRow2" alignment="BOTTOM_CENTER" hgap="4" vgap="2" />
+        <GridPane fx:id="keyboardRow2" alignment="BOTTOM_CENTER" hgap="4" vgap="4" />
 
         <GridPane fx:id="keyboardRow3" alignment="BOTTOM_CENTER" hgap="4" vgap="2">
         </GridPane>
@@ -54,12 +54,12 @@
             </ImageView>
         </graphic>
     </Button>
-    <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="1044.0" layoutY="14.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="close" fitHeight="99.0" fitWidth="21.0" layoutX="1044.0" layoutY="14.0" onMouseClicked="#closeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
         <image>
             <Image url="@image/icons8-close-50.png" />
         </image>
     </ImageView>
-    <ImageView fx:id="minimize" fitHeight="99.0" fitWidth="21.0" layoutX="1012.0" layoutY="14.0" onMouseClicked="#minimizeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" style="-fx-cursor: hand;" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="minimize" fitHeight="99.0" fitWidth="21.0" layoutX="1012.0" layoutY="14.0" onMouseClicked="#minimizeFunction" onMouseEntered="#inEffects3" onMouseExited="#outEffects3" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
         <image>
             <Image url="@image/icons8-minimize-50.png" />
         </image>
