@@ -1,9 +1,13 @@
 package com.example.englishlearningappv1.API;
 
+import net.sourceforge.tess4j.TesseractException;
+
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 
 public class APIController {
+    static TextRecog scanner = new TextRecog();
     static ChatBot chatBot;
     static SaA saA = new SaA();
 
@@ -43,5 +47,9 @@ public class APIController {
 
     public static String sendRequestToSaA(String input) throws SQLException, IOException {
         return saA.sendQuery(input);
+    }
+
+    public static String scan(File file) throws TesseractException {
+        return scanner.scan(file);
     }
 }

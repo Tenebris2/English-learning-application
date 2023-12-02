@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -120,5 +121,21 @@ public class SceneController implements ControllerInterface {
 
     public void switchToScannerPage(ActionEvent event) throws Exception {
         switchScene(event, SCANNER_FXML_FILE_PATH);
+    }
+
+    public void openImage(MouseEvent event) throws IOException {
+        // Load the FXML file
+        URL url = new File(IMAGE_FXML_FILE_PATH).toURI().toURL();
+        Parent root = FXMLLoader.load(url);
+
+        // Get the current stage
+        Stage stage = new Stage();
+
+        // Set the new scene on the existing stage
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+
+        stage.show();
     }
 }

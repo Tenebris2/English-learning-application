@@ -13,7 +13,6 @@ module com.example.englishlearningappv1 {
     opens com.example.englishlearningappv1.Controllers to javafx.fxml;
     exports com.example.englishlearningappv1.API;
     opens com.example.englishlearningappv1.API to javafx.fxml;
-
     requires javafx.web;
     requires freetts;
     requires java.sql;
@@ -29,4 +28,6 @@ module com.example.englishlearningappv1 {
     requires org.jsoup;
     requires org.json;
     requires java.flac.encoder;
+    requires tess4j;
+
 }

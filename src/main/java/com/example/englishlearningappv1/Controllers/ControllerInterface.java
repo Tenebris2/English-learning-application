@@ -14,5 +14,6 @@ public interface ControllerInterface {
     String HELLO_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/Hello.fxml";
     String FAVORITES_PAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/FavoritesPage.fxml";
     String RESULT_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/result.fxml";
+    String IMAGE_FXML_FILE_PATH = "src/main/resources/com/example/englishlearningappv1/fxml/imageFXML.fxml";
     FunctionEffects functionEffects = new FunctionEffects();
 }
